@@ -1,13 +1,22 @@
 import React, {Component} from 'react'
 import {render} from 'react-dom'
+import {Launcher} from '../../src'
+import messageHistory from './messageHistory';
 
-import Example from '../../src'
 
 class Demo extends Component {
+
+  onMessageWasSent() {
+    console.log('onMessageWasSent');
+  }
+
   render() {
     return <div>
       <h1>react-live-chat Demo</h1>
-      <Example/>
+      <Launcher
+        onMessageWasSent={this.onMessageWasSent}
+        messageHistory={messageHistory}
+      />
     </div>
   }
 }

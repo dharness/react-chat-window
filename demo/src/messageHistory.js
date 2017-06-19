@@ -1,0 +1,18 @@
+export default [
+  {author: "me", body: "Why don't they have salsa on the table?"},
+  {author: "them", body: "What do you need salsa for?"},
+  {author: "me", body: "Salsa is now the number one condiment in America."},
+  {author: "them", body: "You know why? Because people like to say 'salsa.' 'Excuse me, do you have salsa?' 'We need more salsa.' 'Where is the salsa? No salsa?'"},
+  {author: "me", body: "You know it must be impossible for a Spanish person to order seltzer and not get salsa. 'I wanted seltzer, not salsa.'"},
+  {author: "them", body: "Don't you know the difference between seltzer and salsa?? You have the seltezer after the salsa!"},
+  {author: "me", body: "See, this should be a show. This is the show. "},
+  {author: "them", body: "What?"},
+  {author: "me", body: "This. Just talking."},
+  {author: "them", body: "Yeah, right."},
+  {author: "me", body: "I'm really serious. I think that's a good idea. "},
+  {author: "them", body: "Just talking? Well what's the show about?"},
+  {author: "me", body: "It's about nothing."},
+  {author: "them", body: "No story?"},
+  {author: "me", body: "No forget the story. "},
+  {author: "them", body: "You've got to have a story."},
+]

@@ -21,6 +21,7 @@ class UserInput extends Component {
       event.preventDefault();
       const messageText = this.userInput.textContent;
       this.props.onSubmit(messageText);
+      console.log(this);
       this.setState({ inputValue: '' });
     }
   }
@@ -42,19 +43,19 @@ class UserInput extends Component {
           onFocus={() => { this.setState({ inputActive: true }); }}
           onBlur={() => { this.setState({ inputActive: false }); }}
           ref={(e) => { this.userInput = e; }}
-          onKeyDown={this.handleKey}
+          onKeyDown={this.handleKey.bind(this)}
           contentEditable="true"
           placeholder="Write a reply..."
           className="sc-input-field--input"
         >
-          {/* this.state.inputValue */}
+
         </div>
         <div className="sc-input-field--buttons">
           <EmojiIcon
-            onClick={this.toggleEmojiMenu}
+            onClick={this.toggleEmojiMenu.bind(this)}
             isActive={this.state.emojiPickerOpen}
-            onFocus={this.toggleEmojiMenu}
-            onBlur={this.toggleEmojiMenu}
+            onFocus={this.toggleEmojiMenu.bind(this)}
+            onBlur={this.toggleEmojiMenu.bind(this)}
           />
           <SendIcon />
         </div>

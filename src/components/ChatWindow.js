@@ -2,22 +2,19 @@ import React, { Component } from 'react';
 import MessageList from './MessageList'
 import UserInput from './UserInput'
 import Header from './Header'
-import messageBroker from './../services/messageBroker';
 
 
 class ChatWindow extends Component {
-    constructor() {
-      super();
-      this.state = { messages: [] };
-      this.messageBroker = messageBroker;
-      this.messageBroker.init();
-      this.messageBroker.onMessageReceived(this.onMessageReceived.bind(this));
+    constructor(props) {
+      super(props);
+      const messages = props.messageHistory || [];
+      this.state = { messages };
     }
 
     onUserInputSubmit(userInput) {
       const msg = {author: 'me', body: userInput};
       this.setState({messages: [...this.state.messages, msg]});
-      this.messageBroker.sendMessage(msg);
+      this.props.onUserInputSubmit(userInput);
     }
 
     onMessageReceived(msg) {
@@ -31,7 +28,11 @@ class ChatWindow extends Component {
         ];
         return (
           <div className={classList.join(' ')}>
-            <Header teamName={messageBroker.getTeamName()} imageUrl={messageBroker.getImageUrl()} onClose={this.props.onClose} />
+            <Header
+              teamName={this.props.teamName}
+              imageUrl={this.props.imageUrl}
+              onClose={this.props.onClose}
+            />
             <MessageList messages={this.state.messages}/>
             <UserInput onSubmit={this.onUserInputSubmit.bind(this)}/>
           </div>

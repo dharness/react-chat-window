@@ -10,8 +10,8 @@ class MessageList extends Component {
   render () {
     return (
       <div className="sc-message-list" ref={el => this.scrollList = el}>
-        {this.props.messages.map(msg => {
-          return <Message message={msg}/>
+        {this.props.messages.map((msg, i) => {
+          return <Message message={msg} key={i} />
         })}
       </div>)
   }

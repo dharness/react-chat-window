@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import ChatWindow from './ChatWindow';
 
@@ -21,10 +22,21 @@ class Launcher extends Component {
     return (
       <div>
         <div className={classList.join(' ')} onClick={this.handleClick.bind(this)} />
-        <ChatWindow active={this.state.active} onClose={this.handleClick.bind(this)} />
+        <ChatWindow
+          messageHistory={this.props.messageHistory}
+          onUserInputSubmit={this.props.onMessageWasSent}
+          agentProfile={this.props.agentProfile}
+          active={this.state.active}
+          onClose={this.handleClick.bind(this)}
+        />
       </div>
     );
   }
 }
+
+Launcher.propTypes = {
+  onMessageWasReceived: PropTypes.func,
+  onMessageWasSent: PropTypes.func,
+};
 
 export default Launcher;

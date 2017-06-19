@@ -7,8 +7,4 @@ import './styles/message.css';
 import Launcher from './components/Launcher';
 
 
-export default class extends Component {
-  render() {
-    return <Launcher />
-  }
-}
+export { Launcher };
