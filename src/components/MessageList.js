@@ -11,7 +11,7 @@ class MessageList extends Component {
     return (
       <div className="sc-message-list" ref={el => this.scrollList = el}>
         {this.props.messages.map((msg, i) => {
-          return <Message message={msg} key={i} />
+          return <Message message={msg} key={i} imageUrl={this.props.imageUrl} />
         })}
       </div>)
   }

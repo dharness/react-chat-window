@@ -10,7 +10,6 @@ class UserInput extends Component {
   constructor() {
     super();
     this.state = {
-      inputValue: '',
       inputActive: false,
       emojiPickerOpen: false,
     };
@@ -21,8 +20,7 @@ class UserInput extends Component {
       event.preventDefault();
       const messageText = this.userInput.textContent;
       this.props.onSubmit(messageText);
-      console.log(this);
-      this.setState({ inputValue: '' });
+      this.userInput.innerHTML = '';
     }
   }
 
@@ -32,13 +30,13 @@ class UserInput extends Component {
 
   render() {
     return (
-      <form className={`sc-input-field ${(this.state.inputActive ? 'active' : '')}`}>
+      <form className={`sc-user-input ${(this.state.inputActive ? 'active' : '')}`}>
         {
           this.state.emojiPickerOpen &&
           <EmojiPicker />
         }
-        <div
-          role="button"
+      {/*<div
+          role="input"
           tabIndex="0"
           onFocus={() => { this.setState({ inputActive: true }); }}
           onBlur={() => { this.setState({ inputActive: false }); }}
@@ -47,10 +45,19 @@ class UserInput extends Component {
           contentEditable="true"
           placeholder="Write a reply..."
           className="sc-input-field--input"
-        >
-
-        </div>
-        <div className="sc-input-field--buttons">
+        ></div>*/}
+        <div
+          role="input"
+          tabIndex="0"
+          onFocus={() => { this.setState({ inputActive: true }); }}
+          onBlur={() => { this.setState({ inputActive: false }); }}
+          ref={(e) => { this.userInput = e; }}
+          onKeyDown={this.handleKey.bind(this)}
+          contentEditable="true"
+          placeholder="Write a reply..."
+          className="sc-user-input--text-input"
+        ></div>
+        <div className="sc-user-input--buttons" style={{display: 'none'}}>
           <EmojiIcon
             onClick={this.toggleEmojiMenu.bind(this)}
             isActive={this.state.emojiPickerOpen}

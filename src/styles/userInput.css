@@ -1,0 +1,123 @@
+.sc-user-input {
+  background: red;
+}
+
+.sc-user-input--text-input {
+  height: 100%;
+}
+
+.sc-input-field {
+  height: 100%;
+  padding: 0px 10px;
+  min-height: 55px;
+  margin: 0px;
+  position: relative;
+  bottom: 0;
+  display: flex;
+  background-color: #f4f7f9;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  transition: background-color .2s ease,box-shadow .2s ease;
+}
+
+.sc-input-field--input {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: #565867;
+  background-color: #f4f7f9;
+  resize: none;
+  border: none;
+  transition: background-color .2s ease,box-shadow .2s ease;
+}
+
+.sc-input-field--input-1 {
+  width: 300px;
+  resize: none;
+  border: none;
+  outline: none;
+  border-bottom-left-radius: 10px;
+  box-sizing: border-box;
+  padding: 18px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.33;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  color: #565867;
+  -webkit-font-smoothing: antialiased;
+  max-height: 200px;
+  overflow: scroll;
+  bottom: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.sc-input-field--input:empty:before {
+  content: attr(placeholder);
+  display: block; /* For Firefox */
+  color: rgba(86, 88, 103, 0.3);
+  outline: none;
+}
+
+.sc-input-field--buttons {
+  height: 100%;
+  width: 70px;
+  position: relative;
+  right: 0px;
+  height: 100%;
+  display: flex;
+}
+
+.sc-input-field.active {
+  box-shadow: none;
+  background-color: white;
+  box-shadow: 0px -5px 20px 0px rgba(150, 165, 190, 0.2);
+}
+
+
+.sc-input-field--send-icon {
+  height: 18px;
+  cursor: pointer;
+  align-self: center;
+}
+
+.sc-input-field--send-icon path {
+  fill: rgba(86, 88, 103, 0.3);
+}
+
+.sc-input-field--send-icon:hover path {
+  fill: rgba(86, 88, 103, 1);
+}
+
+.sc-input-field--send-icon-wrapper,
+.sc-input-field--emoji-icon-wrapper {
+  background: none;
+  border: none;
+  width: 50%;
+  display: flex;
+  outline: none;
+}
+
+.sc-input-field--emoji-icon-wrapper:focus {
+  outline: none;
+}
+
+.sc-input-field--emoji-icon {
+  height: 18px;
+  cursor: pointer;
+  align-self: center;
+}
+
+.sc-input-field--emoji-icon path, .sc-input-field--emoji-icon circle {
+  fill: rgba(86, 88, 103, 0.3);
+}
+
+.sc-input-field--emoji-icon-wrapper:focus .sc-input-field--emoji-icon path,
+.sc-input-field--emoji-icon-wrapper:focus .sc-input-field--emoji-icon circle,
+.sc-input-field--emoji-icon.active path,
+.sc-input-field--emoji-icon.active circle,
+.sc-input-field--emoji-icon:hover path,
+.sc-input-field--emoji-icon:hover circle {
+  fill: rgba(86, 88, 103, 1);
+}

@@ -14,6 +14,10 @@ class Demo extends Component {
     return <div>
       <h1>react-live-chat Demo</h1>
       <Launcher
+        agentProfile={{
+          teamName: 'react-live-chat',
+          imageUrl: 'https://a.slack-edge.com/66f9/img/avatars-teams/ava_0001-34.png'
+        }}
         onMessageWasSent={this.onMessageWasSent}
         messageHistory={messageHistory}
       />

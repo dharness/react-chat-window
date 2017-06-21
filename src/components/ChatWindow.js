@@ -29,11 +29,14 @@ class ChatWindow extends Component {
         return (
           <div className={classList.join(' ')}>
             <Header
-              teamName={this.props.teamName}
-              imageUrl={this.props.imageUrl}
+              teamName={this.props.agentProfile.teamName}
+              imageUrl={this.props.agentProfile.imageUrl}
               onClose={this.props.onClose}
             />
-            <MessageList messages={this.state.messages}/>
+            <MessageList
+              messages={this.state.messages}
+              imageUrl={this.props.agentProfile.imageUrl}
+            />
             <UserInput onSubmit={this.onUserInputSubmit.bind(this)}/>
           </div>
         );

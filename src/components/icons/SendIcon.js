@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
 
 class SendIcon extends Component {
+
   render() {
     return (
+    <button
+      onFocus={this.props.onFocus}
+      onBlur={this.props.onBlur}
+      onClick={(e) => { e.preventDefault(); }}
+      className="sc-input-field--send-icon-wrapper"
+    >
       <svg
         version='1.1'
         className="sc-input-field--send-icon"
@@ -20,7 +27,7 @@ class SendIcon extends Component {
           c0.552,0,1-0.448,1-1s-0.448-1-1-1H8.395L3.866,5.751l29.706,12.757L4.632,30.825z' />
         </g>
       </svg>
-
+    </button>
     );
   }
 }
