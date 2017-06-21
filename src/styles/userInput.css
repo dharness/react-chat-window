@@ -1,14 +1,4 @@
 .sc-user-input {
-  background: red;
-}
-
-.sc-user-input--text-input {
-  height: 100%;
-}
-
-.sc-input-field {
-  height: 100%;
-  padding: 0px 10px;
   min-height: 55px;
   margin: 0px;
   position: relative;
@@ -20,18 +10,8 @@
   transition: background-color .2s ease,box-shadow .2s ease;
 }
 
-.sc-input-field--input {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  color: #565867;
-  background-color: #f4f7f9;
-  resize: none;
-  border: none;
-  transition: background-color .2s ease,box-shadow .2s ease;
-}
 
-.sc-input-field--input-1 {
+.sc-user-input--text {
   width: 300px;
   resize: none;
   border: none;
@@ -53,71 +33,86 @@
   overflow-y: auto;
 }
 
-.sc-input-field--input:empty:before {
+.sc-user-input--text:empty:before {
   content: attr(placeholder);
   display: block; /* For Firefox */
   color: rgba(86, 88, 103, 0.3);
   outline: none;
 }
 
-.sc-input-field--buttons {
-  height: 100%;
-  width: 70px;
-  position: relative;
-  right: 0px;
+.sc-user-input--buttons {
+  width: 100px;
+  position: absolute;
+  right: 30px;
   height: 100%;
   display: flex;
 }
 
-.sc-input-field.active {
+.sc-user-input--button:first-of-type {
+  width: 40px;
+}
+
+.sc-user-input--button {
+  width: 30px;
+  height: 55px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sc-user-input.active {
   box-shadow: none;
   background-color: white;
   box-shadow: 0px -5px 20px 0px rgba(150, 165, 190, 0.2);
 }
 
-
-.sc-input-field--send-icon {
-  height: 18px;
+.sc-user-input--send-icon {
+  height: 20px;
+  width: 20px;
   cursor: pointer;
   align-self: center;
+  outline: none;
 }
 
-.sc-input-field--send-icon path {
+.sc-user-input--send-icon path {
   fill: rgba(86, 88, 103, 0.3);
 }
 
-.sc-input-field--send-icon:hover path {
+.sc-user-input--send-icon:hover path {
   fill: rgba(86, 88, 103, 1);
 }
 
-.sc-input-field--send-icon-wrapper,
-.sc-input-field--emoji-icon-wrapper {
+.sc-user-input--emoji-icon-wrapper,
+.sc-user-input--send-icon-wrapper {
   background: none;
   border: none;
-  width: 50%;
-  display: flex;
+  padding: 0px;
+  margin: 0px;
+}
+
+.sc-user-input--emoji-icon-wrapper:focus {
   outline: none;
 }
 
-.sc-input-field--emoji-icon-wrapper:focus {
-  outline: none;
-}
-
-.sc-input-field--emoji-icon {
+.sc-user-input--emoji-icon {
   height: 18px;
   cursor: pointer;
   align-self: center;
 }
 
-.sc-input-field--emoji-icon path, .sc-input-field--emoji-icon circle {
+.sc-user-input--emoji-icon path, .sc-user-input--emoji-icon circle {
   fill: rgba(86, 88, 103, 0.3);
 }
 
-.sc-input-field--emoji-icon-wrapper:focus .sc-input-field--emoji-icon path,
-.sc-input-field--emoji-icon-wrapper:focus .sc-input-field--emoji-icon circle,
-.sc-input-field--emoji-icon.active path,
-.sc-input-field--emoji-icon.active circle,
-.sc-input-field--emoji-icon:hover path,
-.sc-input-field--emoji-icon:hover circle {
+.sc-user-input--emoji-icon-wrapper:focus .sc-user-input--emoji-icon path,
+.sc-user-input--emoji-icon-wrapper:focus .sc-user-input--emoji-icon circle,
+.sc-user-input--emoji-icon.active path,
+.sc-user-input--emoji-icon.active circle,
+.sc-user-input--emoji-icon:hover path,
+.sc-user-input--emoji-icon:hover circle {
   fill: rgba(86, 88, 103, 1);
+}
+
+.sc-user-input--picker-wrapper {
+  position: absolute;
 }

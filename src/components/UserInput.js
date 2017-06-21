@@ -28,43 +28,38 @@ class UserInput extends Component {
     this.setState({ emojiPickerOpen: !this.state.emojiPickerOpen });
   }
 
+  handleChange() {
+    this.setState({ messageContent: this.textarea.value })
+  }
+
   render() {
     return (
       <form className={`sc-user-input ${(this.state.inputActive ? 'active' : '')}`}>
-        {
-          this.state.emojiPickerOpen &&
-          <EmojiPicker />
-        }
-      {/*<div
-          role="input"
-          tabIndex="0"
-          onFocus={() => { this.setState({ inputActive: true }); }}
-          onBlur={() => { this.setState({ inputActive: false }); }}
-          ref={(e) => { this.userInput = e; }}
-          onKeyDown={this.handleKey.bind(this)}
-          contentEditable="true"
-          placeholder="Write a reply..."
-          className="sc-input-field--input"
-        ></div>*/}
         <div
-          role="input"
+          role="button"
           tabIndex="0"
           onFocus={() => { this.setState({ inputActive: true }); }}
           onBlur={() => { this.setState({ inputActive: false }); }}
           ref={(e) => { this.userInput = e; }}
-          onKeyDown={this.handleKey.bind(this)}
+          onKeyDown={this.handleKey}
           contentEditable="true"
           placeholder="Write a reply..."
-          className="sc-user-input--text-input"
-        ></div>
-        <div className="sc-user-input--buttons" style={{display: 'none'}}>
-          <EmojiIcon
-            onClick={this.toggleEmojiMenu.bind(this)}
-            isActive={this.state.emojiPickerOpen}
-            onFocus={this.toggleEmojiMenu.bind(this)}
-            onBlur={this.toggleEmojiMenu.bind(this)}
-          />
-          <SendIcon />
+          className="sc-user-input--text"
+        >
+        </div>
+        <div className="sc-user-input--buttons">
+          <div className="sc-user-input--button"></div>
+          <div className="sc-user-input--button">
+            <EmojiIcon
+              onClick={this.toggleEmojiMenu.bind(this)}
+              isActive={this.state.emojiPickerOpen}
+              onFocus={this.toggleEmojiMenu.bind(this)}
+              onBlur={this.toggleEmojiMenu.bind(this)}
+            />
+          </div>
+          <div className="sc-user-input--button">
+            <SendIcon />
+          </div>
         </div>
       </form>
     );

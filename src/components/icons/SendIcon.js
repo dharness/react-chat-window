@@ -8,11 +8,11 @@ class SendIcon extends Component {
       onFocus={this.props.onFocus}
       onBlur={this.props.onBlur}
       onClick={(e) => { e.preventDefault(); }}
-      className="sc-input-field--send-icon-wrapper"
+      className="sc-user-input--send-icon-wrapper"
     >
       <svg
         version='1.1'
-        className="sc-input-field--send-icon"
+        className="sc-user-input--send-icon"
         xmlns='http://www.w3.org/2000/svg'
         x='0px'
         y='0px'

@@ -1,16 +1,19 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import EmojiPicker from './../emoji-picker/EmojiPicker';
 
 
 const EmojiIcon = props => (
+  <div className="sc-user-input--picker-wrapper">
+  {props.isActive && <EmojiPicker /> }
   <button
     onFocus={props.onFocus}
     onBlur={props.onBlur}
     onClick={(e) => { e.preventDefault(); }}
-    className="sc-input-field--emoji-icon-wrapper"
+    className="sc-user-input--emoji-icon-wrapper"
   >
     <svg
-      className={`sc-input-field--emoji-icon ${(props.isActive ? 'active' : '')}`}
+      className={`sc-user-input--emoji-icon ${(props.isActive ? 'active' : '')}`}
       version="1.1"
       id="Layer_2"
       xmlns="http://www.w3.org/2000/svg"
@@ -41,6 +44,7 @@ const EmojiIcon = props => (
       </g>
     </svg>
   </button>
+  </div>
 );
 
 
