@@ -22,11 +22,17 @@ class EmojiPicker extends Component {
       // and set the opacity to 1
       elem.style.opacity = 1;
     });
+    this.domNode.focus();
   }
 
   render() {
     return (
-      <div className="sc-emoji-picker" ref={(e) => { this.domNode = e; }} >
+      <div
+        tabIndex="0"
+        onBlur={this.props.onBlur}
+        className="sc-emoji-picker"
+        ref={(e) => { this.domNode = e; }}
+      >
         <div className="sc-emoji-picker--content">
           {emojiData.map((category) => {
             return (
@@ -34,7 +40,16 @@ class EmojiPicker extends Component {
                 <div className="sc-emoji-picker--category-title">{category.name}</div>
                 {category.emojis.map((emoji) => {
                   return (
-                    <span key={emoji} className="sc-emoji-picker--emoji">{emoji}</span>
+                    <span
+                      key={emoji}
+                      className="sc-emoji-picker--emoji"
+                      onClick={() => {
+                        this.props.onEmojiPicked(emoji);
+                        this.domNode.blur();
+                      }}
+                    >
+                      {emoji}
+                    </span>
                   );
                 })}
               </div>

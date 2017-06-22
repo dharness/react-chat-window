@@ -11,7 +11,6 @@ class UserInput extends Component {
     super();
     this.state = {
       inputActive: false,
-      emojiPickerOpen: false,
     };
   }
 
@@ -24,12 +23,9 @@ class UserInput extends Component {
     }
   }
 
-  toggleEmojiMenu() {
-    this.setState({ emojiPickerOpen: !this.state.emojiPickerOpen });
-  }
-
-  handleChange() {
-    this.setState({ messageContent: this.textarea.value })
+  _handleEmojiPicked(emoji) {
+    this.userInput.innerHTML += emoji;
+    this.userInput.focus();
   }
 
   render() {
@@ -41,7 +37,7 @@ class UserInput extends Component {
           onFocus={() => { this.setState({ inputActive: true }); }}
           onBlur={() => { this.setState({ inputActive: false }); }}
           ref={(e) => { this.userInput = e; }}
-          onKeyDown={this.handleKey}
+          onKeyDown={this.handleKey.bind(this)}
           contentEditable="true"
           placeholder="Write a reply..."
           className="sc-user-input--text"
@@ -50,12 +46,7 @@ class UserInput extends Component {
         <div className="sc-user-input--buttons">
           <div className="sc-user-input--button"></div>
           <div className="sc-user-input--button">
-            <EmojiIcon
-              onClick={this.toggleEmojiMenu.bind(this)}
-              isActive={this.state.emojiPickerOpen}
-              onFocus={this.toggleEmojiMenu.bind(this)}
-              onBlur={this.toggleEmojiMenu.bind(this)}
-            />
+            <EmojiIcon onEmojiPicked={this._handleEmojiPicked.bind(this)} />
           </div>
           <div className="sc-user-input--button">
             <SendIcon />

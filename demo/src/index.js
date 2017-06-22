@@ -4,6 +4,7 @@ import {Launcher} from '../../src'
 import messageHistory from './messageHistory';
 
 
+
 class Demo extends Component {
 
   onMessageWasSent() {
@@ -13,6 +14,7 @@ class Demo extends Component {
   render() {
     return <div>
       <h1>react-live-chat Demo</h1>
+      <img src="./../assets/intercom.png" alt=""/>
       <Launcher
         agentProfile={{
           teamName: 'react-live-chat',
