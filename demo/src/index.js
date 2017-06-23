@@ -17,8 +17,13 @@ class Demo extends Component {
     };
   }
 
-  onMessageWasSent() {
-    console.log('onMessageWasSent');
+  _onMessageWasSent(messageText) {
+    this.setState({
+      messageList: [...this.state.messageList, {
+        author: 'me',
+        body: messageText
+      }]
+    })
   }
 
   _sendMessage(messageText) {
@@ -41,7 +46,7 @@ class Demo extends Component {
           teamName: 'react-live-chat',
           imageUrl: 'https://a.slack-edge.com/66f9/img/avatars-teams/ava_0001-34.png'
         }}
-        onMessageWasSent={this.onMessageWasSent}
+        onMessageWasSent={this._onMessageWasSent.bind(this)}
         messageList={this.state.messageList}
       />
     </div>
