@@ -24,8 +24,7 @@ class UserInput extends Component {
   }
 
   _handleEmojiPicked(emoji) {
-    this.userInput.innerHTML += emoji;
-    this.userInput.focus();
+    this.props.onSubmit(emoji);
   }
 
   render() {

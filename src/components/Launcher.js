@@ -23,7 +23,7 @@ class Launcher extends Component {
       <div>
         <div className={classList.join(' ')} onClick={this.handleClick.bind(this)} />
         <ChatWindow
-          messageHistory={this.props.messageHistory}
+          messageList={this.props.messageList}
           onUserInputSubmit={this.props.onMessageWasSent}
           agentProfile={this.props.agentProfile}
           active={this.state.active}
