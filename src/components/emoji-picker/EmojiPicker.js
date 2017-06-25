@@ -9,9 +9,11 @@ class EmojiPicker extends Component {
     super();
     this.emojiConvertor = new EmojiConvertor();
     this.emojiConvertor.init_env();
+    console.log('Constructor')
   }
 
   componentDidMount() {
+    console.log('mounting')
     // Get the components DOM node
     const elem = this.domNode;
     // Set the opacity of the element to 0
