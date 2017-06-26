@@ -1,6 +1,6 @@
 {
-  "name": "react-live-chat",
-  "version": "1.0.0",
+  "name": "react-chat-window",
+  "version": "1.0.1",
   "description": "react-live-chat React component",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -17,11 +17,12 @@
     "test": "nwb test-react",
     "test:coverage": "nwb test-react --coverage",
     "test:watch": "nwb test-react --server",
-    "publish": "nwb build-demo && gh-pages -d demo/dist"
+    "gh:publish": "nwb build-demo && gh-pages -d demo/dist"
   },
   "dependencies": {
     "emoji-js": "3.2.2",
     "gh-pages": "^1.0.0",
+    "prop-types": "15.5.10",
     "react-highlight.js": "1.0.5",
     "socket.io-client": "2.0.3"
   },
@@ -36,7 +37,10 @@
   "author": "",
   "homepage": "",
   "license": "MIT",
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kingofthestack/react-live-chat.git"
+  },
   "keywords": [
     "react-component"
   ]
