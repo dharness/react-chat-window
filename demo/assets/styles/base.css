@@ -1,12 +1,17 @@
 body {
-  padding: 20px;
+  padding: 0px;
+  margin: 0px;
 }
 
 * {
-  font-family: "Akkurat Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Avenir Next, Helvetica Neue, Helvetica,sans-serif;
 }
 
 .demo-description {
+  max-width: 500px;
+}
+
+.demo-description img {
   max-width: 500px;
 }
 
