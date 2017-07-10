@@ -1,0 +1,46 @@
+body {
+  padding: 0px;
+  margin: 0px;
+}
+
+* {
+  font-family: Avenir Next, Helvetica Neue, Helvetica,sans-serif;
+}
+
+.demo-description {
+  max-width: 500px;
+}
+
+.demo-description img {
+  max-width: 500px;
+}
+
+.demo-test-area {
+  width: 300px;
+  box-sizing: border-box;
+}
+
+.demo-test-area--text {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  resize: none;
+  font-family: Avenir Next, Helvetica Neue, Helvetica,sans-serif;
+  background: #fafbfc;
+  color: #8da2b5;
+  border: 1px solid #dde5ed;
+  font-size: 16px;
+  padding: 16px 15px 14px;
+  margin: 0;
+  border-radius: 6px;
+  outline: none;
+  height: 150px;
+  margin-bottom: 10px;
+}
+
+.demo-monster-img {
+  width: 400px;
+  display: block;
+  margin: 60px auto;
+}

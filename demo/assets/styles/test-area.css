@@ -1,0 +1,74 @@
+.demo-test-area--wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.demo-test-area--title {
+  align-self: center;
+  text-align: center;
+}
+
+.demo-test-area--title-main {
+  color: #516996;
+  font-weight: 600;
+  font-size: 28px;
+ }
+
+.demo-test-area--title-sub {
+  color: #4e8cff;
+  padding-top: 10px;
+}
+
+.demo-test-area {
+  align-self: center;
+  margin-top: 30px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.demo-test-area--preamble {
+  padding: 20px 0px;
+  color: #516996;
+}
+
+
+.demo-test-area--button {
+  font-family: Avenir Next, Helvetica Neue, Helvetica,sans-serif;
+  font-weight: 400;
+  margin-top: 20px;
+  user-select: none;
+  border: none;
+  line-height: 1.4;
+  text-decoration: none;
+  background: #4e8cff;
+  color: white;
+  padding: 6px 10px;
+  font-size: 20px;
+  height: 50px;
+  border-radius: 4px;
+  width: 80%;
+  box-sizing: border-box;
+  outline: none;
+  cursor: pointer;
+  align-self: center;
+}
+
+.demo-test-area--button:hover {
+  background: #4883f1;
+}
+
+.demo-test-area--info {
+  margin: auto;
+  margin-top: 40px;
+  color: #516996;
+  font-weight: 200;
+  width: 550px;
+}
+
+.demo-test-area--info a {
+  font-weight: 400;
+  text-decoration: none;
+  color: #4e8cff;
+}
