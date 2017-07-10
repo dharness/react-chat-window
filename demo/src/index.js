@@ -4,6 +4,7 @@ import {Launcher} from '../../src'
 import messageHistory from './messageHistory';
 import TestArea from './TestArea';
 import Header from './Header';
+import Footer from './Footer';
 import monsterImgUrl from "./../assets/monster.png";
 import Highlight from "react-highlight.js";
 import './../assets/styles'
@@ -43,7 +44,6 @@ class Demo extends Component {
       <TestArea
         onMessage={this._sendMessage.bind(this)}
       />
-    
       <Launcher
         agentProfile={{
           teamName: 'react-live-chat',
@@ -52,6 +52,8 @@ class Demo extends Component {
         onMessageWasSent={this._onMessageWasSent.bind(this)}
         messageList={this.state.messageList}
       />
+      <img className="demo-monster-img" src={monsterImgUrl} />
+      <Footer />
     </div>
   }
 }

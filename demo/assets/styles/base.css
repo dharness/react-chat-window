@@ -39,26 +39,8 @@ body {
   margin-bottom: 10px;
 }
 
-.demo-test-area--button {
-  font-family: Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  user-select: none;
-  border: 1px solid #1271c4;
-  line-height: 1.4;
-  text-decoration: none;
-  background: linear-gradient(to bottom, #1f8ded 0%, #1985e3 100%);
-  color: white;
-  padding: 6px 10px;
-  font-size: 14px;
-  height: 50px;
-  border-radius: 4px;
-  width: 100%;
-  box-sizing: border-box;
-  outline: none;
-  cursor: pointer;
-}
-
-.demo-test-area--button:hover {
-  border-color: #1271c4;
-  background: linear-gradient(to bottom, #1280e0 0%, #0675d6 100%);
+.demo-monster-img {
+  width: 400px;
+  display: block;
+  margin: 60px auto;
 }
