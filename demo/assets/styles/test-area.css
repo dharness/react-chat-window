@@ -35,14 +35,14 @@
 
 
 .demo-test-area--button {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: Avenir Next, Helvetica Neue, Helvetica,sans-serif;
   font-weight: 400;
   margin-top: 20px;
   user-select: none;
-  border: 1px solid #1271c4;
+  border: none;
   line-height: 1.4;
   text-decoration: none;
-  background: linear-gradient(to bottom, #1f8ded 0%, #1985e3 100%);
+  background: #4e8cff;
   color: white;
   padding: 6px 10px;
   font-size: 20px;
@@ -56,8 +56,7 @@
 }
 
 .demo-test-area--button:hover {
-  border-color: #1271c4;
-  background: linear-gradient(to bottom, #1280e0 0%, #0675d6 100%);
+  background: #4883f1;
 }
 
 .demo-test-area--info {
