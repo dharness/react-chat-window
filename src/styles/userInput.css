@@ -112,7 +112,3 @@
 .sc-user-input--emoji-icon:hover circle {
   fill: rgba(86, 88, 103, 1);
 }
-
-.sc-user-input--picker-wrapper {
-  position: absolute;
-}
