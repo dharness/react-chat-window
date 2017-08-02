@@ -30,12 +30,14 @@ class Demo extends Component {
   }
 
   _sendMessage(messageText) {
-    this.setState({
-      messageList: [...this.state.messageList, {
-        author: 'them',
-        body: messageText
-      }]
-    })
+    if (messageText.length > 0) {
+      this.setState({
+        messageList: [...this.state.messageList, {
+          author: 'them',
+          body: messageText
+        }]
+      })
+    }
   }
 
   render() {
