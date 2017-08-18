@@ -16,15 +16,19 @@ class UserInput extends Component {
 
   handleKey(event) {
     if (event.keyCode === 13 && !event.shiftKey) {
-      event.preventDefault();
-      const text = this.userInput.textContent;
-      this.props.onSubmit({
-        author: 'me',
-        type: 'text',
-        data: { text }
-      });
-      this.userInput.innerHTML = '';
+      this._submitText(event);
     }
+  }
+
+  _submitText(event) {
+    event.preventDefault();
+    const text = this.userInput.textContent;
+    this.props.onSubmit({
+      author: 'me',
+      type: 'text',
+      data: { text }
+    });
+    this.userInput.innerHTML = '';
   }
 
   _handleEmojiPicked(emoji) {
@@ -56,7 +60,7 @@ class UserInput extends Component {
             <EmojiIcon onEmojiPicked={this._handleEmojiPicked.bind(this)} />
           </div>
           <div className="sc-user-input--button">
-            <SendIcon />
+            <SendIcon onClick={this._submitText.bind(this)} />
           </div>
         </div>
       </form>
