@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Message from './Message'
+import Message from './Messages'
 
 class MessageList extends Component {
 
@@ -10,8 +10,8 @@ class MessageList extends Component {
   render () {
     return (
       <div className="sc-message-list" ref={el => this.scrollList = el}>
-        {this.props.messages.map((msg, i) => {
-          return <Message message={msg} key={i} imageUrl={this.props.imageUrl} />
+        {this.props.messages.map((message, i) => {
+          return <Message message={message} key={i} />
         })}
       </div>)
   }

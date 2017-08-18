@@ -17,14 +17,22 @@ class UserInput extends Component {
   handleKey(event) {
     if (event.keyCode === 13 && !event.shiftKey) {
       event.preventDefault();
-      const messageText = this.userInput.textContent;
-      this.props.onSubmit(messageText);
+      const text = this.userInput.textContent;
+      this.props.onSubmit({
+        author: 'me',
+        type: 'text',
+        data: { text }
+      });
       this.userInput.innerHTML = '';
     }
   }
 
   _handleEmojiPicked(emoji) {
-    this.props.onSubmit(emoji);
+    this.props.onSubmit({
+      author: 'me',
+      type: 'emoji',
+      data: { emoji }
+    });
   }
 
   render() {
