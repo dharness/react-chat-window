@@ -9,13 +9,12 @@ class ChatWindow extends Component {
       super(props);
     }
 
-    onUserInputSubmit(userInput) {
-      const msg = {author: 'me', body: userInput};
-      this.props.onUserInputSubmit(userInput);
+    onUserInputSubmit(message) {
+      this.props.onUserInputSubmit(message);
     }
 
-    onMessageReceived(msg) {
-      this.setState({messages: [...this.state.messages, msg]});
+    onMessageReceived(message) {
+      this.setState({ messages: [...this.state.messages, message] });
     }
 
     render() {

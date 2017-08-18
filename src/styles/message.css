@@ -30,7 +30,7 @@
   margin-right: 15px;
 }
 
-.sc-message--body {
+.sc-message--text {
   padding: 17px 20px;
   border-radius: 6px;
   font-weight: 300;
@@ -39,16 +39,20 @@
   -webkit-font-smoothing: subpixel-antialiased
 }
 
-.sc-message--content.sent .sc-message--body {
+.sc-message--content.sent .sc-message--text {
   color: white;
   background-color: #1F8CEB;
   max-width: calc(100% - 120px);
 }
 
-.sc-message--content.received .sc-message--body {
+.sc-message--content.received .sc-message--text {
   color: #263238;
   background-color: #f4f7f9;
   margin-right: 40px;
+}
+
+.sc-message--emoji {
+  font-size: 40px;
 }
 
 @media (max-width: 450px) {

@@ -20,21 +20,19 @@ class Demo extends Component {
     };
   }
 
-  _onMessageWasSent(messageText) {
+  _onMessageWasSent(message) {
     this.setState({
-      messageList: [...this.state.messageList, {
-        author: 'me',
-        body: messageText
-      }]
+      messageList: [...this.state.messageList, message]
     })
   }
 
-  _sendMessage(messageText) {
-    if (messageText.length > 0) {
+  _sendMessage(text) {
+    if (text.length > 0) {
       this.setState({
         messageList: [...this.state.messageList, {
           author: 'them',
-          body: messageText
+          type: 'text',
+          data: { text }
         }]
       })
     }
