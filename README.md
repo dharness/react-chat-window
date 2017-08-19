@@ -2,6 +2,13 @@
 
 `react-live-chat` provides an intercom-like chat window that can be included easily in any project for free. It provides no messaging facilities, only the view component.
 
+<a href="https://www.npmjs.com/package/react-chat-window" target="\_parent">
+  <img alt="" src="https://img.shields.io/npm/dm/react-chat-window.svg" />
+</a>
+<a href="https://github.com/kingofthestack/react-chat-window" target="\_parent">
+  <img alt="" src="https://img.shields.io/github/stars/kingofthestack/react-chat-window.svg?style=social&label=Star" />
+</a>
+
 ![Alt Text](https://puu.sh/xei2F/fd4a121185.gif)
 
 ## Features
@@ -10,7 +17,7 @@
 - Backend agnostic
 - Free
 
-## [Demo](https://kingofthestack.github.io/react-live-chat/)
+## [Demo](https://kingofthestack.github.io/react-chat-window/)
 
 ## Table of Contents
 - [Installation](#installation)
