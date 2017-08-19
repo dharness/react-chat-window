@@ -23,12 +23,14 @@ class UserInput extends Component {
   _submitText(event) {
     event.preventDefault();
     const text = this.userInput.textContent;
-    this.props.onSubmit({
-      author: 'me',
-      type: 'text',
-      data: { text }
-    });
-    this.userInput.innerHTML = '';
+    if (text && text.length > 0) {
+      this.props.onSubmit({
+        author: 'me',
+        type: 'text',
+        data: { text }
+      });
+      this.userInput.innerHTML = '';
+    }
   }
 
   _handleEmojiPicked(emoji) {
