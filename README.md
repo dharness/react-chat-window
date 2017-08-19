@@ -2,11 +2,7 @@
 
 `react-live-chat` provides an intercom-like chat window that can be included easily in any project for free. It provides no messaging facilities, only the view component.
 
-[![Travis][build-badge]][build]
-
-[![npm package][npm-badge]][npm]
-
-[![Coveralls][coveralls-badge]][coveralls]
+![Alt Text](https://puu.sh/xei2F/fd4a121185.gif)
 
 ## Features
 
