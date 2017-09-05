@@ -17,7 +17,7 @@
 - Backend agnostic
 - Free
 
-## [Demo](https://kingofthestack.github.io/react-chat-window/)
+## [Demo](https://dharness.github.io/react-chat-window/)
 
 ## Table of Contents
 - [Installation](#installation)
@@ -120,4 +120,4 @@ Message objects are rendered differently depending on their type. Currently, onl
 ```
 
 ## Issues
-[waffle.io](https://waffle.io/kingofthestack/react-live-chat)
+[waffle.io](https://waffle.io/dharness/react-live-chat)
