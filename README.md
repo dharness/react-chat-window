@@ -94,6 +94,7 @@ Launcher props:
 | *agentProfile | object | Represents your product or service's customer service agent. Fields: teamName, imageUrl|
 | onMessageWasSent | function(message) | Called when a message a message is sent with a message object as an argument. |
 | messageList | [message] | An array of message objects to be rendered as a conversation. |
+| toggle | boolean | Toggle this boolean to open chat window. Allows customization for event driven opening of the chat. |
 
 
 ### Message Objects
