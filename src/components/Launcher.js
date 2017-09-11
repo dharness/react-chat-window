@@ -13,11 +13,27 @@ class Launcher extends Component {
       active: false,
       launcherIcon
     };
+    this.handleClick = this.handleClick.bind(this);
+    this.openChat = this.openChat.bind(this);
+  }
+
+  //developer may pass in a boolean called toggle  and toggle it to open chat window
+  componentDidUpdate(prevProps, prevState) {
+    if (this.props.toggle !== prevProps.toggle) {
+      this.openChat();
+    }
   }
 
   handleClick() {
     this.setState({
       active: !this.state.active
+    });
+  }
+
+  //call this function to open chat window
+  openChat() {
+    this.setState({
+      active: true
     });
   }
 
@@ -28,7 +44,7 @@ class Launcher extends Component {
     ];
     return (
       <div>
-        <div className={classList.join(' ')} onClick={this.handleClick.bind(this)}>
+        <div className={classList.join(' ')} onClick={this.handleClick}>
           <img className={"sc-open-icon"} src={launcherIconActive} />
           <img className={"sc-closed-icon"} src={launcherIcon} />
         </div>
