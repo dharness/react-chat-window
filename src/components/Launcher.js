@@ -10,25 +10,31 @@ class Launcher extends Component {
   constructor() {
     super();
     this.state = {
-      active: false,
       launcherIcon
     };
   }
 
-  handleClick() {
-    this.setState({
-      active: !this.state.active
-    });
+  displayNewMessagesCount() {
+    if (this.props.newMessagesCount !== 0) {
+      return (
+        <div className={"sc-new-messsages-count"}>
+          {this.props.newMessagesCount}
+        </div>
+      )
+    } 
   }
 
   render() {
     const classList = [
       'sc-launcher',
-      (this.state.active ? ' active' : ''),
+      (this.props.isActive ? ' active' : ''),
     ];
     return (
       <div>
-        <div className={classList.join(' ')} onClick={this.handleClick.bind(this)}>
+        <div>
+        </div>
+        <div className={classList.join(' ')} onClick={this.props.handleClick.bind(this)}>
+          {this.displayNewMessagesCount()}
           <img className={"sc-open-icon"} src={launcherIconActive} />
           <img className={"sc-closed-icon"} src={launcherIcon} />
         </div>
@@ -36,8 +42,8 @@ class Launcher extends Component {
           messageList={this.props.messageList}
           onUserInputSubmit={this.props.onMessageWasSent}
           agentProfile={this.props.agentProfile}
-          active={this.state.active}
-          onClose={this.handleClick.bind(this)}
+          active={this.props.isActive}
+          onClose={this.props.handleClick}
         />
       </div>
     );
