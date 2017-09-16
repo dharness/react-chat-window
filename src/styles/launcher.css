@@ -44,17 +44,17 @@
   opacity: 0;
 }
 
-.sc-launcher.active .sc-open-icon {
+.sc-launcher.opened .sc-open-icon {
   transform: rotate(-90deg);
   opacity: 1;
 }
 
-.sc-launcher.active .sc-closed-icon {
+.sc-launcher.opened .sc-closed-icon {
   transform: rotate(-90deg);
   opacity: 0;
 }
 
-.sc-launcher.active:before {
+.sc-launcher.opened:before {
   box-shadow: 0px 0px 400px 250px rgba(148, 149, 150, 0.2);
 }
 
@@ -62,7 +62,7 @@
   box-shadow: 0 0px 27px 1.5px rgba(0,0,0,0.2);
 }
 
-.sc-launcher .sc-new-messsages-count {
+.sc-new-messsages-count {
   position: absolute;
   top: -3px;
   left: 41px;

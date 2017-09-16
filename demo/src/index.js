@@ -17,8 +17,7 @@ class Demo extends Component {
     super();
     this.state = {
       messageList: messageHistory,
-      newMessagesCount: 0,
-      active: false
+      newMessagesCount: 0
     };
   }
 
@@ -41,9 +40,8 @@ class Demo extends Component {
     }
   }
 
-  _handleClick() {
+  _onOpen() {
     this.setState({
-      active: !this.state.active,
       newMessagesCount: 0
     });
   }
@@ -62,8 +60,7 @@ class Demo extends Component {
         onMessageWasSent={this._onMessageWasSent.bind(this)}
         messageList={this.state.messageList}
         newMessagesCount={this.state.newMessagesCount}
-        handleClick={this._handleClick.bind(this)}
-        isActive={this.state.active}
+        onOpen={this._onOpen.bind(this)}
       />
       <img className="demo-monster-img" src={monsterImgUrl} />
       <Footer />

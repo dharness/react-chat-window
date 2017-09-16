@@ -10,12 +10,13 @@ class Launcher extends Component {
   constructor() {
     super();
     this.state = {
-      launcherIcon
+      launcherIcon,
+      isOpen: false
     };
   }
 
   displayNewMessagesCount() {
-    if (this.props.newMessagesCount !== 0) {
+    if (this.props.newMessagesCount !== 0 && this.state.isOpen === false) {
       return (
         <div className={"sc-new-messsages-count"}>
           {this.props.newMessagesCount}
@@ -24,16 +25,23 @@ class Launcher extends Component {
     } 
   }
 
+  handleClick() {
+    this.state.isOpen ? this.props.onClose() : this.props.onOpen();
+    this.setState({
+      isOpen: !this.state.isOpen,
+    });
+  }
+
   render() {
     const classList = [
       'sc-launcher',
-      (this.props.isActive ? ' active' : ''),
+      (this.state.isOpen ? ' opened' : ''),
     ];
     return (
       <div>
         <div>
         </div>
-        <div className={classList.join(' ')} onClick={this.props.handleClick.bind(this)}>
+        <div className={classList.join(' ')} onClick={this.handleClick.bind(this)}>
           {this.displayNewMessagesCount()}
           <img className={"sc-open-icon"} src={launcherIconActive} />
           <img className={"sc-closed-icon"} src={launcherIcon} />
@@ -42,8 +50,8 @@ class Launcher extends Component {
           messageList={this.props.messageList}
           onUserInputSubmit={this.props.onMessageWasSent}
           agentProfile={this.props.agentProfile}
-          active={this.props.isActive}
-          onClose={this.props.handleClick}
+          isOpen={this.state.isOpen}
+          onClose={this.handleClick.bind(this)}
         />
       </div>
     );
@@ -53,6 +61,15 @@ class Launcher extends Component {
 Launcher.propTypes = {
   onMessageWasReceived: PropTypes.func,
   onMessageWasSent: PropTypes.func,
+  newMessagesCount: PropTypes.number,
+  onOpen: PropTypes.func,
+  onClose: PropTypes.func
 };
+
+Launcher.defaultProps = {
+  onOpen: () => {},
+  onClose: () => {},
+  newMessagesCount: 0
+}
 
 export default Launcher;
