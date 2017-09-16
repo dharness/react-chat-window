@@ -16,7 +16,9 @@ class Demo extends Component {
   constructor() {
     super();
     this.state = {
-      messageList: messageHistory
+      messageList: messageHistory,
+      newMessagesCount: 0,
+      isOpen: false
     };
   }
 
@@ -28,7 +30,9 @@ class Demo extends Component {
 
   _sendMessage(text) {
     if (text.length > 0) {
+      const newMessagesCount = this.state.isOpen ? this.state.newMessagesCount : this.state.newMessagesCount + 1
       this.setState({
+        newMessagesCount: newMessagesCount,
         messageList: [...this.state.messageList, {
           author: 'them',
           type: 'text',
@@ -36,6 +40,13 @@ class Demo extends Component {
         }]
       })
     }
+  }
+
+  _handleClick() {
+    this.setState({
+      isOpen: !this.state.isOpen,
+      newMessagesCount: 0
+    })
   }
 
   render() {
@@ -51,6 +62,9 @@ class Demo extends Component {
         }}
         onMessageWasSent={this._onMessageWasSent.bind(this)}
         messageList={this.state.messageList}
+        newMessagesCount={this.state.newMessagesCount}
+        handleClick={this._handleClick.bind(this)}
+        isOpen={this.state.isOpen}
       />
       <img className="demo-monster-img" src={monsterImgUrl} />
       <Footer />
