@@ -30,8 +30,9 @@ class Demo extends Component {
 
   _sendMessage(text) {
     if (text.length > 0) {
+      const newMessagesCount = this.state.isOpen ? this.state.newMessagesCount : this.state.newMessagesCount + 1
       this.setState({
-        newMessagesCount: this.state.newMessagesCount + 1,
+        newMessagesCount: newMessagesCount,
         messageList: [...this.state.messageList, {
           author: 'them',
           type: 'text',
@@ -42,7 +43,6 @@ class Demo extends Component {
   }
 
   _handleClick() {
-    console.log('sdfsdf')
     this.setState({
       isOpen: !this.state.isOpen,
       newMessagesCount: 0

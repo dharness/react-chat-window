@@ -21,7 +21,7 @@ class ChatWindow extends Component {
       let messageList = this.props.messageList || [];
       let classList = [
         "sc-chat-window",
-        (this.props.isOpen ? " opened" : " closed")
+        (this.props.isOpen ? "opened" : "closed")
       ];
       return (
         <div className={classList.join(' ')}>

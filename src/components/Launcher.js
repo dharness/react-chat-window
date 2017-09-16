@@ -16,7 +16,8 @@ class Launcher extends Component {
   }
 
   displayNewMessagesCount() {
-    if (this.props.newMessagesCount !== 0 && this.state.isOpen === false) {
+    const isOpen = (this.props.isOpen === undefined) ? this.state.isOpen : this.props.isOpen;
+    if (this.props.newMessagesCount !== 0 && isOpen === false) {
       return (
         <div className={"sc-new-messsages-count"}>
           {this.props.newMessagesCount}
