@@ -4,7 +4,6 @@ import ChatWindow from './ChatWindow';
 import launcherIcon from './../assets/logo-no-bg.svg';
 import launcherIconActive from './../assets/close-icon.png';
 
-
 class Launcher extends Component {
 
   constructor() {
@@ -13,17 +12,6 @@ class Launcher extends Component {
       launcherIcon,
       isOpen: false
     };
-  }
-
-  displayNewMessagesCount() {
-    const isOpen = (this.props.isOpen === undefined) ? this.state.isOpen : this.props.isOpen;
-    if (this.props.newMessagesCount !== 0 && isOpen === false) {
-      return (
-        <div className={"sc-new-messsages-count"}>
-          {this.props.newMessagesCount}
-        </div>
-      )
-    } 
   }
 
   handleClick() {
@@ -37,17 +25,17 @@ class Launcher extends Component {
   }
 
   render() {
-    const isOpen = (this.props.isOpen === undefined) ? this.state.isOpen : this.props.isOpen;
+    const isOpen = this.props.hasOwnProperty('isOpen') ? this.props.isOpen : this.state.isOpen;
     const classList = [
       'sc-launcher',
-      (isOpen ? ' opened' : ''),
+      (isOpen ? 'opened' : ''),
     ];
     return (
       <div>
         <div>
         </div>
         <div className={classList.join(' ')} onClick={this.handleClick.bind(this)}>
-          {this.displayNewMessagesCount()}
+          <MessageCount count={this.props.newMessagesCount} isOpen={isOpen} />
           <img className={"sc-open-icon"} src={launcherIconActive} />
           <img className={"sc-closed-icon"} src={launcherIcon} />
         </div>
@@ -61,6 +49,15 @@ class Launcher extends Component {
       </div>
     );
   }
+}
+
+const MessageCount = (props) => {
+  if (props.count === 0 || props.isOpen === true) { return null }
+  return (
+    <div className={"sc-new-messsages-count"}>
+      {props.count}
+    </div>
+  )
 }
 
 Launcher.propTypes = {
