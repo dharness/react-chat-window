@@ -68,7 +68,8 @@ Launcher.propTypes = {
   onMessageWasSent: PropTypes.func,
   newMessagesCount: PropTypes.number,
   isOpen: PropTypes.bool,
-  handleClick: PropTypes.func
+  handleClick: PropTypes.func,
+  messageList: PropTypes.arrayOf(PropTypes.object)
 };
 
 Launcher.defaultProps = {
