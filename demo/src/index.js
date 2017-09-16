@@ -17,7 +17,8 @@ class Demo extends Component {
     super();
     this.state = {
       messageList: messageHistory,
-      newMessagesCount: 0
+      newMessagesCount: 0,
+      isOpen: false
     };
   }
 
@@ -40,10 +41,12 @@ class Demo extends Component {
     }
   }
 
-  _onOpen() {
+  _handleClick() {
+    console.log('sdfsdf')
     this.setState({
+      isOpen: !this.state.isOpen,
       newMessagesCount: 0
-    });
+    })
   }
 
   render() {
@@ -60,7 +63,8 @@ class Demo extends Component {
         onMessageWasSent={this._onMessageWasSent.bind(this)}
         messageList={this.state.messageList}
         newMessagesCount={this.state.newMessagesCount}
-        onOpen={this._onOpen.bind(this)}
+        handleClick={this._handleClick.bind(this)}
+        isOpen={this.state.isOpen}
       />
       <img className="demo-monster-img" src={monsterImgUrl} />
       <Footer />

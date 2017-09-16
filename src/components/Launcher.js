@@ -26,16 +26,20 @@ class Launcher extends Component {
   }
 
   handleClick() {
-    this.state.isOpen ? this.props.onClose() : this.props.onOpen();
-    this.setState({
-      isOpen: !this.state.isOpen,
-    });
+    if (this.props.handleClick !== undefined) {
+      this.props.handleClick();
+    } else {
+      this.setState({
+        isOpen: !this.state.isOpen,
+      });
+    }
   }
 
   render() {
+    const isOpen = (this.props.isOpen === undefined) ? this.state.isOpen : this.props.isOpen;
     const classList = [
       'sc-launcher',
-      (this.state.isOpen ? ' opened' : ''),
+      (isOpen ? ' opened' : ''),
     ];
     return (
       <div>
@@ -50,7 +54,7 @@ class Launcher extends Component {
           messageList={this.props.messageList}
           onUserInputSubmit={this.props.onMessageWasSent}
           agentProfile={this.props.agentProfile}
-          isOpen={this.state.isOpen}
+          isOpen={isOpen}
           onClose={this.handleClick.bind(this)}
         />
       </div>
@@ -62,13 +66,11 @@ Launcher.propTypes = {
   onMessageWasReceived: PropTypes.func,
   onMessageWasSent: PropTypes.func,
   newMessagesCount: PropTypes.number,
-  onOpen: PropTypes.func,
-  onClose: PropTypes.func
+  isOpen: PropTypes.bool,
+  handleClick: PropTypes.func
 };
 
 Launcher.defaultProps = {
-  onOpen: () => {},
-  onClose: () => {},
   newMessagesCount: 0
 }
 
