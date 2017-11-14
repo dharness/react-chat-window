@@ -94,6 +94,7 @@ Launcher props:
 | *agentProfile | object | Represents your product or service's customer service agent. Fields: teamName, imageUrl|
 | onMessageWasSent | function(message) | Called when a message a message is sent with a message object as an argument. |
 | messageList | [message] | An array of message objects to be rendered as a conversation. |
+| newMessagesCount | Number | The number of new messages. To be displayed in a badge on the launcher. 0 for no badge |
 
 
 ### Message Objects

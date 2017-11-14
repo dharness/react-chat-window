@@ -54,7 +54,7 @@ class Launcher extends Component {
 const MessageCount = (props) => {
   if (props.count === 0 || props.isOpen === true) { return null }
   return (
-    <div className={"sc-new-messsages-count"}>
+    <div className={"sc-new-messages-count"}>
       {props.count}
     </div>
   )
