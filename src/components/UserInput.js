@@ -12,13 +12,19 @@ class UserInput extends Component {
     super();
     this.state = {
       inputActive: false,
+      inputHasText: false
     };
   }
 
-  handleKey(event) {
+  handleKeyDown(event) {
     if (event.keyCode === 13 && !event.shiftKey) {
-      this._submitText(event);
+      return this._submitText(event);
     }
+  }
+
+  handleKeyUp(event) {
+    const inputHasText = event.target.innerHTML.length !== 0;
+    this.setState({ inputHasText })
   }
 
   _showFilePicker() {
@@ -50,6 +56,28 @@ class UserInput extends Component {
     });
   }
 
+  _renderSendOrFileIcon() {
+    if (this.state.inputHasText) {
+      return (
+        <div className="sc-user-input--button">
+          <SendIcon onClick={this._submitText.bind(this)} />
+        </div>
+      )
+    }
+    return (
+      <div className="sc-user-input--button">
+        <FileIcon onClick={this._showFilePicker.bind(this)} />
+        <input
+          type="file"
+          name="files[]"
+          multiple
+          ref={(e) => { this._fileUploadButton = e; }}
+          onChange={this._onFilesSelected.bind(this)}
+        />
+      </div>
+    )
+  }
+
   render() {
     return (
       <form className={`sc-user-input ${(this.state.inputActive ? 'active' : '')}`}>
@@ -59,7 +87,8 @@ class UserInput extends Component {
           onFocus={() => { this.setState({ inputActive: true }); }}
           onBlur={() => { this.setState({ inputActive: false }); }}
           ref={(e) => { this.userInput = e; }}
-          onKeyDown={this.handleKey.bind(this)}
+          onKeyDown={this.handleKeyDown.bind(this)}
+          onKeyUp={this.handleKeyUp.bind(this)}
           contentEditable="true"
           placeholder="Write a reply..."
           className="sc-user-input--text"
@@ -69,19 +98,7 @@ class UserInput extends Component {
           <div className="sc-user-input--button">
             <EmojiIcon onEmojiPicked={this._handleEmojiPicked.bind(this)} />
           </div>
-          <div className="sc-user-input--button">
-            <SendIcon onClick={this._submitText.bind(this)} />
-          </div>
-          <div className="sc-user-input--button">
-            <FileIcon onClick={this._showFilePicker.bind(this)} />
-            <input
-              type="file"
-              name="files[]"
-              multiple
-              ref={(e) => {this._fileUploadButton =  e;}}
-              onChange={this._onFilesSelected.bind(this)}
-            />
-          </div>
+          {this._renderSendOrFileIcon()}
         </div>
       </form>
     );
