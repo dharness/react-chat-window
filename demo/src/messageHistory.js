@@ -16,4 +16,9 @@ export default [
   {type: 'text', author: "me", data: { text: "No forget the story. "} },
   {type: 'text', author: "them", data: { text: "You've got to have a story."} },
   {type: 'emoji', author: "me", data: { emoji: "😋"} },
+  {type: 'file', author: "me",
+  data: {
+    url: "http://fromgentogen.us/wp-content/uploads/2017/08/dyson-wood-floor-tool-nice-on-floor-with-regard-to-impressive-dyson-hardwood-hard-tool-6.jpg",
+    fileName: "some_file.mp4"
+  }},
 ]

@@ -2,17 +2,22 @@ import React, { Component } from 'react';
 
 class FileIcon extends Component {
 
+  _handleClick(e) {
+    e.preventDefault();
+    this.props.onClick && this.props.onClick(e);
+  }
+
   render() {
     return (
     <button
       onFocus={this.props.onFocus}
       onBlur={this.props.onBlur}
-      onClick={(e) => { e.preventDefault(); this.props.onClick(e); }}
+      onClick={this._handleClick.bind(this)}
       className="sc-user-input--file-icon-wrapper"
     >
       <svg
         version='1.1'
-        className='sc-user-input--send-icon'
+        className='sc-user-input--file-icon'
         xmlns='http://www.w3.org/2000/svg'
         x='0px'
         y='0px'
