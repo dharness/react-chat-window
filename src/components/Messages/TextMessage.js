@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import chatIconUrl from './../../assets/chat-icon.svg';
 import Linkify from 'react-linkify';
 
 

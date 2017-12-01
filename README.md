@@ -94,12 +94,17 @@ Launcher props:
 | *agentProfile | object | Represents your product or service's customer service agent. Fields: teamName, imageUrl|
 | onMessageWasSent | function(message) | Called when a message a message is sent with a message object as an argument. |
 | messageList | [message] | An array of message objects to be rendered as a conversation. |
+| isOpen | boolean | Force the open/close state of the chat window. If this is not set, it will open and close when clicked. |
+| handleClick | Function | Intercept the click event on the launcher |
+| newMessagesCount | Number | If greater than 0, this number will be displayed in a badge on the launcher |
+| onFilesSelected | Function | Called after file has been selected from dialogue in chat window |
 | newMessagesCount | Number | The number of new messages. To be displayed in a badge on the launcher. 0 for no badge |
+
 
 
 ### Message Objects
 
-Message objects are rendered differently depending on their type. Currently, only text and emoji types are supported. Each message object has an `author` field which can have the value 'me' or 'them'.
+Message objects are rendered differently depending on their type. Currently, only text, file, and emoji types are supported. Each message object has an `author` field which can have the value 'me' or 'them'.
 
 ``` javascript
 {
@@ -115,6 +120,16 @@ Message objects are rendered differently depending on their type. Currently, onl
   type: 'emoji',
   data: {
     code: 'someCode'
+  }
+}
+
+
+{
+  author: 'me',
+  type: 'file',
+  data: {
+    url: 'somefile.mp3',
+    fileName: 'Any old name'
   }
 }
 
