@@ -98,6 +98,8 @@ Launcher props:
 | handleClick | Function | Intercept the click event on the launcher |
 | newMessagesCount | Number | If greater than 0, this number will be displayed in a badge on the launcher |
 | onFilesSelected | Function | Called after file has been selected from dialogue in chat window |
+| newMessagesCount | Number | The number of new messages. To be displayed in a badge on the launcher. 0 for no badge |
+
 
 
 ### Message Objects
