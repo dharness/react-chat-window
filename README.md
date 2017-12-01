@@ -94,6 +94,10 @@ Launcher props:
 | *agentProfile | object | Represents your product or service's customer service agent. Fields: teamName, imageUrl|
 | onMessageWasSent | function(message) | Called when a message a message is sent with a message object as an argument. |
 | messageList | [message] | An array of message objects to be rendered as a conversation. |
+| isOpen | boolean | Force the open/close state of the chat window. If this is not set, it will open and close when clicked. |
+| handleClick | Function | Intercept the click event on the launcher |
+| newMessagesCount | Number | If greater than 0, this number will be displayed in a badge on the launcher |
+| onFilesSelected | Function | Called after file has been selected from dialogue in chat window |
 
 
 ### Message Objects
