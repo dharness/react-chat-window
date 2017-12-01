@@ -45,7 +45,9 @@ class UserInput extends Component {
   }
 
   _onFilesSelected(event) {
-    this.props.onFilesSelected(event.target.files)
+    if (event.target.files && event.target.files.length > 0) {
+      this.props.onFilesSelected(event.target.files)
+    }
   }
 
   _handleEmojiPicked(emoji) {
