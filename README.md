@@ -98,7 +98,7 @@ Launcher props:
 
 ### Message Objects
 
-Message objects are rendered differently depending on their type. Currently, only text, file, and emoji types are supported. Each message object has an `author` field which can have the value 'me' or 'them'.
+Message objects are rendered differently depending on their type. Currently, only text and emoji types are supported. Each message object has an `author` field which can have the value 'me' or 'them'.
 
 ``` javascript
 {
@@ -114,16 +114,6 @@ Message objects are rendered differently depending on their type. Currently, onl
   type: 'emoji',
   data: {
     code: 'someCode'
-  }
-}
-
-
-{
-  author: 'me',
-  type: 'file',
-  data: {
-    url: 'somefile.mp3',
-    fileName: 'Any old name'
   }
 }
 

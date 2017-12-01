@@ -28,10 +28,6 @@ class Demo extends Component {
     })
   }
 
-  _onFilesSelected(fileList) {
-    console.log(fileList)
-  }
-
   _sendMessage(text) {
     if (text.length > 0) {
       const newMessagesCount = this.state.isOpen ? this.state.newMessagesCount : this.state.newMessagesCount + 1
@@ -65,7 +61,6 @@ class Demo extends Component {
           imageUrl: 'https://a.slack-edge.com/66f9/img/avatars-teams/ava_0001-34.png'
         }}
         onMessageWasSent={this._onMessageWasSent.bind(this)}
-        onFilesSelected={this._onFilesSelected.bind(this)}
         messageList={this.state.messageList}
         newMessagesCount={this.state.newMessagesCount}
         handleClick={this._handleClick.bind(this)}
