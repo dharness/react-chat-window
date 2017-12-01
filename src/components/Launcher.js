@@ -42,7 +42,6 @@ class Launcher extends Component {
         <ChatWindow
           messageList={this.props.messageList}
           onUserInputSubmit={this.props.onMessageWasSent}
-          onFilesSelected={this.props.onFilesSelected}
           agentProfile={this.props.agentProfile}
           isOpen={isOpen}
           onClose={this.handleClick.bind(this)}

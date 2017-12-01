@@ -13,10 +13,6 @@ class ChatWindow extends Component {
       this.props.onUserInputSubmit(message);
     }
 
-    onFilesSelected(filesList) {
-      this.props.onFilesSelected(filesList);
-    }
-
     onMessageReceived(message) {
       this.setState({ messages: [...this.state.messages, message] });
     }
@@ -38,10 +34,7 @@ class ChatWindow extends Component {
             messages={messageList}
             imageUrl={this.props.agentProfile.imageUrl}
           />
-          <UserInput
-            onSubmit={this.onUserInputSubmit.bind(this)}
-            onFilesSelected={this.onFilesSelected.bind(this)}
-          />
+          <UserInput onSubmit={this.onUserInputSubmit.bind(this)}/>
         </div>
       );
     }

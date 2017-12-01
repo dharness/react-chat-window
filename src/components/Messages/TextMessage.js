@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
-import Linkify from 'react-linkify';
-
+import chatIconUrl from './../../assets/chat-icon.svg';
 
 const TextMessage = (props) => {
-  return <div className="sc-message--text">{
-    <Linkify properties={{ target: '_blank' }}>{props.data.text}</Linkify>
-  }</div>
+  return <div className="sc-message--text">{props.data.text}</div>
 }
 
 export default TextMessage

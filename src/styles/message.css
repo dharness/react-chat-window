@@ -37,9 +37,7 @@
   font-size: 14px;
   line-height: 1.4;
   white-space: pre-wrap;
-  -webkit-font-smoothing: subpixel-antialiased;
-  word-wrap: break-word;
-  width: calc(100% - 90px);
+  -webkit-font-smoothing: subpixel-antialiased
 }
 
 .sc-message--content.sent .sc-message--text {
@@ -57,28 +55,6 @@
 
 .sc-message--emoji {
   font-size: 40px;
-}
-
-.sc-message--file {
-  background: white;
-  border: solid 1px #CCCDD1;
-  padding: 15px 20px;
-  border-radius: 5px;
-  display: flex;
-  font-weight: 300;
-  font-size: 14px;
-  line-height: 1.4;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-.sc-message--file p {
-  margin: 0px 0px 0px 10px;
-  color: rgba(86, 88, 103, 0.6);
-}
-
-.sc-message--file .sc-user-input--file-icon:hover path {
-  fill: rgba(86, 88, 103, 0.3);
 }
 
 @media (max-width: 450px) {
