@@ -17,10 +17,6 @@ class ChatWindow extends Component {
       this.props.onFilesSelected(filesList);
     }
 
-    onMessageReceived(message) {
-      this.setState({ messages: [...this.state.messages, message] });
-    }
-
     render() {
       let messageList = this.props.messageList || [];
       let classList = [
