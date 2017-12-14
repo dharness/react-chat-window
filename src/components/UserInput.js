@@ -23,7 +23,8 @@ class UserInput extends Component {
   }
 
   handleKeyUp(event) {
-    const inputHasText = event.target.innerHTML.length !== 0;
+    const inputHasText = event.target.innerHTML.length !== 0 &&
+      event.target.innerText !== '\n';
     this.setState({ inputHasText })
   }
 
