@@ -1,6 +1,9 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import EmojiPicker from './../emoji-picker/EmojiPicker';
+import PopupWindow from './../popups/PopupWindow';
+
+console.log(PopupWindow)
 
 
 class EmojiIcon extends Component {
@@ -12,7 +15,7 @@ class EmojiIcon extends Component {
     };
   }
 
-  _handlePickerBlur() {
+  _handlePickerBlur = () => {
     this.setState({
       isActive: false
     });
@@ -28,12 +31,18 @@ class EmojiIcon extends Component {
   render() {
     return (
       <div className="sc-user-input--picker-wrapper">
-      { this.state.isActive && 
+      <PopupWindow isOpen={this.state.isActive}>
+        <EmojiPicker 
+          onEmojiPicked={this.props.onEmojiPicked}
+          onBlur={this._handlePickerBlur}
+        />
+      </PopupWindow>
+      {/* { this.state.isActive && 
         <EmojiPicker 
           onEmojiPicked={this.props.onEmojiPicked}
           onBlur={this._handlePickerBlur.bind(this)}
         />
-      }
+      } */}
       <button
         onClick={this._openPicker.bind(this)}
         className="sc-user-input--emoji-icon-wrapper"
