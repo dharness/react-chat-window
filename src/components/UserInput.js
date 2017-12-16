@@ -18,6 +18,10 @@ class UserInput extends Component {
     };
   }
 
+  componentDidMount() {
+    this.emojiPickerButton = document.querySelector('#sc-emoji-picker-button'); 
+  }
+
   handleKeyDown(event) {
     if (event.keyCode === 13 && !event.shiftKey) {
       return this._submitText(event);
@@ -35,7 +39,17 @@ class UserInput extends Component {
 
   toggleEmojiPicker = (e) => {
     e.preventDefault();
-    this.setState({ emojiPickerIsOpen: !this.state.emojiPickerIsOpen });
+    if (!this.state.emojiPickerIsOpen) {
+      this.setState({ emojiPickerIsOpen: true });
+    }
+  }
+
+  closeEmojiPicker = (e) => {
+    if (this.emojiPickerButton.contains(e.target)) {
+      e.stopPropagation();
+      e.preventDefault();
+    }
+    this.setState({ emojiPickerIsOpen: false });
   }
 
   _submitText(event) {
@@ -67,7 +81,10 @@ class UserInput extends Component {
   }
 
   _renderEmojiPopup = () => (
-    <PopupWindow isOpen={this.state.emojiPickerIsOpen}>
+    <PopupWindow
+      isOpen={this.state.emojiPickerIsOpen}
+      onClickedOutside={this.closeEmojiPicker}
+    >
       <EmojiPicker onEmojiPicked={this._handleEmojiPicked} />
     </PopupWindow>
   )
