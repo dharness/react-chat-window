@@ -23,7 +23,11 @@ class PopupWindow extends Component {
     return (
       <div className="sc-popup-window" ref={e => this.emojiPopup = e}>
         <div className={`sc-popup-window--cointainer ${isOpen ? '' : 'closed'}`}>
-          <input className="sc-popup-window--search" placeholder="Search emoji..."/>
+          <input
+            onChange={this.props.onInputChange}
+            className="sc-popup-window--search"
+            placeholder="Search emoji..."
+          />
           {children}
         </div>
       </div>

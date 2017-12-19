@@ -6,20 +6,24 @@ import emojiData from './emojiData';
 const emojiConvertor = new EmojiConvertor();
 emojiConvertor.init_env();
 
-export default ({ onEmojiPicked }) => (
+export default ({ onEmojiPicked, filter }) => (
 <div className="sc-emoji-picker">
   {emojiData.map((category) => {
+    const filteredEmojis = category.emojis.filter(({ name }) => name.includes(filter));
     return (
       <div className="sc-emoji-picker--category" key={category.name}>
-        <div className="sc-emoji-picker--category-title">{category.name}</div>
-        {category.emojis.map((emoji) => {
+        {
+          filteredEmojis.length > 0 &&
+          <div className="sc-emoji-picker--category-title">{category.name}</div>
+        }
+        {filteredEmojis.map(({ char, name }) => {
           return (
             <span
-              key={emoji}
+              key={char}
               className="sc-emoji-picker--emoji"
-              onClick={() => onEmojiPicked(emoji)}
+              onClick={() => onEmojiPicked(char)}
             >
-              {emoji}
+              {char}
             </span>
           );
         })}

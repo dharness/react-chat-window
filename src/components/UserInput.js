@@ -14,7 +14,8 @@ class UserInput extends Component {
     this.state = {
       inputActive: false,
       inputHasText: false,
-      emojiPickerIsOpen: false
+      emojiPickerIsOpen: false,
+      emojiFilter: ''
     };
   }
 
@@ -85,12 +86,21 @@ class UserInput extends Component {
     }
   }
 
+  handleEmojiFilterChange = (event) => {
+    const emojiFilter = event.target.value;
+    this.setState({ emojiFilter });
+  }
+
   _renderEmojiPopup = () => (
     <PopupWindow
       isOpen={this.state.emojiPickerIsOpen}
       onClickedOutside={this.closeEmojiPicker}
+      onInputChange={this.handleEmojiFilterChange}
     >
-      <EmojiPicker onEmojiPicked={this._handleEmojiPicked} />
+      <EmojiPicker
+        onEmojiPicked={this._handleEmojiPicked}
+        filter={this.state.emojiFilter}
+      />
     </PopupWindow>
   )
 
