@@ -11,10 +11,7 @@ class Launcher extends Component {
     super();
     this.state = {
       launcherIcon,
-      isOpen: false,
-      emojiPicker: {
-        isOpen: false
-      }
+      isOpen: false
     };
   }
 
