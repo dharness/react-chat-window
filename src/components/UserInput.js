@@ -73,11 +73,15 @@ class UserInput extends Component {
 
   _handleEmojiPicked = (emoji) => {
     this.setState({ emojiPickerIsOpen: false });
-    this.props.onSubmit({
-      author: 'me',
-      type: 'emoji',
-      data: { emoji }
-    });
+    if(this.state.inputHasText) {
+      this.userInput.innerHTML += emoji;
+    } else {
+      this.props.onSubmit({
+        author: 'me',
+        type: 'emoji',
+        data: { emoji }
+      });
+    }
   }
 
   _renderEmojiPopup = () => (
