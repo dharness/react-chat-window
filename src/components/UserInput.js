@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import SendIcon from './icons/SendIcon';
 import FileIcon from './icons/FileIcon';
 import EmojiIcon from './icons/EmojiIcon';
+import PopupWindow from './popups/PopupWindow';
 import EmojiPicker from './emoji-picker/EmojiPicker';
 
 
@@ -12,8 +13,14 @@ class UserInput extends Component {
     super();
     this.state = {
       inputActive: false,
-      inputHasText: false
+      inputHasText: false,
+      emojiPickerIsOpen: false,
+      emojiFilter: ''
     };
+  }
+
+  componentDidMount() {
+    this.emojiPickerButton = document.querySelector('#sc-emoji-picker-button'); 
   }
 
   handleKeyDown(event) {
@@ -30,6 +37,21 @@ class UserInput extends Component {
 
   _showFilePicker() {
     this._fileUploadButton.click()
+  }
+
+  toggleEmojiPicker = (e) => {
+    e.preventDefault();
+    if (!this.state.emojiPickerIsOpen) {
+      this.setState({ emojiPickerIsOpen: true });
+    }
+  }
+
+  closeEmojiPicker = (e) => {
+    if (this.emojiPickerButton.contains(e.target)) {
+      e.stopPropagation();
+      e.preventDefault();
+    }
+    this.setState({ emojiPickerIsOpen: false });
   }
 
   _submitText(event) {
@@ -51,13 +73,36 @@ class UserInput extends Component {
     }
   }
 
-  _handleEmojiPicked(emoji) {
-    this.props.onSubmit({
-      author: 'me',
-      type: 'emoji',
-      data: { emoji }
-    });
+  _handleEmojiPicked = (emoji) => {
+    this.setState({ emojiPickerIsOpen: false });
+    if(this.state.inputHasText) {
+      this.userInput.innerHTML += emoji;
+    } else {
+      this.props.onSubmit({
+        author: 'me',
+        type: 'emoji',
+        data: { emoji }
+      });
+    }
   }
+
+  handleEmojiFilterChange = (event) => {
+    const emojiFilter = event.target.value;
+    this.setState({ emojiFilter });
+  }
+
+  _renderEmojiPopup = () => (
+    <PopupWindow
+      isOpen={this.state.emojiPickerIsOpen}
+      onClickedOutside={this.closeEmojiPicker}
+      onInputChange={this.handleEmojiFilterChange}
+    >
+      <EmojiPicker
+        onEmojiPicked={this._handleEmojiPicked}
+        filter={this.state.emojiFilter}
+      />
+    </PopupWindow>
+  )
 
   _renderSendOrFileIcon() {
     if (this.state.inputHasText) {
@@ -82,8 +127,9 @@ class UserInput extends Component {
   }
 
   render() {
+    const { emojiPickerIsOpen, inputActive } = this.state;
     return (
-      <form className={`sc-user-input ${(this.state.inputActive ? 'active' : '')}`}>
+      <form className={`sc-user-input ${(inputActive ? 'active' : '')}`}>
         <div
           role="button"
           tabIndex="0"
@@ -99,7 +145,11 @@ class UserInput extends Component {
         </div>
         <div className="sc-user-input--buttons">
           <div className="sc-user-input--button">
-            <EmojiIcon onEmojiPicked={this._handleEmojiPicked.bind(this)} />
+            <EmojiIcon
+              onClick={this.toggleEmojiPicker}
+              isActive={emojiPickerIsOpen}
+              tooltip={this._renderEmojiPopup()}
+            />
           </div>
           {this._renderSendOrFileIcon()}
         </div>

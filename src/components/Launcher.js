@@ -37,7 +37,6 @@ class Launcher extends Component {
       });
     }
   }
-
   render() {
     const isOpen = this.props.hasOwnProperty('isOpen') ? this.props.isOpen : this.state.isOpen;
     const classList = [
@@ -45,9 +44,7 @@ class Launcher extends Component {
       (isOpen ? 'opened' : ''),
     ];
     return (
-      <div>
-        <div>
-        </div>
+      <div id="sc-launcher">
         <div className={classList.join(' ')} onClick={this.handleClick.bind(this)}>
           <MessageCount count={this.props.newMessagesCount} isOpen={isOpen} />
           <img className={"sc-open-icon"} src={launcherIconActive} />
