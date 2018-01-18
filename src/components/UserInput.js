@@ -59,7 +59,7 @@ class UserInput extends Component {
         <div className="sc-user-input--buttons">
           <div className="sc-user-input--button"></div>
           <div className="sc-user-input--button">
-            <EmojiIcon onEmojiPicked={this._handleEmojiPicked.bind(this)} />
+            {this.props.showEmoji && <EmojiIcon onEmojiPicked={this._handleEmojiPicked.bind(this)} />}
           </div>
           <div className="sc-user-input--button">
             <SendIcon onClick={this._submitText.bind(this)} />
@@ -72,6 +72,7 @@ class UserInput extends Component {
 
 UserInput.propTypes = {
   onSubmit: PropTypes.func.isRequired,
+  showEmoji: PropTypes.bool
 };
 
 export default UserInput;

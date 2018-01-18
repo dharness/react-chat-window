@@ -45,6 +45,7 @@ class Launcher extends Component {
           agentProfile={this.props.agentProfile}
           isOpen={isOpen}
           onClose={this.handleClick.bind(this)}
+          showEmoji={this.props.showEmoji}
         />
       </div>
     );
@@ -66,11 +67,13 @@ Launcher.propTypes = {
   newMessagesCount: PropTypes.number,
   isOpen: PropTypes.bool,
   handleClick: PropTypes.func,
-  messageList: PropTypes.arrayOf(PropTypes.object)
+  messageList: PropTypes.arrayOf(PropTypes.object),
+  showEmoji: PropTypes.bool
 };
 
 Launcher.defaultProps = {
-  newMessagesCount: 0
+  newMessagesCount: 0,
+  showEmoji: true
 }
 
 export default Launcher;
