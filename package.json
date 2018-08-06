@@ -14,9 +14,6 @@
     "build": "nwb build-react-component --copy-files",
     "clean": "nwb clean-module && nwb clean-demo",
     "start": "nwb serve-react-demo",
-    "test": "nwb test-react",
-    "test:coverage": "nwb test-react --coverage",
-    "test:watch": "nwb test-react --server",
     "gh:publish": "nwb build-demo && gh-pages -d demo/dist"
   },
   "dependencies": {
