@@ -144,6 +144,10 @@ class UserInput extends Component {
         >
         </div>
         <div className="sc-user-input--buttons">
+          <div className="sc-user-input--button"></div>
+          <div className="sc-user-input--button">
+            {this.props.showEmoji && <EmojiIcon onEmojiPicked={this._handleEmojiPicked.bind(this)} />}
+          </div>
           <div className="sc-user-input--button">
             <EmojiIcon
               onClick={this.toggleEmojiPicker}
@@ -161,6 +165,7 @@ class UserInput extends Component {
 UserInput.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   onFilesSelected: PropTypes.func.isRequired
+  showEmoji: PropTypes.bool
 };
 
 export default UserInput;

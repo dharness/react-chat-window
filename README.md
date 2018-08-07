@@ -73,6 +73,7 @@ class Demo extends Component {
         }}
         onMessageWasSent={this._onMessageWasSent.bind(this)}
         messageList={this.state.messageList}
+        showEmoji
       />
     </div>)
   }
@@ -99,7 +100,7 @@ Launcher props:
 | newMessagesCount | Number | If greater than 0, this number will be displayed in a badge on the launcher |
 | onFilesSelected | Function | Called after file has been selected from dialogue in chat window |
 | newMessagesCount | Number | The number of new messages. To be displayed in a badge on the launcher. 0 for no badge |
-
+| showEmoji | bool | A bool indicating whether or not to show the emoji button
 
 
 ### Message Objects
@@ -137,3 +138,7 @@ Message objects are rendered differently depending on their type. Currently, onl
 
 ## Issues
 [waffle.io](https://waffle.io/dharness/react-live-chat)
+
+## People Using react-live-chat
+
+If you're using react-live-chat in a product I'd love to see what you're making! Email me at dylan@kingofthestack.com

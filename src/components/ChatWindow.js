@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import MessageList from './MessageList'
 import UserInput from './UserInput'
@@ -38,9 +39,14 @@ class ChatWindow extends Component {
             onSubmit={this.onUserInputSubmit.bind(this)}
             onFilesSelected={this.onFilesSelected.bind(this)}
           />
+          <UserInput showEmoji={this.props.showEmoji} onSubmit={this.onUserInputSubmit.bind(this)}/>
         </div>
       );
     }
+}
+
+ChatWindow.propTypes = {
+  showEmoji: PropTypes.bool
 }
 
 export default ChatWindow;
