@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "emoji-js": "3.2.2",
-    "gh-pages": "^1.0.0",
+    "gh-pages": "^1.2.0",
     "prop-types": "15.5.10",
     "react-highlight.js": "1.0.5",
     "react-linkify": "^0.2.1",
@@ -28,7 +28,7 @@
     "react": "15.x"
   },
   "devDependencies": {
-    "nwb": "0.17.x",
+    "nwb": "^0.23.0",
     "react": "15.6.1",
     "react-dom": "15.6.1"
   },
