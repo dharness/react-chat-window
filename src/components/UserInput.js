@@ -164,7 +164,7 @@ class UserInput extends Component {
 
 UserInput.propTypes = {
   onSubmit: PropTypes.func.isRequired,
-  onFilesSelected: PropTypes.func.isRequired
+  onFilesSelected: PropTypes.func.isRequired,
   showEmoji: PropTypes.bool
 };
 
