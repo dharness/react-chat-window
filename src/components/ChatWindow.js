@@ -38,8 +38,8 @@ class ChatWindow extends Component {
           <UserInput
             onSubmit={this.onUserInputSubmit.bind(this)}
             onFilesSelected={this.onFilesSelected.bind(this)}
+            showEmoji={this.props.showEmoji}
           />
-          <UserInput showEmoji={this.props.showEmoji} onSubmit={this.onUserInputSubmit.bind(this)}/>
         </div>
       );
     }
