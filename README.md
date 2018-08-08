@@ -102,11 +102,11 @@ Launcher props:
 |      prop        | type   | description |
 |------------------|--------|-------------|
 | agentProfile     | object | Represents your product or service's customer service agent. Fields: teamName, imageUrl |
-| handleClick      | function | Intercept the click event on the launcher. |
+| handleClick      | function | Intercept the click event on the launcher. (No arguments sent) |
 | isOpen           | boolean | Force the open/close state of the chat window. If this is not set, it will open and close when clicked. |
 | messageList      | [message] | An array of message objects to be rendered as a conversation. |
 | newMessagesCount | number | The number of new messages. If greater than 0, this number will be displayed in a badge on the launcher. |
-| onFilesSelected  | function | Called after file has been selected from dialogue in chat window. |
+| onFilesSelected  | function([fileList](https://developer.mozilla.org/en-US/docs/Web/API/FileList)) | Called after file has been selected from dialogue in chat window. |
 | onMessageWasSent | function(message) | Called when a message is sent, with a message object as an argument. |
 | showEmoji        | boolean | A bool indicating whether or not to show the emoji button in the input bar.
 
