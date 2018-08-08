@@ -101,14 +101,14 @@ Launcher props:
 
 |prop | type   | description |
 |-----|--------|---------------|
-| *agentProfile | object | Represents your product or service's customer service agent. Fields: teamName, imageUrl|
-| onMessageWasSent | function(message) | Called when a message a message is sent with a message object as an argument. |
+| *agentProfile | object | Represents your product or service's customer service agent. Fields: teamName, imageUrl |
+| onMessageWasSent | function(message) | Called when a message is sent, with a message object as an argument. |
 | messageList | [message] | An array of message objects to be rendered as a conversation. |
 | isOpen | boolean | Force the open/close state of the chat window. If this is not set, it will open and close when clicked. |
-| handleClick | Function | Intercept the click event on the launcher |
-| onFilesSelected | Function | Called after file has been selected from dialogue in chat window |
-| showEmoji | bool | A bool indicating whether or not to show the emoji button
+| handleClick | function | Intercept the click event on the launcher. |
 | newMessagesCount | number | The number of new messages. If greater than 0, this number will be displayed in a badge on the launcher. |
+| onFilesSelected | function | Called after file has been selected from dialogue in chat window. |
+| showEmoji | boolean | A bool indicating whether or not to show the emoji button in the input bar.
 
 
 ### Message Objects
