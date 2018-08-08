@@ -106,10 +106,9 @@ Launcher props:
 | messageList | [message] | An array of message objects to be rendered as a conversation. |
 | isOpen | boolean | Force the open/close state of the chat window. If this is not set, it will open and close when clicked. |
 | handleClick | Function | Intercept the click event on the launcher |
-| newMessagesCount | Number | If greater than 0, this number will be displayed in a badge on the launcher |
 | onFilesSelected | Function | Called after file has been selected from dialogue in chat window |
-| newMessagesCount | Number | The number of new messages. To be displayed in a badge on the launcher. 0 for no badge |
 | showEmoji | bool | A bool indicating whether or not to show the emoji button
+| newMessagesCount | number | The number of new messages. If greater than 0, this number will be displayed in a badge on the launcher. |
 
 
 ### Message Objects
