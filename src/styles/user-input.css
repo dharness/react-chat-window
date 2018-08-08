@@ -61,6 +61,10 @@
   justify-content: center;
 }
 
+.sc-user-input--button button {
+  cursor: pointer;
+}
+
 .sc-user-input--buttons input[type="file"] {
   display: none;
 }
