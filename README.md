@@ -155,9 +155,6 @@ Look like this:
 }
 ```
 
-## Issues
-[waffle.io](https://waffle.io/dharness/react-live-chat)
-
 ## People Using react-chat-window
 
 If you're using react-chat-window in a product I'd love to see what you're making! Email me at dylan@kingofthestack.com
