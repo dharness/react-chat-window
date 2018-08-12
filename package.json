@@ -1,7 +1,7 @@
 {
   "name": "react-chat-window",
   "version": "1.0.8",
-  "description": "react-live-chat React component",
+  "description": "react-chat-window React component",
   "main": "lib/index.js",
   "module": "es/index.js",
   "files": [
@@ -37,7 +37,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kingofthestack/react-live-chat.git"
+    "url": "https://github.com/dharness/react-chat-window.git"
   },
   "keywords": [
     "react-component"
