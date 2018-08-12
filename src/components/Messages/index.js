@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import TextMessage from './TextMessage'
 import EmojiMessage from './EmojiMessage'
+import FileMessage from './FileMessage'
 import chatIconUrl from './../../assets/chat-icon.svg'
 
 
@@ -12,6 +13,10 @@ class Message extends Component {
         return <TextMessage {...this.props.message} />
       case 'emoji':
         return <EmojiMessage {...this.props.message} />
+      case 'file':
+        return <FileMessage {...this.props.message} />
+      default:
+        console.error(`Attempting to load message with unsupported file type '${type}'`)
     }
   }
 

@@ -1,6 +1,7 @@
 import './emojiPicker.css';
-import './index.css';
+import './chat-window.css';
 import './launcher.css';
 import './header.css';
 import './message.css';
-import './userInput.css';
+import './user-input.css';
+import './popup-window.css';

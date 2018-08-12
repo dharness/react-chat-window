@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import ChatWindow from './ChatWindow';
 import launcherIcon from './../assets/logo-no-bg.svg';
+import incomingMessageSound from './../assets/sounds/notification.mp3';
 import launcherIconActive from './../assets/close-icon.png';
 
 class Launcher extends Component {
@@ -14,6 +15,19 @@ class Launcher extends Component {
     };
   }
 
+  componentWillReceiveProps(nextProps) {
+    const nextMessage = nextProps.messageList[nextProps.messageList.length - 1];
+    const isIncoming = (nextMessage || {}).author === 'them';
+    if (isIncoming && nextProps.messageList.length > this.props.messageList.length) {
+      this.playIncomingMessageSound()
+    }
+  }
+
+  playIncomingMessageSound() {
+    var audio = new Audio(incomingMessageSound);
+    audio.play();
+  }
+
   handleClick() {
     if (this.props.handleClick !== undefined) {
       this.props.handleClick();
@@ -23,7 +37,6 @@ class Launcher extends Component {
       });
     }
   }
-
   render() {
     const isOpen = this.props.hasOwnProperty('isOpen') ? this.props.isOpen : this.state.isOpen;
     const classList = [
@@ -31,9 +44,7 @@ class Launcher extends Component {
       (isOpen ? 'opened' : ''),
     ];
     return (
-      <div>
-        <div>
-        </div>
+      <div id="sc-launcher">
         <div className={classList.join(' ')} onClick={this.handleClick.bind(this)}>
           <MessageCount count={this.props.newMessagesCount} isOpen={isOpen} />
           <img className={"sc-open-icon"} src={launcherIconActive} />
@@ -42,6 +53,7 @@ class Launcher extends Component {
         <ChatWindow
           messageList={this.props.messageList}
           onUserInputSubmit={this.props.onMessageWasSent}
+          onFilesSelected={this.props.onFilesSelected}
           agentProfile={this.props.agentProfile}
           isOpen={isOpen}
           onClose={this.handleClick.bind(this)}
@@ -55,7 +67,7 @@ class Launcher extends Component {
 const MessageCount = (props) => {
   if (props.count === 0 || props.isOpen === true) { return null }
   return (
-    <div className={"sc-new-messsages-count"}>
+    <div className={"sc-new-messages-count"}>
       {props.count}
     </div>
   )
