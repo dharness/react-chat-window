@@ -65,6 +65,11 @@
   display: none;
 }
 
+.sc-user-input--picker-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
 .sc-user-input.active {
   box-shadow: none;
   background-color: white;
@@ -95,7 +100,7 @@
 .sc-user-input--file-icon-wrapper {
   background: none;
   border: none;
-  padding: 0px;
+  padding: 2px;
   margin: 0px;
   display: flex;
   flex-direction: column;
