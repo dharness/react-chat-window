@@ -6,7 +6,7 @@
 .sc-popup-window--cointainer {
   position: absolute;
   bottom: 20px;
-  right: 70px;
+  right: 100px;
   width: 330px;
   max-height: 260px;
   height: 260px;
@@ -34,7 +34,7 @@
   position: absolute;
   z-index: -1;
   bottom: -6px;
-  right: 53px;
+  right: 28px;
   transform: rotate(45deg);
   border-radius: 2px;
 }
