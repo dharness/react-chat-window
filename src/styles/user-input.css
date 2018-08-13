@@ -43,7 +43,7 @@
 .sc-user-input--buttons {
   width: 100px;
   position: absolute;
-  right: 30px;
+  right: 10px;
   height: 100%;
   display: flex;
   justify-content: flex-end;
@@ -63,6 +63,11 @@
 
 .sc-user-input--buttons input[type="file"] {
   display: none;
+}
+
+.sc-user-input--picker-wrapper {
+  display: flex;
+  flex-direction: column;
 }
 
 .sc-user-input.active {
@@ -95,7 +100,7 @@
 .sc-user-input--file-icon-wrapper {
   background: none;
   border: none;
-  padding: 0px;
+  padding: 2px;
   margin: 0px;
   display: flex;
   flex-direction: column;
