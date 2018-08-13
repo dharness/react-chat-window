@@ -1,6 +1,6 @@
-# react-live-chat
+# react-chat-window
 
-`react-live-chat` provides an intercom-like chat window that can be included easily in any project for free. It provides no messaging facilities, only the view component.
+`react-chat-window` provides an intercom-like chat window that can be included easily in any project for free. It provides no messaging facilities, only the view component.
 
 <a href="https://www.npmjs.com/package/react-chat-window" target="\_parent">
   <img alt="" src="https://img.shields.io/npm/dm/react-chat-window.svg" />
@@ -68,7 +68,7 @@ class Demo extends Component {
     return (<div>
       <Launcher
         agentProfile={{
-          teamName: 'react-live-chat',
+          teamName: 'react-chat-window',
           imageUrl: 'https://a.slack-edge.com/66f9/img/avatars-teams/ava_0001-34.png'
         }}
         onMessageWasSent={this._onMessageWasSent.bind(this)}
@@ -86,7 +86,7 @@ For more detailed examples see the demo folder.
 
 # Launcher
 
-`Launcher` is the only component needed to use react-live-chat. It will react dynamically to changes in messages. All new messages must be added via a change in props as shown in the example.
+`Launcher` is the only component needed to use react-chat-window. It will react dynamically to changes in messages. All new messages must be added via a change in props as shown in the example.
 
 Launcher props:
 
@@ -136,9 +136,6 @@ Message objects are rendered differently depending on their type. Currently, onl
 
 ```
 
-## Issues
-[waffle.io](https://waffle.io/dharness/react-live-chat)
+## People Using react-chat-window
 
-## People Using react-live-chat
-
-If you're using react-live-chat in a product I'd love to see what you're making! Email me at dylan@kingofthestack.com
+If you're using react-chat-window in a product I'd love to see what you're making! Email me at dylan@kingofthestack.com
