@@ -8,6 +8,16 @@
 <a href="https://github.com/kingofthestack/react-chat-window" target="\_parent">
   <img alt="" src="https://img.shields.io/github/stars/kingofthestack/react-chat-window.svg?style=social&label=Star" />
 </a>
+<br/>
+<br/>
+<h4>This project is fuelled by donations and maple syrup:</h4>
+<a href="https://www.patreon.com/bePatron?u=12544159" target="\_parent">
+  <img
+    width="150px"
+    src="https://c5.patreon.com/external/logo/become_a_patron_button.png">
+</a>
+<br/>
+<br/>
 
 ![Alt Text](https://puu.sh/xei2F/fd4a121185.gif)
 
