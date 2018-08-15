@@ -9,7 +9,6 @@
   <img alt="" src="https://img.shields.io/github/stars/kingofthestack/react-chat-window.svg?style=social&label=Star" />
 </a>
 <br/>
-<br/>
 <h4>This project is fuelled by donations and maple syrup:</h4>
 <a href="https://www.patreon.com/bePatron?u=12544159" target="\_parent">
   <img
