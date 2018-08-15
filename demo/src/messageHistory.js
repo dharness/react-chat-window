@@ -1,3 +1,5 @@
+import monsterImgUrl from "./../assets/monster.png";
+
 export default [
   {type: 'text', author: "me", data: { text: "Why don't they have salsa on the table?"} },
   {type: 'text', author: "them", data: { text: "What do you need salsa for?"} },
@@ -16,4 +18,9 @@ export default [
   {type: 'text', author: "me", data: { text: "No forget the story. "} },
   {type: 'text', author: "them", data: { text: "You've got to have a story."} },
   {type: 'emoji', author: "me", data: { emoji: "😋"} },
+  {type: 'file', author: "me",
+  data: {
+    url: monsterImgUrl,
+    fileName: "bigBlue.png"
+  }},
 ]

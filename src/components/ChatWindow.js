@@ -14,8 +14,8 @@ class ChatWindow extends Component {
       this.props.onUserInputSubmit(message);
     }
 
-    onMessageReceived(message) {
-      this.setState({ messages: [...this.state.messages, message] });
+    onFilesSelected(filesList) {
+      this.props.onFilesSelected(filesList);
     }
 
     render() {
@@ -35,7 +35,11 @@ class ChatWindow extends Component {
             messages={messageList}
             imageUrl={this.props.agentProfile.imageUrl}
           />
-          <UserInput showEmoji={this.props.showEmoji} onSubmit={this.onUserInputSubmit.bind(this)}/>
+          <UserInput
+            onSubmit={this.onUserInputSubmit.bind(this)}
+            onFilesSelected={this.onFilesSelected.bind(this)}
+            showEmoji={this.props.showEmoji}
+          />
         </div>
       );
     }

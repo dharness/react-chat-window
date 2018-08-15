@@ -1,8 +1,14 @@
 /coverage
 /demo/dist
+
+# Generated build files
 /es
 /lib
-/node_modules
 /umd
+
+# Node
+/node_modules
 npm-debug.log*
+package-lock.json
+
 .DS_Store

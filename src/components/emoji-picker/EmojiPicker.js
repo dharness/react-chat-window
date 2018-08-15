@@ -3,58 +3,32 @@ import EmojiConvertor from 'emoji-js';
 import emojiData from './emojiData';
 
 
-class EmojiPicker extends Component {
+const emojiConvertor = new EmojiConvertor();
+emojiConvertor.init_env();
 
-  constructor() {
-    super();
-    this.emojiConvertor = new EmojiConvertor();
-    this.emojiConvertor.init_env();
-  }
-
-  componentDidMount() {
-    const elem = this.domNode;
-    elem.style.opacity = 0;
-    window.requestAnimationFrame(() => {
-      elem.style.transition = 'opacity 350ms';
-      elem.style.opacity = 1;
-    });
-    this.domNode.focus();
-  }
-
-  render() {
+export default ({ onEmojiPicked, filter }) => (
+<div className="sc-emoji-picker">
+  {emojiData.map((category) => {
+    const filteredEmojis = category.emojis.filter(({ name }) => name.includes(filter));
     return (
-      <div
-        tabIndex="0"
-        onBlur={this.props.onBlur}
-        className="sc-emoji-picker"
-        ref={(e) => { this.domNode = e; }}
-      >
-        <div className="sc-emoji-picker--content">
-          {emojiData.map((category) => {
-            return (
-              <div className="sc-emoji-picker--category" key={category.name}>
-                <div className="sc-emoji-picker--category-title">{category.name}</div>
-                {category.emojis.map((emoji) => {
-                  return (
-                    <span
-                      key={emoji}
-                      className="sc-emoji-picker--emoji"
-                      onClick={() => {
-                        this.props.onEmojiPicked(emoji);
-                        this.domNode.blur();
-                      }}
-                    >
-                      {emoji}
-                    </span>
-                  );
-                })}
-              </div>
-            );
-          })}
-        </div>
+      <div className="sc-emoji-picker--category" key={category.name}>
+        {
+          filteredEmojis.length > 0 &&
+          <div className="sc-emoji-picker--category-title">{category.name}</div>
+        }
+        {filteredEmojis.map(({ char, name }) => {
+          return (
+            <span
+              key={char}
+              className="sc-emoji-picker--emoji"
+              onClick={() => onEmojiPicked(char)}
+            >
+              {char}
+            </span>
+          );
+        })}
       </div>
     );
-  }
-}
-
-export default EmojiPicker;
+  })}
+</div>
+);
