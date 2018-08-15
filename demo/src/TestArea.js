@@ -22,10 +22,10 @@ class TestArea extends Component {
           <button className="demo-test-area--button"> Send Message! </button>
         </form>
         <p className="demo-test-area--info">
-          react-live-chat is a chat window that allows you to build and add custom live chat to your sites. It includes only the react chat widget. There is no backend, and no communication system baked in.
+          react-chat-window is a chat window that allows you to build and add custom live chat to your sites. It includes only the react chat widget. There is no backend, and no communication system baked in.
           <br />
           <br/>
-          For instructions on how to use react-chat-window click <a href="https://github.com/kingofthestack/react-live-chat">here</a>.
+          For instructions on how to use react-chat-window click <a href="https://github.com/dharness/react-chat-window">here</a>.
         </p>
       </div>
     )
