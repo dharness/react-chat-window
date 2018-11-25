@@ -96,8 +96,9 @@ Launcher props:
 | onMessageWasSent | function(message) | Called when a message a message is sent with a message object as an argument. |
 | messageList | [message] | An array of message objects to be rendered as a conversation. |
 | handleClick | [function] | Called when the open/close chat icon is clicked and when the close [x] button is clicked. |
-| isOpen | bool | A bool indicating whether or not to show/expand the chat message list
-| showEmoji | bool | A bool indicating whether or not to show the emoji button
+| isOpen | bool | A bool indicating whether or not to show/expand the chat message list. |
+| showEmoji | bool | A bool indicating whether or not to show the emoji button. |
+| newMessagesCount | number | An integer to track the new message count. |
 
 
 ### Message Objects
