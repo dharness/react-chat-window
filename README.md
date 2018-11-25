@@ -100,7 +100,7 @@ Launcher props:
 
 ### Message Objects
 
-Message objects are rendered differently depending on their type. Currently, only text and emoji types are supported. Each message object has an `author` field which can have the value 'me' or 'them'.
+Message objects are rendered differently depending on their type. Currently text, links, emoji and mixed types are supported. Each message object has an `author` field which can have the value 'me' or 'them'.
 
 ``` javascript
 {
@@ -116,6 +116,30 @@ Message objects are rendered differently depending on their type. Currently, onl
   type: 'emoji',
   data: {
     code: 'someCode'
+  }
+}
+
+{
+  author: 'them',
+  type: 'link',
+  data: {
+    label: 'Google' // Optional
+    href: 'https://google.com'
+  }
+}
+
+{
+  author: 'me',
+  type: 'mixed',
+  data: {
+    content: (
+      <div>
+        Hello, this is some mixed content 😃
+        <a href='#docs'>
+          This is a docs link
+        </a>
+      </div>
+    )
   }
 }
 

@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import TextMessage from './TextMessage'
 import EmojiMessage from './EmojiMessage'
+import LinkMessage from './LinkMessage'
+import MixedMessage from './MixedMessage'
 import chatIconUrl from './../../assets/chat-icon.svg'
 
 
@@ -12,6 +14,10 @@ class Message extends Component {
         return <TextMessage {...this.props.message} />
       case 'emoji':
         return <EmojiMessage {...this.props.message} />
+      case 'link':
+        return <LinkMessage {...this.props.message} />
+      case 'mixed': 
+        return <MixedMessage {...this.props.message} />
     }
   }
 

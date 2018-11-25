@@ -40,6 +40,14 @@
   -webkit-font-smoothing: subpixel-antialiased
 }
 
+.sc-message--link {
+  /* Link specific styles go here */
+}
+
+.sc-message--mixed {
+  /* Mixed specific styles go here */
+}
+
 .sc-message--content.sent .sc-message--text {
   color: white;
   background-color: #4e8cff;
