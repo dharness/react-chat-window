@@ -92,7 +92,6 @@ Launcher props:
 
 |prop | type   | description |
 |-----|--------|---------------|
-
 | *agentProfile | object | Represents your product or service's customer service agent. Fields: teamName, imageUrl|
 | onMessageWasSent | function(message) | Called when a message a message is sent with a message object as an argument. |
 | messageList | [message] | An array of message objects to be rendered as a conversation. |
