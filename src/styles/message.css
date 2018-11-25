@@ -42,6 +42,7 @@
 
 .sc-message--link {
   /* Link specific styles go here */
+  word-break: break-all;
 }
 
 .sc-message--mixed {

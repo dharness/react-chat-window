@@ -16,4 +16,5 @@ export default [
   {type: 'text', author: "me", data: { text: "No forget the story. "} },
   {type: 'text', author: "them", data: { text: "You've got to have a story."} },
   {type: 'emoji', author: "me", data: { emoji: "😋"} },
+  {type: 'link', author: "them", data: { href: "https://github.com/kingofthestack/react-chat-window" } },
 ]
