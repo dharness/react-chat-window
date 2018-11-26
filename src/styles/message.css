@@ -45,8 +45,8 @@
   word-break: break-all;
 }
 
-.sc-message--mixed {
-  /* Mixed specific styles go here */
+.sc-message--custom {
+  /* Custom specific styles go here */
 }
 
 .sc-message--content.sent .sc-message--text {

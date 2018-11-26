@@ -1,23 +1,23 @@
 /*
  This component is a generic message component that will render data that 
- contains mixed content i.e. text, emoji, link etc. The implementation
+ contains custom content i.e. text, emoji, link etc. The implementation
  is left to the user
 */
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-const MixedMessage = (props) => {
+const CustomMessage = (props) => {
   return (
-    <div className={"sc-message--mixed"}>
+    <div className={"sc-message--custom"}>
       {props.data.content}
     </div>
   )
 }
 
-MixedMessage.propTypes = {
+CustomMessage.propTypes = {
   data: PropTypes.shape({
     content: PropTypes.any
   })
 }
 
-export default MixedMessage
+export default CustomMessage
