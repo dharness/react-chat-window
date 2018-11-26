@@ -95,7 +95,10 @@ Launcher props:
 | *agentProfile | object | Represents your product or service's customer service agent. Fields: teamName, imageUrl|
 | onMessageWasSent | function(message) | Called when a message a message is sent with a message object as an argument. |
 | messageList | [message] | An array of message objects to be rendered as a conversation. |
-| showEmoji | bool | A bool indicating whether or not to show the emoji button
+| handleClick | [function] | Called when the open/close chat icon is clicked and when the close [x] button is clicked. |
+| isOpen | bool | A bool indicating whether or not to show/expand the chat message list. |
+| showEmoji | bool | A bool indicating whether or not to show the emoji button. |
+| newMessagesCount | number | An integer to track the new message count. |
 
 
 ### Message Objects
