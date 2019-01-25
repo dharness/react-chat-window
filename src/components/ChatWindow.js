@@ -46,6 +46,11 @@ class ChatWindow extends Component {
 }
 
 ChatWindow.propTypes = {
+  agentProfile: PropTypes.object.isRequired,
+  isOpen: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+  onFilesSelected: PropTypes.func,
+  onUserInputSubmit: PropTypes.func.isRequired,
   showEmoji: PropTypes.bool
 }
 
