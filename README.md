@@ -99,17 +99,16 @@ For more detailed examples see the demo folder.
 
 Launcher props:
 
-|prop | type   | description |
-|-----|--------|---------------|
-| *agentProfile | object | Represents your product or service's customer service agent. Fields: teamName, imageUrl|
-| onMessageWasSent | function(message) | Called when a message a message is sent with a message object as an argument. |
-| messageList | [message] | An array of message objects to be rendered as a conversation. |
-| isOpen | boolean | Force the open/close state of the chat window. If this is not set, it will open and close when clicked. |
-| handleClick | Function | Intercept the click event on the launcher |
-| newMessagesCount | Number | If greater than 0, this number will be displayed in a badge on the launcher |
-| onFilesSelected | Function | Called after file has been selected from dialogue in chat window |
-| newMessagesCount | Number | The number of new messages. To be displayed in a badge on the launcher. 0 for no badge |
-| showEmoji | bool | A bool indicating whether or not to show the emoji button
+|      prop        | type   | required | description |
+|------------------|--------|----------|-------------|
+| agentProfile     | [object](#agent-profile-objects) | yes | Represents your product or service's customer service agent. Fields: imageUrl (string), teamName (string). |
+| handleClick      | function | yes | Intercept the click event on the launcher. No argument sent when function is called. |
+| isOpen           | boolean | yes | Force the open/close state of the chat window. If this is not set, it will open and close when clicked. |
+| messageList      | [[message](#message-objects)] | yes | An array of message objects to be rendered as a conversation. |
+| newMessagesCount | number | no | The number of new messages. If greater than 0, this number will be displayed in a badge on the launcher. |
+| onFilesSelected  | function([fileList](https://developer.mozilla.org/en-US/docs/Web/API/FileList)) | no | Called after file has been selected from dialogue in chat window. |
+| onMessageWasSent | function([message](#message-objects)) | yes | Called when a message is sent, with a message object as an argument. |
+| showEmoji        | boolean | no | Whether or not to show the emoji button in the input bar.
 
 
 ### Message Objects
@@ -143,6 +142,17 @@ Message objects are rendered differently depending on their type. Currently, onl
   }
 }
 
+```
+
+### Agent Profile Objects
+
+Look like this:
+
+```js
+{
+  imageUrl: 'https://somewhere.on/the_web.png',
+  teamName: 'Da best'
+}
 ```
 
 ## People Using react-chat-window
