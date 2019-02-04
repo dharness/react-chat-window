@@ -25,7 +25,7 @@ class TestArea extends Component {
           react-chat-window is a chat window that allows you to build and add custom live chat to your sites. It includes only the react chat widget. There is no backend, and no communication system baked in.
           <br />
           <br/>
-          For instructions on how to use react-chat-window click <a href="https://github.com/kingofthestack/react-chat-window">here</a>.
+          Usage instructions for react-chat-window are <a href="https://github.com/kingofthestack/react-chat-window">on Github</a>.
         </p>
       </div>
     )
