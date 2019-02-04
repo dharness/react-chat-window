@@ -6,7 +6,9 @@ class TestArea extends Component {
       <div className="demo-test-area--wrapper">
         <div className="demo-test-area--title">
           <div className="demo-test-area--title-main">react-chat-window demo</div>
-          <div className="demo-test-area--title-sub">made by King of the Stack</div>
+          <div className="demo-test-area--title-sub">
+            <a href="https://kingofthestack.com">made by King of the Stack</a>
+          </div>
         </div>
         <form className="demo-test-area" onSubmit={(e)=> {
             e.preventDefault();
