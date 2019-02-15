@@ -67,7 +67,7 @@
   width: 550px;
 }
 
-.demo-test-area--info a {
+.demo-test-area--info a, .demo-test-area--title-sub a {
   font-weight: 400;
   text-decoration: none;
   color: #4e8cff;

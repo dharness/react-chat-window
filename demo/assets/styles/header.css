@@ -21,12 +21,12 @@
   font-weight: 500;
 }
 
-.demo-header--links a {
+.demo-header--links a, .demo-header--title a {
   color: #4e8cff;
   text-decoration: none;
   cursor: pointer;
 }
 
-.demo-header--links a:hover {
+.demo-header--links a:hover, .demo-header--title a:hover {
   color: #4983ee;
 }
