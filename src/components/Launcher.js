@@ -24,6 +24,7 @@ class Launcher extends Component {
   }
 
   playIncomingMessageSound() {
+    if (this.props.mute) { return; }
     var audio = new Audio(incomingMessageSound);
     audio.play();
   }
@@ -80,7 +81,8 @@ Launcher.propTypes = {
   isOpen: PropTypes.bool,
   handleClick: PropTypes.func,
   messageList: PropTypes.arrayOf(PropTypes.object),
-  showEmoji: PropTypes.bool
+  mute: PropTypes.bool,
+  showEmoji: PropTypes.bool,
 };
 
 Launcher.defaultProps = {
