@@ -16,15 +16,16 @@ class Launcher extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    if (this.props.mute) { return; }
     const nextMessage = nextProps.messageList[nextProps.messageList.length - 1];
     const isIncoming = (nextMessage || {}).author === 'them';
-    if (isIncoming && nextProps.messageList.length > this.props.messageList.length) {
+    const isNew = nextProps.messageList.length > this.props.messageList.length;
+    if (isIncoming && isNew) {
       this.playIncomingMessageSound()
     }
   }
 
   playIncomingMessageSound() {
-    if (this.props.mute) { return; }
     var audio = new Audio(incomingMessageSound);
     audio.play();
   }
