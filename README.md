@@ -18,7 +18,7 @@
 <br/>
 <br/>
 
-![Alt Text](https://puu.sh/xei2F/fd4a121185.gif)
+![Demo gif of react-chat-window being used](https://puu.sh/xei2F/fd4a121185.gif)
 
 ## Features
 
@@ -43,15 +43,14 @@ $ npm install react-chat-window
 
 ``` javascript
 import React, {Component} from 'react'
-import {render} from 'react-dom'
-import {Launcher} from '../../src'
+import {Launcher} from 'react-chat-window'
 
 class Demo extends Component {
 
   constructor() {
     super();
     this.state = {
-      messageList: messageHistory
+      messageList: []
     };
   }
 
