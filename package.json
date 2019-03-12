@@ -17,20 +17,22 @@
     "gh:publish": "nwb build-demo && gh-pages -d demo/dist"
   },
   "dependencies": {
-    "emoji-js": "3.2.2",
-    "gh-pages": "^1.2.0",
-    "prop-types": "15.5.10",
-    "react-highlight.js": "1.0.5",
+    "emoji-js": "^3.4.1",
+    "gh-pages": "^2.0.1",
+    "prop-types": "^15.7.2",
+    "react-highlight.js": "^1.0.7",
+    "react-image-lightbox": "^5.1.0",
     "react-linkify": "^0.2.1",
-    "socket.io-client": "2.0.3"
+    "react-medium-image-zoom": "^3.0.15",
+    "socket.io-client": "^2.2.0"
   },
   "peerDependencies": {
     "react": "15.x"
   },
   "devDependencies": {
     "nwb": "^0.23.0",
-    "react": "15.6.1",
-    "react-dom": "15.6.1"
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4"
   },
   "author": "",
   "homepage": "",

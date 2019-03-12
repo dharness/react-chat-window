@@ -1,6 +1,6 @@
-import React, {Component} from 'react'
-import {render} from 'react-dom'
-import {Launcher} from '../../src'
+import React, { Component } from 'react'
+import { render } from 'react-dom'
+import { Launcher } from '../../src'
 import messageHistory from './messageHistory';
 import TestArea from './TestArea';
 import Header from './Header';
@@ -30,14 +30,19 @@ class Demo extends Component {
 
   _onFilesSelected(fileList) {
     const objectURL = window.URL.createObjectURL(fileList[0]);
+    const type = fileList[0].type.split('/')[0];
+    const newMessage = {
+      type: 'file', author: "me",
+      data: {
+        url: objectURL,
+        fileName: fileList[0].name
+      }
+    };
+    if (type === 'image') {
+      newMessage.type = 'image';
+    }
     this.setState({
-      messageList: [...this.state.messageList, {
-        type: 'file', author: "me",
-        data: {
-          url: objectURL,
-          fileName: fileList[0].name
-        }
-      }]
+      messageList: [...this.state.messageList, newMessage]
     })
   }
 
@@ -87,4 +92,4 @@ class Demo extends Component {
   }
 }
 
-render(<Demo/>, document.querySelector('#demo'))
+render(<Demo />, document.querySelector('#demo'))
