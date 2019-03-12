@@ -142,6 +142,15 @@ Message objects are rendered differently depending on their type. Currently, onl
   }
 }
 
+{
+  author: 'me',
+  type: 'image',
+  data: {
+    url: 'somefile.png',
+    fileName: 'Any name.png'
+  }
+}
+
 ```
 
 ### Agent Profile Objects
