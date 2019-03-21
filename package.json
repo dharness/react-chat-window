@@ -1,5 +1,5 @@
 {
-  "name": "react-chat-window",
+  "name": "react-chat-window2",
   "version": "1.2.0",
   "description": "react-chat-window React component",
   "main": "lib/index.js",
@@ -39,7 +39,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kingofthestack/react-chat-window.git"
+    "url": "https://github.com/santosh898/react-chat-window.git"
   },
   "keywords": [
     "react-component"

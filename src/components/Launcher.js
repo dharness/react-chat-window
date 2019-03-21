@@ -60,6 +60,8 @@ class Launcher extends Component {
           isOpen={isOpen}
           onClose={this.handleClick.bind(this)}
           showEmoji={this.props.showEmoji}
+          sendVideo={this.props.sendVideo}
+          videoCall={this.props.videoCall}
         />
       </div>
     );
@@ -84,6 +86,8 @@ Launcher.propTypes = {
   messageList: PropTypes.arrayOf(PropTypes.object),
   mute: PropTypes.bool,
   showEmoji: PropTypes.bool,
+  sendVideo: PropTypes.func,
+  videoCall: PropTypes.func
 };
 
 Launcher.defaultProps = {

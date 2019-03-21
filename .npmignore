@@ -1,0 +1,6 @@
+demo/
+src/
+nwb.config.js
+package-lock.json
+yarn.lock
+CONTRIBUTING.md
