@@ -31,7 +31,8 @@ class ChatWindow extends Component {
           imageUrl={this.props.agentProfile.imageUrl}
           onClose={this.props.onClose}
           sendVideo={this.props.sendVideo}
-          videoCall={this.props.videoCall}
+          audioCall={this.props.audioCall}
+          shareScreen={this.props.shareScreen}
         />
         <MessageList
           messages={messageList}
@@ -53,7 +54,10 @@ ChatWindow.propTypes = {
   onClose: PropTypes.func.isRequired,
   onFilesSelected: PropTypes.func,
   onUserInputSubmit: PropTypes.func.isRequired,
-  showEmoji: PropTypes.bool
+  showEmoji: PropTypes.bool,
+  sendVideo: PropTypes.func,
+  audioCall: PropTypes.func,
+  shareScreen: PropTypes.func
 }
 
 export default ChatWindow;

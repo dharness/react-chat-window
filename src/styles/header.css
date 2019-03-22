@@ -36,10 +36,10 @@
 }
 
 .sc-header--custom-button {
-  width: 40px;
+  width: 30px;
   align-self: center;
-  height: 40px;
-  margin-right: 10px;
+  height: 30px;
+  margin-right: 5px;
   box-sizing: border-box;
   cursor: pointer;
   border-radius: 5px;

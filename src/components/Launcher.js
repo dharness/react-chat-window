@@ -61,7 +61,8 @@ class Launcher extends Component {
           onClose={this.handleClick.bind(this)}
           showEmoji={this.props.showEmoji}
           sendVideo={this.props.sendVideo}
-          videoCall={this.props.videoCall}
+          audioCall={this.props.audioCall}
+          shareScreen={this.props.shareScreen}
         />
       </div>
     );
@@ -87,7 +88,8 @@ Launcher.propTypes = {
   mute: PropTypes.bool,
   showEmoji: PropTypes.bool,
   sendVideo: PropTypes.func,
-  videoCall: PropTypes.func
+  audioCall: PropTypes.func,
+  shareScreen: PropTypes.func
 };
 
 Launcher.defaultProps = {
