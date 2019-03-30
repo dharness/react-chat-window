@@ -1,3 +1,0 @@
-# {{name}}
-
-Describe {{name}} here.
