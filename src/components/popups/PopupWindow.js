@@ -9,7 +9,7 @@ class PopupWindow extends Component {
   }
 
   componentWillUnmount() {
-    this.scLauncher.removeEventListener(this.interceptLauncherClick);
+    this.scLauncher.removeEventListener('click', this.interceptLauncherClick);
   }
 
   interceptLauncherClick = (e) => {

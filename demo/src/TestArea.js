@@ -6,7 +6,9 @@ class TestArea extends Component {
       <div className="demo-test-area--wrapper">
         <div className="demo-test-area--title">
           <div className="demo-test-area--title-main">react-chat-window demo</div>
-          <div className="demo-test-area--title-sub">made by King of the Stack</div>
+          <div className="demo-test-area--title-sub">
+            <a href="https://kingofthestack.com">made by King of the Stack</a>
+          </div>
         </div>
         <form className="demo-test-area" onSubmit={(e)=> {
             e.preventDefault();
@@ -25,7 +27,7 @@ class TestArea extends Component {
           react-chat-window is a chat window that allows you to build and add custom live chat to your sites. It includes only the react chat widget. There is no backend, and no communication system baked in.
           <br />
           <br/>
-          For instructions on how to use react-chat-window click <a href="https://github.com/kingofthestack/react-chat-window">here</a>.
+          Usage instructions for react-chat-window are <a href="https://github.com/kingofthestack/react-chat-window">on Github</a>.
         </p>
       </div>
     )

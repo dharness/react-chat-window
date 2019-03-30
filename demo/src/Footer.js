@@ -5,7 +5,7 @@ class Footer extends Component {
     return (
       <div className="demo-footer">
         <div>
-          <div>Copyright 2017. King of the Stack</div>
+          <div>Copyright {new Date().getFullYear()}. King of the Stack</div>
           <div>All rights reserved</div>
         </div>
         <div>
