@@ -1,5 +1,7 @@
 # react-chat-window
 
+![GitHub license](https://d25lcipzij17d.cloudfront.net/badge.svg?id=js&type=6&v=1.2.1&x2=0)
+
 `react-chat-window` provides an intercom-like chat window that can be included easily in any project for free. It provides no messaging facilities, only the view component.
 
 <a href="https://www.npmjs.com/package/react-chat-window" target="\_parent">
