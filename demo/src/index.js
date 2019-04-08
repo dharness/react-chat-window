@@ -6,7 +6,6 @@ import TestArea from './TestArea'
 import Header from './Header'
 import Footer from './Footer'
 import monsterImgUrl from './../assets/monster.png'
-import Highlight from 'react-highlight.js'
 import './../assets/styles'
 
 

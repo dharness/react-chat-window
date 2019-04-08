@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import EmojiConvertor from 'emoji-js'
 import emojiData from './emojiData'
 
@@ -16,7 +16,7 @@ export default ({ onEmojiPicked, filter }) => (
             filteredEmojis.length > 0 &&
           <div className="sc-emoji-picker--category-title">{category.name}</div>
           }
-          {filteredEmojis.map(({ char, name }) => {
+          {filteredEmojis.map(({ char, _name }) => {
             return (
               <span
                 key={char}

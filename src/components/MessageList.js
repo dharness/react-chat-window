@@ -3,7 +3,7 @@ import Message from './Messages'
 
 class MessageList extends Component {
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(_prevProps, _prevState) {
     this.scrollList.scrollTop = this.scrollList.scrollHeight
   }
 
