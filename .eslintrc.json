@@ -29,14 +29,21 @@
             "error",
             "unix"
         ],
+        "no-console": ["error", { "allow": ["error"] }],
         "no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
         "quotes": [
             "error",
             "single"
         ],
+        "react/prop-types": "off",
         "semi": [
             "error",
             "never"
         ]
+    },
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
     }
 }

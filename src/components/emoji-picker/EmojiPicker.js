@@ -6,7 +6,7 @@ import emojiData from './emojiData'
 const emojiConvertor = new EmojiConvertor()
 emojiConvertor.init_env()
 
-export default ({ onEmojiPicked, filter }) => (
+const EmojiPicker = ({ onEmojiPicked, filter }) => (
   <div className="sc-emoji-picker">
     {emojiData.map((category) => {
       const filteredEmojis = category.emojis.filter(({ name }) => name.includes(filter))
@@ -32,3 +32,5 @@ export default ({ onEmojiPicked, filter }) => (
     })}
   </div>
 )
+
+export default EmojiPicker
