@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import closeIcon from './../assets/close-icon.png';
+import React, { Component } from 'react'
+import closeIcon from './../assets/close-icon.png'
 
 
 class Header extends Component {
@@ -13,8 +13,8 @@ class Header extends Component {
           <img src={closeIcon} alt="" />
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default Header;
+export default Header

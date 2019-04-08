@@ -8,6 +8,6 @@ const MESSAGE_TYPES = {
     VISITOR_ID: 'broker.visitor_id',
     MESSAGE: 'broker.message',
   },
-};
+}
 
-module.exports = MESSAGE_TYPES;
+module.exports = MESSAGE_TYPES

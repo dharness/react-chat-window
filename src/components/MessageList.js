@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import Message from './Messages'
 
 class MessageList extends Component {
 
   componentDidUpdate(prevProps, prevState) {
-    this.scrollList.scrollTop = this.scrollList.scrollHeight;
+    this.scrollList.scrollTop = this.scrollList.scrollHeight
   }
 
   render () {

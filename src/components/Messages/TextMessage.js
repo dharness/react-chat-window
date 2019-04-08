@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import Linkify from 'react-linkify';
+import React, { Component } from 'react'
+import Linkify from 'react-linkify'
 
 
 const TextMessage = (props) => {

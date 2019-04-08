@@ -1,12 +1,12 @@
 import React, {Component} from 'react'
 import {render} from 'react-dom'
 import {Launcher} from '../../src'
-import messageHistory from './messageHistory';
-import TestArea from './TestArea';
-import Header from './Header';
-import Footer from './Footer';
-import monsterImgUrl from "./../assets/monster.png";
-import Highlight from "react-highlight.js";
+import messageHistory from './messageHistory'
+import TestArea from './TestArea'
+import Header from './Header'
+import Footer from './Footer'
+import monsterImgUrl from './../assets/monster.png'
+import Highlight from 'react-highlight.js'
 import './../assets/styles'
 
 
@@ -14,12 +14,12 @@ import './../assets/styles'
 class Demo extends Component {
 
   constructor() {
-    super();
+    super()
     this.state = {
       messageList: messageHistory,
       newMessagesCount: 0,
       isOpen: false
-    };
+    }
   }
 
   _onMessageWasSent(message) {
@@ -29,10 +29,10 @@ class Demo extends Component {
   }
 
   _onFilesSelected(fileList) {
-    const objectURL = window.URL.createObjectURL(fileList[0]);
+    const objectURL = window.URL.createObjectURL(fileList[0])
     this.setState({
       messageList: [...this.state.messageList, {
-        type: 'file', author: "me",
+        type: 'file', author: 'me',
         data: {
           url: objectURL,
           fileName: fileList[0].name

@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
-import './styles';
-import Launcher from './components/Launcher';
+import React, {Component} from 'react'
+import './styles'
+import Launcher from './components/Launcher'
 
 
-export { Launcher };
+export { Launcher }

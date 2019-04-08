@@ -1,30 +1,30 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 class FileIcon extends Component {
 
   _handleClick(e) {
-    e.preventDefault();
-    this.props.onClick && this.props.onClick(e);
+    e.preventDefault()
+    this.props.onClick && this.props.onClick(e)
   }
 
   render() {
     return (
-    <button
-      onFocus={this.props.onFocus}
-      onBlur={this.props.onBlur}
-      onClick={this._handleClick.bind(this)}
-      className="sc-user-input--file-icon-wrapper"
-    >
-      <svg
-        version='1.1'
-        className='sc-user-input--file-icon'
-        xmlns='http://www.w3.org/2000/svg'
-        x='0px'
-        y='0px'
-        width='60px'
-        height='60px'
-        viewBox='0 0 55 55'
-        enableBackground='new 0 0 60 60'>
+      <button
+        onFocus={this.props.onFocus}
+        onBlur={this.props.onBlur}
+        onClick={this._handleClick.bind(this)}
+        className="sc-user-input--file-icon-wrapper"
+      >
+        <svg
+          version='1.1'
+          className='sc-user-input--file-icon'
+          xmlns='http://www.w3.org/2000/svg'
+          x='0px'
+          y='0px'
+          width='60px'
+          height='60px'
+          viewBox='0 0 55 55'
+          enableBackground='new 0 0 60 60'>
           <g>
             <path d='M43.922,6.653c-2.643-2.644-6.201-4.107-9.959-4.069c-3.774,0.019-7.32,1.497-9.983,4.161l-12.3,12.3l-8.523,8.521
             c-4.143,4.144-4.217,10.812-0.167,14.862c1.996,1.996,4.626,2.989,7.277,2.989c2.73,0,5.482-1.055,7.583-3.156l15.547-15.545
@@ -37,10 +37,10 @@ class FileIcon extends Component {
             L25.459,40.895c-0.563,0.562-0.563,1.473,0,2.035c0.281,0.281,0.65,0.422,1.018,0.422c0.369,0,0.737-0.141,1.018-0.422
             L43.83,26.596C49.354,21.073,49.395,12.126,43.922,6.653z' />
           </g>
-      </svg>
-    </button>
-    );
+        </svg>
+      </button>
+    )
   }
 }
 
-export default FileIcon;
+export default FileIcon
