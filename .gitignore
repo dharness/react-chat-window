@@ -1,13 +1,13 @@
-/coverage
-/demo/dist
+coverage/
+demo/dist/
 
 # Generated build files
-/es
-/lib
-/umd
+es/
+lib/
+umd/
 
 # Node
-/node_modules
+node_modules/
 npm-debug.log*
 package-lock.json
 

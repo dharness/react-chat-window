@@ -1,6 +1,6 @@
 {
   "name": "react-chat-window",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "react-chat-window React component",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -32,8 +32,8 @@
     "react": "15.6.1",
     "react-dom": "15.6.1"
   },
-  "author": "",
-  "homepage": "",
+  "author": "kingofthestack",
+  "homepage": "https://kingofthestack.github.io/react-chat-window/",
   "license": "MIT",
   "repository": {
     "type": "git",
