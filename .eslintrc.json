@@ -33,7 +33,8 @@
         "no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
         "quotes": [
             "error",
-            "single"
+            "single",
+            { "avoidEscape": true, "allowTemplateLiterals": true }
         ],
         "react/prop-types": "off",
         "semi": [
