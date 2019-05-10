@@ -2,39 +2,45 @@
   "name": "react-chat-window",
   "version": "1.2.0",
   "description": "react-chat-window React component",
-  "main": "lib/index.js",
-  "module": "es/index.js",
-  "files": [
-    "css",
-    "es",
-    "lib",
-    "umd"
-  ],
+  "main": "dist/index.js",
   "scripts": {
-    "build": "nwb build-react-component --copy-files",
+    "build": "webpack",
     "clean": "nwb clean-module && nwb clean-demo",
     "lint": "eslint src demo/src",
-    "start": "nwb serve-react-demo",
+    "start": "./node_modules/.bin/webpack-dev-server",
     "gh:publish": "nwb build-demo && gh-pages -d demo/dist"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.4.4",
     "emoji-js": "3.2.2",
     "gh-pages": "^1.2.0",
     "prop-types": "15.5.10",
     "react-highlight.js": "1.0.5",
     "react-linkify": "^0.2.1",
-    "socket.io-client": "2.0.3"
+    "socket.io-client": "2.0.3",
+    "webpack": "^4.31.0",
+    "webpack-dev-server": "^3.3.1"
   },
   "peerDependencies": {
     "react": "15.x"
   },
   "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.4",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "@babel/preset-react": "^7.0.0",
     "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.5",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "eslint": "^5.13.0",
     "eslint-plugin-react": "^7.12.4",
-    "nwb": "^0.23.0",
-    "react": "15.6.1",
-    "react-dom": "15.6.1"
+    "css-loader": "^2.1.1",
+    "file-loader": "^3.0.1",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "style-loader": "^0.23.1",
+    "webpack-cli": "^3.3.2"
   },
   "author": "kingofthestack",
   "homepage": "https://kingofthestack.github.io/react-chat-window/",
