@@ -25,7 +25,6 @@
   ],
   "dependencies": {
     "emoji-js": "3.2.2",
-    "react-highlight.js": "1.0.5",
     "react-linkify": "^0.2.1",
     "socket.io-client": "2.0.3"
   },
