@@ -43,6 +43,7 @@ class Demo extends Component {
     super();
     this.state = {
       messageList: []
+      typing: true
     };
   }
 
@@ -73,6 +74,7 @@ class Demo extends Component {
         }}
         onMessageWasSent={this._onMessageWasSent.bind(this)}
         messageList={this.state.messageList}
+        typing={this.state.typing}
         showEmoji
       />
     </div>)
@@ -100,6 +102,7 @@ Launcher props:
 | newMessagesCount | number | no | The number of new messages. If greater than 0, this number will be displayed in a badge on the launcher. Defaults to `0`. |
 | onFilesSelected  | function([fileList](https://developer.mozilla.org/en-US/docs/Web/API/FileList)) | no | Called after file has been selected from dialogue in chat window. |
 | onMessageWasSent | function([message](#message-objects)) | yes | Called when a message is sent, with a message object as an argument. |
+| typing           | boolean | no | Whether or not to show typing indicator in the message box. Defaults to `false`.
 | showEmoji        | boolean | no | Whether or not to show the emoji button in the input bar. Defaults to `true`.
 
 
