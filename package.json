@@ -5,10 +5,12 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "webpack",
-    "clean": "rm -rf demo/dist ; rm -rf dist",
+    "build-demo": "npm run build && webpack --config webpack.config.dev.js",
     "lint": "eslint src demo/src",
-    "start": "webpack-dev-server --mode development",
-    "gh:publish": "nwb build-demo && gh-pages -d demo/dist"
+    "start": "npm run build && webpack-dev-server --config webpack.config.dev.js",
+    "prepublish": "npm run build",
+    "gh:publish": "npm run build-demo && gh-pages -d demo/dist",
+    "clean": "rm -rf demo/dist ; rm -rf dist"
   },
   "author": "kingofthestack",
   "homepage": "https://kingofthestack.github.io/react-chat-window/",
