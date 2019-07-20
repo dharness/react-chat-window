@@ -18,6 +18,7 @@ class Demo extends Component {
     this.state = {
       messageList: messageHistory,
       newMessagesCount: 0,
+      typing: false,
       isOpen: false
     };
   }
@@ -55,6 +56,18 @@ class Demo extends Component {
     }
   }
 
+  _startTyping() {
+    this.setState({
+      typing: true
+    })
+  }
+
+  _stopTyping() {
+    this.setState({
+      typing: false
+    })
+  }
+
   _handleClick() {
     this.setState({
       isOpen: !this.state.isOpen,
@@ -67,6 +80,8 @@ class Demo extends Component {
       <Header />
       <TestArea
         onMessage={this._sendMessage.bind(this)}
+        startTyping={this._startTyping.bind(this)}
+        stopTyping={this._stopTyping.bind(this)}
       />
       <Launcher
         agentProfile={{
@@ -80,6 +95,7 @@ class Demo extends Component {
         handleClick={this._handleClick.bind(this)}
         isOpen={this.state.isOpen}
         showEmoji
+        typing={this.state.typing}
       />
       <img className="demo-monster-img" src={monsterImgUrl} />
       <Footer />
