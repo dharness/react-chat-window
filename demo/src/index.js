@@ -18,8 +18,8 @@ class Demo extends Component {
     this.state = {
       messageList: messageHistory,
       newMessagesCount: 0,
-      typing: false,
-      isOpen: false
+      isOpen: false,
+      isTyping: false
     };
   }
 
@@ -58,14 +58,14 @@ class Demo extends Component {
 
   _startTyping() {
     this.setState({
-      typing: true
-    })
+      isTyping: true
+    });
   }
 
   _stopTyping() {
     this.setState({
-      typing: false
-    })
+      isTyping: false
+    });
   }
 
   _handleClick() {
@@ -95,7 +95,7 @@ class Demo extends Component {
         handleClick={this._handleClick.bind(this)}
         isOpen={this.state.isOpen}
         showEmoji
-        typing={this.state.typing}
+        showTypingIndicator={this.state.isTyping}
       />
       <img className="demo-monster-img" src={monsterImgUrl} />
       <Footer />

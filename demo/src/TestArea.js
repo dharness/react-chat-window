@@ -2,23 +2,23 @@ import React, { Component } from 'react'
 
 class TestArea extends Component {
   constructor (props) {
-    super(props)
+    super(props);
 
-    this.timeout = null
-    this._onKeyUp = this._onKeyUp.bind(this)
+    this.timeout = null;
+    this._onKeyUp = this._onKeyUp.bind(this);
   }
 
   _onKeyUp() {
     if (this.timeout) {
-      clearTimeout(this.timeout)
+      clearTimeout(this.timeout);
     }
 
-    this.props.startTyping()
+    this.props.startTyping();
 
     // stop typing after 1 second of inactivity
     this.timeout = setTimeout(() => {
-      this.props.stopTyping()
-    }, 1000)
+      this.props.stopTyping();
+    }, 1000);
   }
 
   render () {
@@ -34,7 +34,7 @@ class TestArea extends Component {
             e.preventDefault();
             this.props.onMessage(this.textArea.value);
 
-            this.props.stopTyping()
+            this.props.stopTyping();
 
             this.textArea.value = '';
           }}>
