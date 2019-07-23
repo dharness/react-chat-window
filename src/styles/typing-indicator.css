@@ -1,0 +1,52 @@
+.sc-typing-indicator {
+  padding-top: 20px;
+  width: 300px;
+  margin: auto;
+}
+
+.sc-typing-indicator--circle {
+  width: 28px;
+  height: 22px;
+  padding: 5px 8px;
+  border-radius: 15px;
+  background-color: #f4f7f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sc-typing-indicator--dot {
+  background-color: #90949c;
+  animation: typing-indicator 1.5s infinite ease-in-out;
+  display: inline-block;
+  border-radius: 2px;
+  margin-right: 2px;
+  height: 4px;
+  width: 4px;
+}
+
+@keyframes typing-indicator {
+  0% {
+    transform: translateY(0px)
+  }
+
+  28% {
+    transform: translateY(-5px)
+  }
+
+  44% {
+    transform: translateY(0px)
+  }
+}
+
+.sc-typing-indicator--dot:nth-child(1) {
+  animation-delay: 200ms;
+}
+
+.sc-typing-indicator--dot:nth-child(2) {
+  animation-delay: 300ms;
+}
+
+.sc-typing-indicator--dot:nth-child(3) {
+  animation-delay: 400ms;
+}
