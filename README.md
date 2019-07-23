@@ -42,7 +42,8 @@ class Demo extends Component {
   constructor() {
     super();
     this.state = {
-      messageList: []
+      messageList: [],
+      isTyping: true
     };
   }
 
@@ -74,6 +75,7 @@ class Demo extends Component {
         onMessageWasSent={this._onMessageWasSent.bind(this)}
         messageList={this.state.messageList}
         showEmoji
+        showTypingIndicator={this.state.isTyping}
       />
     </div>)
   }
@@ -92,15 +94,16 @@ Launcher props:
 
 |      prop        | type   | required | description |
 |------------------|--------|----------|-------------|
-| agentProfile     | [object](#agent-profile-objects) | yes | Represents your product or service's customer service agent. Fields: imageUrl (string), teamName (string). |
-| handleClick      | function | yes | Intercept the click event on the launcher. No argument sent when function is called. |
-| isOpen           | boolean | yes | Force the open/close state of the chat window. If this is not set, it will open and close when clicked. |
-| messageList      | [[message](#message-objects)] | yes | An array of message objects to be rendered as a conversation. |
-| mute             | boolean | no | Don't play sound for incoming messages. Defaults to `false`. |
-| newMessagesCount | number | no | The number of new messages. If greater than 0, this number will be displayed in a badge on the launcher. Defaults to `0`. |
-| onFilesSelected  | function([fileList](https://developer.mozilla.org/en-US/docs/Web/API/FileList)) | no | Called after file has been selected from dialogue in chat window. |
-| onMessageWasSent | function([message](#message-objects)) | yes | Called when a message is sent, with a message object as an argument. |
-| showEmoji        | boolean | no | Whether or not to show the emoji button in the input bar. Defaults to `true`.
+| agentProfile          | [object](#agent-profile-objects) | yes | Represents your product or service's customer service agent. Fields: imageUrl (string), teamName (string). |
+| handleClick           | function | yes | Intercept the click event on the launcher. No argument sent when function is called. |
+| isOpen                | boolean | yes | Force the open/close state of the chat window. If this is not set, it will open and close when clicked. |
+| messageList           | [[message](#message-objects)] | yes | An array of message objects to be rendered as a conversation. |
+| mute                  | boolean | no | Don't play sound for incoming messages. Defaults to `false`. |
+| newMessagesCount      | number | no | The number of new messages. If greater than 0, this number will be displayed in a badge on the launcher. Defaults to `0`. |
+| onFilesSelected       | function([fileList](https://developer.mozilla.org/en-US/docs/Web/API/FileList)) | no | Called after file has been selected from dialogue in chat window. |
+| onMessageWasSent      | function([message](#message-objects)) | yes | Called when a message is sent, with a message object as an argument. |
+| showEmoji             | boolean | no | Whether or not to show the emoji button in the input bar. Defaults to `true`.
+| showTypingIndicator   | boolean | no | Whether or not to show typing indicator in the message box. Defaults to `false`.
 
 
 ### Message Objects
