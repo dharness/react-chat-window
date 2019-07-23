@@ -15,3 +15,15 @@
 - `npm run build` will build the component for publishing to npm and also bundle the demo app.
 
 - `npm run clean` will delete built resources.
+
+## PRs
+
+Thanks for wanting to contribute to RCW! Here are some pull request guidelines:
+
+- Follow current code structure
+- Keep all changes in one PR related to a single topic
+- Include a description
+- Using the demo, ensure that it still functions as expected
+- Don't forget to update readme/docs
+- Ensure `npm run lint` passes
+  - `npm run lint -- --fix` will autofix where possible (in general, `--` passes any flags following it)

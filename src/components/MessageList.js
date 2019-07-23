@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import Message from './Messages'
+import Message from './Messages';
 
 class MessageList extends Component {
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(_prevProps, _prevState) {
     this.scrollList.scrollTop = this.scrollList.scrollHeight;
   }
 
@@ -11,10 +11,10 @@ class MessageList extends Component {
     return (
       <div className="sc-message-list" ref={el => this.scrollList = el}>
         {this.props.messages.map((message, i) => {
-          return <Message message={message} key={i} />
+          return <Message message={message} key={i} />;
         })}
-      </div>)
+      </div>);
   }
 }
 
-export default MessageList
+export default MessageList;

@@ -31,7 +31,7 @@ class PopupWindow extends Component {
           {children}
         </div>
       </div>
-    )
+    );
   }
 }
 

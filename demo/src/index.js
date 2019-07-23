@@ -1,13 +1,12 @@
-import React, {Component} from 'react'
-import {render} from 'react-dom'
-import {Launcher} from '../../src'
+import React, {Component} from 'react';
+import {render} from 'react-dom';
+import {Launcher} from '../../src';
 import messageHistory from './messageHistory';
 import TestArea from './TestArea';
 import Header from './Header';
 import Footer from './Footer';
-import monsterImgUrl from "./../assets/monster.png";
-import Highlight from "react-highlight.js";
-import './../assets/styles'
+import monsterImgUrl from './../assets/monster.png';
+import './../assets/styles';
 
 
 
@@ -25,25 +24,25 @@ class Demo extends Component {
   _onMessageWasSent(message) {
     this.setState({
       messageList: [...this.state.messageList, message]
-    })
+    });
   }
 
   _onFilesSelected(fileList) {
     const objectURL = window.URL.createObjectURL(fileList[0]);
     this.setState({
       messageList: [...this.state.messageList, {
-        type: 'file', author: "me",
+        type: 'file', author: 'me',
         data: {
           url: objectURL,
           fileName: fileList[0].name
         }
       }]
-    })
+    });
   }
 
   _sendMessage(text) {
     if (text.length > 0) {
-      const newMessagesCount = this.state.isOpen ? this.state.newMessagesCount : this.state.newMessagesCount + 1
+      const newMessagesCount = this.state.isOpen ? this.state.newMessagesCount : this.state.newMessagesCount + 1;
       this.setState({
         newMessagesCount: newMessagesCount,
         messageList: [...this.state.messageList, {
@@ -51,7 +50,7 @@ class Demo extends Component {
           type: 'text',
           data: { text }
         }]
-      })
+      });
     }
   }
 
@@ -59,7 +58,7 @@ class Demo extends Component {
     this.setState({
       isOpen: !this.state.isOpen,
       newMessagesCount: 0
-    })
+    });
   }
 
   render() {
@@ -83,8 +82,8 @@ class Demo extends Component {
       />
       <img className="demo-monster-img" src={monsterImgUrl} />
       <Footer />
-    </div>
+    </div>;
   }
 }
 
-render(<Demo/>, document.querySelector('#demo'))
+render(<Demo/>, document.querySelector('#demo'));

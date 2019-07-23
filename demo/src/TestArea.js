@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 class TestArea extends Component {
   render () {
@@ -11,10 +11,10 @@ class TestArea extends Component {
           </div>
         </div>
         <form className="demo-test-area" onSubmit={(e)=> {
-            e.preventDefault();
-            this.props.onMessage(this.textArea.value);
-            this.textArea.value = '';
-          }}>
+          e.preventDefault();
+          this.props.onMessage(this.textArea.value);
+          this.textArea.value = '';
+        }}>
           <div className="demo-test-area--preamble">Test the chat window by sending a message:</div>
           <textarea
             ref={(e) => { this.textArea = e; }}
@@ -30,8 +30,8 @@ class TestArea extends Component {
           Usage instructions for react-chat-window are <a href="https://github.com/kingofthestack/react-chat-window">on Github</a>.
         </p>
       </div>
-    )
+    );
   }
 }
 
-export default TestArea
+export default TestArea;

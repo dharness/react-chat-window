@@ -13,6 +13,7 @@
   "scripts": {
     "build": "nwb build-react-component --copy-files",
     "clean": "nwb clean-module && nwb clean-demo",
+    "lint": "eslint src demo/src",
     "start": "nwb serve-react-demo",
     "gh:publish": "nwb build-demo && gh-pages -d demo/dist"
   },
@@ -28,6 +29,9 @@
     "react": "15.x"
   },
   "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.13.0",
+    "eslint-plugin-react": "^7.12.4",
     "nwb": "^0.23.0",
     "react": "15.6.1",
     "react-dom": "15.6.1"

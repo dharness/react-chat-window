@@ -32,11 +32,11 @@ class UserInput extends Component {
   handleKeyUp(event) {
     const inputHasText = event.target.innerHTML.length !== 0 &&
       event.target.innerText !== '\n';
-    this.setState({ inputHasText })
+    this.setState({ inputHasText });
   }
 
   _showFilePicker() {
-    this._fileUploadButton.click()
+    this._fileUploadButton.click();
   }
 
   toggleEmojiPicker = (e) => {
@@ -69,7 +69,7 @@ class UserInput extends Component {
 
   _onFilesSelected(event) {
     if (event.target.files && event.target.files.length > 0) {
-      this.props.onFilesSelected(event.target.files)
+      this.props.onFilesSelected(event.target.files);
     }
   }
 
@@ -110,7 +110,7 @@ class UserInput extends Component {
         <div className="sc-user-input--button">
           <SendIcon onClick={this._submitText.bind(this)} />
         </div>
-      )
+      );
     }
     return (
       <div className="sc-user-input--button">
@@ -123,7 +123,7 @@ class UserInput extends Component {
           onChange={this._onFilesSelected.bind(this)}
         />
       </div>
-    )
+    );
   }
 
   render() {
