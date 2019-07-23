@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-
-import Message from './Messages';
-import TypingIndicator from './TypingIndicator';
+import Message from './Messages'
 
 class MessageList extends Component {
 
@@ -15,7 +13,6 @@ class MessageList extends Component {
         {this.props.messages.map((message, i) => {
           return <Message message={message} key={i} />
         })}
-        {this.props.showTypingIndicator && <TypingIndicator />}
       </div>)
   }
 }

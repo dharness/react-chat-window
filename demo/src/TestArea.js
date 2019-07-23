@@ -1,26 +1,6 @@
 import React, { Component } from 'react'
 
 class TestArea extends Component {
-  constructor (props) {
-    super(props);
-
-    this.timeout = null;
-    this._onKeyUp = this._onKeyUp.bind(this);
-  }
-
-  _onKeyUp() {
-    if (this.timeout) {
-      clearTimeout(this.timeout);
-    }
-
-    this.props.startTyping();
-
-    // stop typing after 1 second of inactivity
-    this.timeout = setTimeout(() => {
-      this.props.stopTyping();
-    }, 1000);
-  }
-
   render () {
     return (
       <div className="demo-test-area--wrapper">
@@ -33,9 +13,6 @@ class TestArea extends Component {
         <form className="demo-test-area" onSubmit={(e)=> {
             e.preventDefault();
             this.props.onMessage(this.textArea.value);
-
-            this.props.stopTyping();
-
             this.textArea.value = '';
           }}>
           <div className="demo-test-area--preamble">Test the chat window by sending a message:</div>
@@ -43,7 +20,6 @@ class TestArea extends Component {
             ref={(e) => { this.textArea = e; }}
             className="demo-test-area--text"
             placeholder="Write a test message...."
-            onKeyUp={this._onKeyUp}
           />
           <button className="demo-test-area--button"> Send Message! </button>
         </form>

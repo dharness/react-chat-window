@@ -5,4 +5,3 @@ import './header.css';
 import './message.css';
 import './user-input.css';
 import './popup-window.css';
-import './typing-indicator.css';
