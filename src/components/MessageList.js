@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import Message from './Messages'
-import TypingIndicator from './TypingIndicator'
+
+import Message from './Messages';
+import TypingIndicator from './TypingIndicator';
 
 class MessageList extends Component {
 
