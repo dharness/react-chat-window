@@ -1,4 +1,4 @@
-import monsterImgUrl from './../assets/monster.png'
+import monsterImgUrl from './../assets/monster.png';
 
 export default [
   {type: 'text', author: 'me', data: { text: "Why don't they have salsa on the table?"} },
@@ -23,4 +23,4 @@ export default [
       url: monsterImgUrl,
       fileName: 'bigBlue.png'
     }},
-]
+];

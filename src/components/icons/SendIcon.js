@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 class SendIcon extends Component {
 
@@ -7,7 +7,7 @@ class SendIcon extends Component {
       <button
         onFocus={this.props.onFocus}
         onBlur={this.props.onBlur}
-        onClick={(e) => { e.preventDefault(); this.props.onClick(e) }}
+        onClick={(e) => { e.preventDefault(); this.props.onClick(e); }}
         className="sc-user-input--send-icon-wrapper"
       >
         <svg
@@ -28,8 +28,8 @@ class SendIcon extends Component {
           </g>
         </svg>
       </button>
-    )
+    );
   }
 }
 
-export default SendIcon
+export default SendIcon;

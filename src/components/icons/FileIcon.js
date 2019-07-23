@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 class FileIcon extends Component {
 
   _handleClick(e) {
-    e.preventDefault()
-    this.props.onClick && this.props.onClick(e)
+    e.preventDefault();
+    this.props.onClick && this.props.onClick(e);
   }
 
   render() {
@@ -39,8 +39,8 @@ class FileIcon extends Component {
           </g>
         </svg>
       </button>
-    )
+    );
   }
 }
 
-export default FileIcon
+export default FileIcon;

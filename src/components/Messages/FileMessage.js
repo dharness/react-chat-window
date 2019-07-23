@@ -1,5 +1,5 @@
-import React from 'react'
-import FileIcon from './../icons/FileIcon'
+import React from 'react';
+import FileIcon from './../icons/FileIcon';
 
 
 const FileMessage = (props) => {
@@ -8,7 +8,7 @@ const FileMessage = (props) => {
       <FileIcon />
       <p>{props.data.fileName}</p>
     </a>
-  )
-}
+  );
+};
 
-export default FileMessage
+export default FileMessage;

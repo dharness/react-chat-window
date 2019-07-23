@@ -1,15 +1,15 @@
-import React from 'react'
-import EmojiConvertor from 'emoji-js'
-import emojiData from './emojiData'
+import React from 'react';
+import EmojiConvertor from 'emoji-js';
+import emojiData from './emojiData';
 
 
-const emojiConvertor = new EmojiConvertor()
-emojiConvertor.init_env()
+const emojiConvertor = new EmojiConvertor();
+emojiConvertor.init_env();
 
 const EmojiPicker = ({ onEmojiPicked, filter }) => (
   <div className="sc-emoji-picker">
     {emojiData.map((category) => {
-      const filteredEmojis = category.emojis.filter(({ name }) => name.includes(filter))
+      const filteredEmojis = category.emojis.filter(({ name }) => name.includes(filter));
       return (
         <div className="sc-emoji-picker--category" key={category.name}>
           {
@@ -25,12 +25,12 @@ const EmojiPicker = ({ onEmojiPicked, filter }) => (
               >
                 {char}
               </span>
-            )
+            );
           })}
         </div>
-      )
+      );
     })}
   </div>
-)
+);
 
-export default EmojiPicker
+export default EmojiPicker;

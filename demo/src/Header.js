@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 class Header extends Component {
   render () {
@@ -9,8 +9,8 @@ class Header extends Component {
           <a href="https://github.com/kingofthestack/react-chat-window">Usage</a>
         </div>
       </div>
-    )
+    );
   }
 }
 
-export default Header
+export default Header;
