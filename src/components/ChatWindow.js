@@ -4,7 +4,6 @@ import MessageList from './MessageList';
 import UserInput from './UserInput';
 import Header from './Header';
 
-
 class ChatWindow extends Component {
   constructor(props) {
     super(props);
@@ -20,26 +19,38 @@ class ChatWindow extends Component {
 
   render() {
     let messageList = this.props.messageList || [];
-    let classList = [
-      'sc-chat-window',
-      (this.props.isOpen ? 'opened' : 'closed')
-    ];
+    let classList = ['sc-chat-window', this.props.isOpen ? 'opened' : 'closed'];
+    const {
+      headerComponent,
+      userInputComponent,
+      messageComponent,
+    } = this.props;
     return (
       <div className={classList.join(' ')}>
-        <Header
-          teamName={this.props.agentProfile.teamName}
-          imageUrl={this.props.agentProfile.imageUrl}
-          onClose={this.props.onClose}
-        />
+        {headerComponent ? (
+          headerComponent
+        ) : (
+          <Header
+            teamName={this.props.agentProfile.teamName}
+            imageUrl={this.props.agentProfile.imageUrl}
+            onClose={this.props.onClose}
+          />
+        )}
+
         <MessageList
+          messageComponent={messageComponent}
           messages={messageList}
           imageUrl={this.props.agentProfile.imageUrl}
         />
-        <UserInput
-          onSubmit={this.onUserInputSubmit.bind(this)}
-          onFilesSelected={this.onFilesSelected.bind(this)}
-          showEmoji={this.props.showEmoji}
-        />
+        {userInputComponent ? (
+          userInputComponent
+        ) : (
+          <UserInput
+            onSubmit={this.onUserInputSubmit.bind(this)}
+            onFilesSelected={this.onFilesSelected.bind(this)}
+            showEmoji={this.props.showEmoji}
+          />
+        )}
       </div>
     );
   }
@@ -51,7 +62,10 @@ ChatWindow.propTypes = {
   onClose: PropTypes.func.isRequired,
   onFilesSelected: PropTypes.func,
   onUserInputSubmit: PropTypes.func.isRequired,
-  showEmoji: PropTypes.bool
+  showEmoji: PropTypes.bool,
+  userInputComponent: PropTypes.node,
+  headerComponent: PropTypes.node,
+  messageComponent: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
 };
 
 export default ChatWindow;

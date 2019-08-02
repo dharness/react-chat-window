@@ -71,6 +71,8 @@ class Demo extends Component {
           teamName: 'react-chat-window',
           imageUrl: 'https://a.slack-edge.com/66f9/img/avatars-teams/ava_0001-34.png'
         }}
+        // messageComponent={(props) => <p>{props.message.data.text}</p>}
+        // headerComponent={<div>header</div>}
         onMessageWasSent={this._onMessageWasSent.bind(this)}
         messageList={this.state.messageList}
         showEmoji
@@ -101,6 +103,9 @@ Launcher props:
 | onFilesSelected  | function([fileList](https://developer.mozilla.org/en-US/docs/Web/API/FileList)) | no | Called after file has been selected from dialogue in chat window. |
 | onMessageWasSent | function([message](#message-objects)) | yes | Called when a message is sent, with a message object as an argument. |
 | showEmoji        | boolean | no | Whether or not to show the emoji button in the input bar. Defaults to `true`.
+| userInputComponent | react node | no | Replace the user input component.
+| headerComponent | react node | no | Replace the header component.
+| messageComponent | react component | no | Replace the message component, make sure this component has "message" props(a message is an object)
 
 
 ### Message Objects
