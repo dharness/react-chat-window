@@ -20,7 +20,7 @@ class UserInput extends Component {
   }
 
   componentDidMount() {
-    this.emojiPickerButton = document.querySelector('#sc-emoji-picker-button'); 
+    this.emojiPickerButton = document.querySelector('#sc-emoji-picker-button');
   }
 
   handleKeyDown(event) {
@@ -111,19 +111,20 @@ class UserInput extends Component {
           <SendIcon onClick={this._submitText.bind(this)} />
         </div>
       );
+    } else if (this.props.showFilePicker) {
+      return (
+        <div className="sc-user-input--button">
+          <FileIcon onClick={this._showFilePicker.bind(this)} />
+          <input
+            type="file"
+            name="files[]"
+            multiple
+            ref={(e) => { this._fileUploadButton = e; }}
+            onChange={this._onFilesSelected.bind(this)}
+          />
+        </div>
+      );
     }
-    return (
-      <div className="sc-user-input--button">
-        <FileIcon onClick={this._showFilePicker.bind(this)} />
-        <input
-          type="file"
-          name="files[]"
-          multiple
-          ref={(e) => { this._fileUploadButton = e; }}
-          onChange={this._onFilesSelected.bind(this)}
-        />
-      </div>
-    );
   }
 
   render() {
@@ -162,7 +163,8 @@ class UserInput extends Component {
 UserInput.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   onFilesSelected: PropTypes.func.isRequired,
-  showEmoji: PropTypes.bool
+  showEmoji: PropTypes.bool,
+  showFilePicker: PropTypes.bool
 };
 
 export default UserInput;

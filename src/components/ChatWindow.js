@@ -39,6 +39,7 @@ class ChatWindow extends Component {
           onSubmit={this.onUserInputSubmit.bind(this)}
           onFilesSelected={this.onFilesSelected.bind(this)}
           showEmoji={this.props.showEmoji}
+          showFilePicker={this.props.showFilePicker}
         />
       </div>
     );
@@ -51,7 +52,8 @@ ChatWindow.propTypes = {
   onClose: PropTypes.func.isRequired,
   onFilesSelected: PropTypes.func,
   onUserInputSubmit: PropTypes.func.isRequired,
-  showEmoji: PropTypes.bool
+  showEmoji: PropTypes.bool,
+  showFilePicker: PropTypes.bool
 };
 
 export default ChatWindow;
