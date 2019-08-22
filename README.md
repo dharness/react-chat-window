@@ -100,7 +100,8 @@ Launcher props:
 | newMessagesCount | number | no | The number of new messages. If greater than 0, this number will be displayed in a badge on the launcher. Defaults to `0`. |
 | onFilesSelected  | function([fileList](https://developer.mozilla.org/en-US/docs/Web/API/FileList)) | no | Called after file has been selected from dialogue in chat window. |
 | onMessageWasSent | function([message](#message-objects)) | yes | Called when a message is sent, with a message object as an argument. |
-| showEmoji        | boolean | no | Whether or not to show the emoji button in the input bar. Defaults to `true`.
+| showEmoji        | boolean | no | Whether or not to show the emoji button in the input bar. Defaults to `true`. |
+| showFilePicker   | boolean | no | Whether or not to show the file picker button in the input bar. Defaults to `true`.
 
 
 ### Message Objects
