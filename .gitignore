@@ -1,5 +1,6 @@
 coverage/
 demo/dist/
+.idea/
 
 # Generated build files
 es/

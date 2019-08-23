@@ -124,6 +124,8 @@ class UserInput extends Component {
           />
         </div>
       );
+    } else {
+      return null;
     }
   }
 
