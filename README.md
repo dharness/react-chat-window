@@ -23,7 +23,7 @@
 ## Table of Contents
 - [Installation](#installation)
 - [Example](#example)
-- [Components](#api)
+- [Components](#components)
 
 ## Installation
 
