@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 function TypingIndicator () {
   return (
@@ -9,8 +9,8 @@ function TypingIndicator () {
         <div className="sc-typing-indicator--dot"></div>
       </div>
     </div>
-  )
+  );
 }
 
 
-export default TypingIndicator
+export default TypingIndicator;
