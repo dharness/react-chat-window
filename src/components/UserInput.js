@@ -44,7 +44,7 @@ class UserInput extends Component {
     if (!this.state.emojiPickerIsOpen) {
       this.setState({ emojiPickerIsOpen: true });
     }
-  }
+  };
 
   closeEmojiPicker = (e) => {
     if (this.emojiPickerButton.contains(e.target)) {
@@ -52,7 +52,7 @@ class UserInput extends Component {
       e.preventDefault();
     }
     this.setState({ emojiPickerIsOpen: false });
-  }
+  };
 
   _submitText(event) {
     event.preventDefault();
@@ -84,12 +84,12 @@ class UserInput extends Component {
         data: { emoji }
       });
     }
-  }
+  };
 
   handleEmojiFilterChange = (event) => {
     const emojiFilter = event.target.value;
     this.setState({ emojiFilter });
-  }
+  };
 
   _renderEmojiPopup = () => (
     <PopupWindow
@@ -102,16 +102,18 @@ class UserInput extends Component {
         filter={this.state.emojiFilter}
       />
     </PopupWindow>
-  )
+  );
 
   _renderSendOrFileIcon() {
-    if (this.state.inputHasText) {
+    if (!this.props.showFile) {
+      const disabledSend = !this.state.inputHasText;
       return (
         <div className="sc-user-input--button">
-          <SendIcon onClick={this._submitText.bind(this)} />
+          <SendIcon onClick={this._submitText.bind(this)} disabled={disabledSend}/>
         </div>
       );
     }
+
     return (
       <div className="sc-user-input--button">
         <FileIcon onClick={this._showFilePicker.bind(this)} />
@@ -144,7 +146,7 @@ class UserInput extends Component {
         >
         </div>
         <div className="sc-user-input--buttons">
-          <div className="sc-user-input--button"></div>
+          <div className="sc-user-input--button"/>
           <div className="sc-user-input--button">
             {this.props.showEmoji && <EmojiIcon
               onClick={this.toggleEmojiPicker}
@@ -162,7 +164,8 @@ class UserInput extends Component {
 UserInput.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   onFilesSelected: PropTypes.func.isRequired,
-  showEmoji: PropTypes.bool
+  showEmoji: PropTypes.bool,
+  showFile: PropTypes.bool,
 };
 
 export default UserInput;

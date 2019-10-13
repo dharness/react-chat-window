@@ -9,6 +9,7 @@ class SendIcon extends Component {
         onBlur={this.props.onBlur}
         onClick={(e) => { e.preventDefault(); this.props.onClick(e); }}
         className="sc-user-input--send-icon-wrapper"
+        disabled={this.props.disabled}
       >
         <svg
           version='1.1'

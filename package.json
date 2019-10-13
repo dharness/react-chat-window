@@ -1,7 +1,7 @@
 {
-  "name": "react-chat-window",
-  "version": "1.2.0",
-  "description": "react-chat-window React component",
+  "name": "react-chat-windower",
+  "version": "1.2.1",
+  "description": "A clone of the react-chat-window React component with enhancements",
   "main": "lib/index.js",
   "module": "es/index.js",
   "files": [
@@ -37,13 +37,13 @@
     "react-dom": "15.6.1"
   },
   "author": "kingofthestack",
-  "homepage": "https://kingofthestack.github.io/react-chat-window/",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kingofthestack/react-chat-window.git"
+    "url": "https://github.com/rburton/react-chat-window.git"
   },
   "keywords": [
-    "react-component"
+    "react-component",
+    "chat"
   ]
 }

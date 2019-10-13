@@ -26,7 +26,7 @@ class Launcher extends Component {
   }
 
   playIncomingMessageSound() {
-    var audio = new Audio(incomingMessageSound);
+    const audio = new Audio(incomingMessageSound);
     audio.play();
   }
 
@@ -39,6 +39,7 @@ class Launcher extends Component {
       });
     }
   }
+
   render() {
     const isOpen = this.props.hasOwnProperty('isOpen') ? this.props.isOpen : this.state.isOpen;
     const classList = [
@@ -59,6 +60,7 @@ class Launcher extends Component {
           agentProfile={this.props.agentProfile}
           isOpen={isOpen}
           onClose={this.handleClick.bind(this)}
+          showFile={this.props.showFile}
           showEmoji={this.props.showEmoji}
         />
       </div>
@@ -84,11 +86,13 @@ Launcher.propTypes = {
   messageList: PropTypes.arrayOf(PropTypes.object),
   mute: PropTypes.bool,
   showEmoji: PropTypes.bool,
+  showFile: PropTypes.bool,
 };
 
 Launcher.defaultProps = {
   newMessagesCount: 0,
-  showEmoji: true
+  showEmoji: true,
+  showFile: true
 };
 
 export default Launcher;
