@@ -1,8 +1,8 @@
 # Warning!
 
-This repo is not actively maintained or developed by kingofthestack. PRs, issues, and feature requests may not recieve any response.
+This repo is not actively maintained or developed by kingofthestack. PRs, issues, and feature requests may not receive any response.
 
-We appologize for the inconvenience. 
+Thank you for the support over the years for RCW! We appologize for the inconvenience.
 
 # react-chat-window
 
