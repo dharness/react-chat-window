@@ -11,7 +11,7 @@ class Launcher extends Component {
     super();
     this.state = {
       launcherIcon,
-      isOpen: false
+      isOpen: false,
     };
   }
 
@@ -47,7 +47,7 @@ class Launcher extends Component {
     ];
     return (
       <div id="sc-launcher">
-        <div className={classList.join(' ')} onClick={this.handleClick.bind(this)}>
+        <div className={classList.join(' ')} onClick={this.handleClick.bind(this)} style={{background: `${this.props.launcherColor}`}}>
           <MessageCount count={this.props.newMessagesCount} isOpen={isOpen} />
           <img className={'sc-open-icon'} src={launcherIconActive} />
           <img className={'sc-closed-icon'} src={launcherIcon} />
@@ -84,11 +84,13 @@ Launcher.propTypes = {
   messageList: PropTypes.arrayOf(PropTypes.object),
   mute: PropTypes.bool,
   showEmoji: PropTypes.bool,
+  launcherColor: PropTypes.string
 };
 
 Launcher.defaultProps = {
   newMessagesCount: 0,
-  showEmoji: true
+  showEmoji: true,
+  launcherColor: "blue"
 };
 
 export default Launcher;
