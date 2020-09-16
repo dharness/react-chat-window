@@ -1,6 +1,6 @@
 import React from 'react';
 import EmojiConvertor from 'emoji-js';
-import emojiData from './emojiData';
+import emojiData from './emojiData.json';
 
 
 const emojiConvertor = new EmojiConvertor();

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import TextMessage from './TextMessage';
 import EmojiMessage from './EmojiMessage';
 import FileMessage from './FileMessage';
+import AgentTypingMessage from './AgentTypingMessage';
 import chatIconUrl from './../../assets/chat-icon.svg';
 
 
@@ -13,6 +14,8 @@ class Message extends Component {
       return <TextMessage {...this.props.message} />;
     case 'emoji':
       return <EmojiMessage {...this.props.message} />;
+    case 'AgentTyping':
+      return <AgentTypingMessage {...this.props.message} />;
     case 'file':
       return <FileMessage {...this.props.message} />;
     default:

@@ -42,6 +42,18 @@
   width: calc(100% - 90px);
 }
 
+.sc-message--agent-typing {
+  padding: 17px 20px;
+  border-radius: 6px;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.4;
+  white-space: pre-wrap;
+  -webkit-font-smoothing: subpixel-antialiased;
+  word-wrap: break-word;
+  width: calc(100% - 90px);
+}
+
 .sc-message--content.sent .sc-message--text {
   color: white;
   background-color: #4e8cff;

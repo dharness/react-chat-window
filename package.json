@@ -1,7 +1,7 @@
 {
-  "name": "react-chat-window",
-  "version": "1.2.0",
-  "description": "react-chat-window React component",
+  "name": "@jamesfiltness/chat-widget",
+  "version": "1.2.4",
+  "description": "live-chat-widget React component",
   "main": "lib/index.js",
   "module": "es/index.js",
   "files": [
@@ -23,6 +23,7 @@
     "prop-types": "15.5.10",
     "react-highlight.js": "1.0.5",
     "react-linkify": "^0.2.1",
+    "react-spinners": "^0.9.0",
     "socket.io-client": "2.0.3"
   },
   "peerDependencies": {
@@ -36,12 +37,12 @@
     "react": "15.6.1",
     "react-dom": "15.6.1"
   },
-  "author": "kingofthestack",
-  "homepage": "https://kingofthestack.github.io/react-chat-window/",
+  "author": "Digital Genius",
+  "homepage": "https://github.com/DigitalGenius/react-chat-window",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kingofthestack/react-chat-window.git"
+    "url": "https://github.com/DigitalGenius/react-chat-window"
   },
   "keywords": [
     "react-component"
