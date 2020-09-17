@@ -56,6 +56,7 @@ class Launcher extends Component {
           messageList={this.props.messageList}
           onUserInputSubmit={this.props.onMessageWasSent}
           onUserStartTyping={this.props.onUserStartTyping}
+          onUserEndChat={this.props.onUserEndChat}
           onFilesSelected={this.props.onFilesSelected}
           agentProfile={this.props.agentProfile}
           isOpen={isOpen}
@@ -86,6 +87,7 @@ Launcher.propTypes = {
   messageList: PropTypes.arrayOf(PropTypes.object),
   mute: PropTypes.bool,
   showEmoji: PropTypes.bool,
+  onUserEndChat: PropTypes.func,
 };
 
 Launcher.defaultProps = {

@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import MessageList from './MessageList';
 import UserInput from './UserInput';
+import UserOptions from './UserOptions';
 import Header from './Header';
 
 
@@ -45,6 +46,9 @@ class ChatWindow extends Component {
           onUserStartTyping={this.onUserStartTyping(this)}
           showEmoji={this.props.showEmoji}
         />
+        <UserOptions 
+          endChat={this.props.onUserEndChat}
+        />
       </div>
     );
   }
@@ -56,7 +60,8 @@ ChatWindow.propTypes = {
   onClose: PropTypes.func.isRequired,
   onFilesSelected: PropTypes.func,
   onUserInputSubmit: PropTypes.func.isRequired,
-  showEmoji: PropTypes.bool
+  showEmoji: PropTypes.bool,
+  onUserEndChat: PropTypes.func,
 };
 
 export default ChatWindow;
