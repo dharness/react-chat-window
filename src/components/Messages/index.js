@@ -24,6 +24,7 @@ class Message extends Component {
   }
 
   render () {
+    const { message } = this.props;
     let contentClassList = [
       'sc-message--content',
       (this.props.message.author === 'me' ? 'sent' : 'received')
@@ -31,10 +32,12 @@ class Message extends Component {
     return (
       <div className="sc-message">
         <div className={contentClassList.join(' ')}>
-          <div className="sc-message--avatar" style={{
-            backgroundImage: `url(${chatIconUrl})`
-          }}></div>
-          {this._renderMessageOfType(this.props.message.type)}
+          {!message.hideAvatar ? (
+            <div className="sc-message--avatar" style={{
+              backgroundImage: `url(${chatIconUrl})`
+            }}></div>) : null 
+          }
+          {this._renderMessageOfType(message.type)}
         </div>
       </div>);
   }

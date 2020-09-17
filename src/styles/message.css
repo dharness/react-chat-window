@@ -43,7 +43,7 @@
 }
 
 .sc-message--agent-typing {
-  padding: 17px 20px;
+  padding: 17px 0px;
   border-radius: 6px;
   font-weight: 300;
   font-size: 14px;
@@ -52,6 +52,11 @@
   -webkit-font-smoothing: subpixel-antialiased;
   word-wrap: break-word;
   width: calc(100% - 90px);
+}
+
+.sc-message--agent-typing > div:first-child {
+  display: inline-block;
+  margin-right: 10px;
 }
 
 .sc-message--content.sent .sc-message--text {
