@@ -18,6 +18,10 @@ class ChatWindow extends Component {
     this.props.onFilesSelected(filesList);
   }
 
+  onUserStartTyping() {
+    this.props.onUserStartTyping();
+  }
+
   render() {
     let messageList = this.props.messageList || [];
     let classList = [
@@ -38,6 +42,7 @@ class ChatWindow extends Component {
         <UserInput
           onSubmit={this.onUserInputSubmit.bind(this)}
           onFilesSelected={this.onFilesSelected.bind(this)}
+          onUserStartTyping={this.onUserStartTyping(this)}
           showEmoji={this.props.showEmoji}
         />
       </div>

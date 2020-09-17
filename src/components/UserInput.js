@@ -15,7 +15,8 @@ class UserInput extends Component {
       inputActive: false,
       inputHasText: false,
       emojiPickerIsOpen: false,
-      emojiFilter: ''
+      emojiFilter: '',
+      typing: false,
     };
   }
 
@@ -26,6 +27,14 @@ class UserInput extends Component {
   handleKeyDown(event) {
     if (event.keyCode === 13 && !event.shiftKey) {
       return this._submitText(event);
+    }
+    
+    if (!this.state.typing) {
+      this.setState({
+        typing: true,
+      }, () => {
+        this.props.onUserStartTyping();
+      });
     }
   }
 
@@ -162,7 +171,8 @@ class UserInput extends Component {
 UserInput.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   onFilesSelected: PropTypes.func.isRequired,
-  showEmoji: PropTypes.bool
+  showEmoji: PropTypes.bool,
+  onUserStartTyping: PropTypes.func,
 };
 
 export default UserInput;
