@@ -1,6 +1,6 @@
 {
   "name": "@jamesfiltness/chat-widget",
-  "version": "1.2.13",
+  "version": "1.2.15",
   "description": "live-chat-widget React component",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -21,6 +21,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
     "@fortawesome/free-solid-svg-icons": "^5.14.0",
     "@fortawesome/react-fontawesome": "^0.1.11",
+    "classnames": "^2.2.6",
     "emoji-js": "3.2.2",
     "gh-pages": "^1.2.0",
     "prop-types": "15.5.10",

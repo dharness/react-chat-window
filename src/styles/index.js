@@ -4,4 +4,5 @@ import './launcher.css';
 import './header.css';
 import './message.css';
 import './user-input.css';
+import './user-options.css';
 import './popup-window.css';

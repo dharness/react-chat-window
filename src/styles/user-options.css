@@ -1,0 +1,23 @@
+.sc-user-options__toggle {
+    float: right;
+    color: #68737d;
+    margin-right: 10px;
+    position: absolute;
+    bottom: 9px;
+    right: 24px;
+}
+
+.sc-user-options__list {
+    display: none;
+    position: absolute;
+    bottom: 35px;
+    left: 10px;
+}
+
+.sc-user-options__list--visible {
+    display: block;
+}
+
+.sc-user-options__list ul {
+    list-style: none;
+}
