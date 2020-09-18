@@ -26,6 +26,9 @@ class UserInput extends Component {
 
   handleKeyDown(event) {
     if (event.keyCode === 13 && !event.shiftKey) {
+      this.setState({
+        typing: false,
+      });
       return this._submitText(event);
     }
     

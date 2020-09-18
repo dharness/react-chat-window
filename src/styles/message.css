@@ -43,14 +43,14 @@
 }
 
 .sc-message--status {
-  padding: 17px 0px;
+  padding: 10px 0px;
   border-radius: 6px;
   font-weight: normal;
   font-size: 14px;
   line-height: 1.4;
   white-space: pre-wrap;
   word-wrap: break-word;
-  width: calc(100% - 90px);
+  width: 100%;
   text-align: center;
   color: #68737d;
 }
