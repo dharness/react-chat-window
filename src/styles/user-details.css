@@ -6,20 +6,23 @@
     display: block;
     margin: 20px auto;
     border: 1px solid #ccc;
-    padding: 5px 10px;
+    padding: 11px 62px;
     color: #666;
     border-radius: 3px;
 }
 
 .sc-user-details-label {
-  margin-bottom: 5px;
   display: block;
-  color: #666;
+  color: #999;
   font-size: 14px;
 }
 
 .sc-user-details-input {
   border-radius: 3px;
-  padding: 4px;
+  padding: 11px 17px;
   border: 1px solid #ccc;
+  width: 200px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 13px;
 }
