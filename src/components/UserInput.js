@@ -164,7 +164,7 @@ class UserInput extends Component {
               tooltip={this._renderEmojiPopup()}
             />}
           </div>
-          {this._renderSendOrFileIcon()}
+          {/* {this._renderSendOrFileIcon()} */}
         </div>
       </form>
     );

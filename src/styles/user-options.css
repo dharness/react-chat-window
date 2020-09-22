@@ -3,15 +3,22 @@
     color: #68737d;
     margin-right: 10px;
     position: absolute;
-    bottom: 9px;
-    right: 24px;
+    bottom: 7px;
+    right: 12px;
+    color: #aaa;
+    cursor: pointer;
 }
 
 .sc-user-options__list {
     display: none;
     position: absolute;
-    bottom: 35px;
+    bottom: 24px;
     left: 10px;
+    width: 338px;
+    font-size: 14px;
+    color: #aaa;
+    background:#fff;
+    border: 1px solid #ccc;
 }
 
 .sc-user-options__list--visible {
@@ -20,4 +27,11 @@
 
 .sc-user-options__list ul {
     list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sc-user-options__list li {
+    padding: 10px;
+    cursor: pointer;
 }

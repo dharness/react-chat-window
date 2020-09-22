@@ -62,6 +62,8 @@ class Launcher extends Component {
           isOpen={isOpen}
           onClose={this.handleClick.bind(this)}
           showEmoji={this.props.showEmoji}
+          onUserDetailsSubmitted={this.props.onUserDetailsSubmitted}
+          userDetailsPopulated={this.props.userDetailsPopulated}
         />
       </div>
     );
@@ -88,6 +90,8 @@ Launcher.propTypes = {
   mute: PropTypes.bool,
   showEmoji: PropTypes.bool,
   onUserEndChat: PropTypes.func,
+  onUserDetailsSubmitted: PropTypes.func,
+  userDetailsPopulated: PropTypes.func,
 };
 
 Launcher.defaultProps = {

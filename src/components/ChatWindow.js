@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import MessageList from './MessageList';
 import UserInput from './UserInput';
 import UserOptions from './UserOptions';
+import UserDetails from './UserDetails';
 import Header from './Header';
 
 
@@ -27,7 +28,8 @@ class ChatWindow extends Component {
     let messageList = this.props.messageList || [];
     let classList = [
       'sc-chat-window',
-      (this.props.isOpen ? 'opened' : 'closed')
+      (this.props.isOpen ? 'opened' : 'closed'),
+      (this.props.userDetailsPopulated ? 'show-chat' : 'show-user-details-screen'),
     ];
     return (
       <div className={classList.join(' ')}>
@@ -36,19 +38,29 @@ class ChatWindow extends Component {
           imageUrl={this.props.agentProfile.imageUrl}
           onClose={this.props.onClose}
         />
-        <MessageList
-          messages={messageList}
-          imageUrl={this.props.agentProfile.imageUrl}
-        />
-        <UserInput
-          onSubmit={this.onUserInputSubmit.bind(this)}
-          onFilesSelected={this.onFilesSelected.bind(this)}
-          onUserStartTyping={this.onUserStartTyping.bind(this)}
-          showEmoji={this.props.showEmoji}
-        />
-        <UserOptions 
-          endChat={this.props.onUserEndChat}
-        />
+        {this.props.userDetailsPopulated ?
+          (
+            <Fragment>
+              <MessageList
+                messages={messageList}
+                imageUrl={this.props.agentProfile.imageUrl}
+              />
+              <UserInput
+                onSubmit={this.onUserInputSubmit.bind(this)}
+                onFilesSelected={this.onFilesSelected.bind(this)}
+                onUserStartTyping={this.onUserStartTyping.bind(this)}
+                showEmoji={this.props.showEmoji}
+              />
+              <UserOptions 
+                endChat={this.props.onUserEndChat}
+              />
+            </Fragment>
+          ) : (
+            <UserDetails
+              detailsSubmitted={this.props.onUserDetailsSubmitted}
+            />
+          )
+        }
       </div>
     );
   }
@@ -62,6 +74,8 @@ ChatWindow.propTypes = {
   onUserInputSubmit: PropTypes.func.isRequired,
   showEmoji: PropTypes.bool,
   onUserEndChat: PropTypes.func,
+  onUserDetailsSubmitted: PropTypes.func,
+  userDetailsPopulated: PropTypes.bool, 
 };
 
 export default ChatWindow;

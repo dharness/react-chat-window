@@ -10,10 +10,13 @@
   background: white;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   transition: 0.3s ease-in-out;
   border-radius: 10px;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.show-chat {
+  justify-content: space-between;
 }
 
 .sc-chat-window.closed {

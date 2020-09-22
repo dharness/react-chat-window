@@ -8,6 +8,11 @@
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   transition: background-color .2s ease,box-shadow .2s ease;
+  border-radius: 5px;
+  bottom: 0px;
+  margin: 20px 20px 30px 20px;
+  background: #fff;
+  border: 1px solid #e9ebed;
 }
 
 

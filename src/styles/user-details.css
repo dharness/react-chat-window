@@ -1,0 +1,25 @@
+.sc-user-details {
+  margin: auto;
+}
+
+.sc-user-details-submit {
+    display: block;
+    margin: 20px auto;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    color: #666;
+    border-radius: 3px;
+}
+
+.sc-user-details-label {
+  margin-bottom: 5px;
+  display: block;
+  color: #666;
+  font-size: 14px;
+}
+
+.sc-user-details-input {
+  border-radius: 3px;
+  padding: 4px;
+  border: 1px solid #ccc;
+}
