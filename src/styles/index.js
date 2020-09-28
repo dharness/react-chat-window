@@ -7,3 +7,4 @@ import './user-input.css';
 import './user-options.css';
 import './user-details.css';
 import './popup-window.css';
+import './start-new-chat.css';

@@ -4,6 +4,7 @@ import MessageList from './MessageList';
 import UserInput from './UserInput';
 import UserOptions from './UserOptions';
 import UserDetails from './UserDetails';
+import StartNewChat from './startNewChat';
 import Header from './Header';
 
 
@@ -45,15 +46,25 @@ class ChatWindow extends Component {
                 messages={messageList}
                 imageUrl={this.props.agentProfile.imageUrl}
               />
-              <UserInput
-                onSubmit={this.onUserInputSubmit.bind(this)}
-                onFilesSelected={this.onFilesSelected.bind(this)}
-                onUserStartTyping={this.onUserStartTyping.bind(this)}
-                showEmoji={this.props.showEmoji}
-              />
-              <UserOptions 
-                endChat={this.props.onUserEndChat}
-              />
+              {this.props.showStartNewChatButton
+                ?  (
+                  <StartNewChat
+                    startNewChat={this.props.startNewChat}
+                  />
+                )  
+                : (
+                  <Fragment>
+                    <UserInput
+                      onSubmit={this.onUserInputSubmit.bind(this)}
+                      onFilesSelected={this.onFilesSelected.bind(this)}
+                      onUserStartTyping={this.onUserStartTyping.bind(this)}
+                      showEmoji={this.props.showEmoji}
+                    />
+                    <UserOptions 
+                      endChat={this.props.onUserEndChat}
+                    />
+                  </Fragment>
+                )}
             </Fragment>
           ) : (
             <UserDetails
@@ -76,6 +87,8 @@ ChatWindow.propTypes = {
   onUserEndChat: PropTypes.func,
   onUserDetailsSubmitted: PropTypes.func,
   userDetailsPopulated: PropTypes.bool, 
+  showStartNewChatButton: PropTypes.bool,
+  startNewChat: PropTypes.func,
 };
 
 export default ChatWindow;

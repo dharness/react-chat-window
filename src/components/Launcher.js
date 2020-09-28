@@ -64,6 +64,8 @@ class Launcher extends Component {
           showEmoji={this.props.showEmoji}
           onUserDetailsSubmitted={this.props.onUserDetailsSubmitted}
           userDetailsPopulated={this.props.userDetailsPopulated}
+          showStartNewChatButton={this.props.showStartNewChatButton}
+          startNewChat={this.props.startNewChat}
         />
       </div>
     );
@@ -92,6 +94,8 @@ Launcher.propTypes = {
   onUserEndChat: PropTypes.func,
   onUserDetailsSubmitted: PropTypes.func,
   userDetailsPopulated: PropTypes.func,
+  showStartNewChatButton: PropTypes.bool,
+  startNewChat: PropTypes.func,
 };
 
 Launcher.defaultProps = {

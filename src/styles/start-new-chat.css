@@ -1,0 +1,11 @@
+.sc-start-new-chat-button {
+    color: #2072b7;
+    border-radius: 30px;
+    border: 2px solid #2072b7;
+    margin: 30px;
+    padding: 10px;
+    font-size: 16px;
+    background: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}

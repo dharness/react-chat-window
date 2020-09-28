@@ -1,10 +1,9 @@
-# Warning!
+This is fork of react-chat-window npm package which has some additional functionality:
+* A start screen before the chat to enable the user to fill out their details - name field is currently implemented
+* Enabling events such as ending chat, user typing/not typing
 
-This repo is not actively maintained or developed by kingofthestack. PRs, issues, and feature requests may not receive any response.
 
-Thank you for the support over the years for RCW! We appologize for the inconvenience.
-
-# react-chat-window
+## react-chat-window
 
 `react-chat-window` provides an intercom-like chat window that can be included easily in any project for free. It provides no messaging facilities, only the view component.
 
@@ -18,26 +17,26 @@ Thank you for the support over the years for RCW! We appologize for the inconven
 
 ![Demo gif of react-chat-window being used](https://puu.sh/xei2F/fd4a121185.gif)
 
-## Features
+### Features
 
 - Customizeable
 - Backend agnostic
 - Free
 
-## [Demo](https://kingofthestack.github.io/react-chat-window/)
+### [Demo](https://kingofthestack.github.io/react-chat-window/)
 
-## Table of Contents
+### Table of Contents
 - [Installation](#installation)
 - [Example](#example)
 - [Components](#components)
 
-## Installation
+### Installation
 
 ```
 $ npm install react-chat-window
 ```
 
-## Example
+### Example
 
 ``` javascript
 import React, {Component} from 'react'
@@ -88,7 +87,7 @@ class Demo extends Component {
 
 For more detailed examples see the demo folder.
 
-## Components
+### Components
 
 # Launcher
 
@@ -153,6 +152,6 @@ Look like this:
 }
 ```
 
-## People Using react-chat-window
+### People Using react-chat-window
 
 If you're using react-chat-window in a product I'd love to see what you're making! Email me at dylan@kingofthestack.com
