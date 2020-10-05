@@ -41,7 +41,7 @@ class UserDetails extends Component {
           htmlFor="name-field"
           className="sc-user-details-label"
         >
-          Enter Name:
+          Your Name:
         </label>
         <input
           type="text"
@@ -51,7 +51,7 @@ class UserDetails extends Component {
         />
         <input
           type="submit"
-          value="Start Chat"
+          value="Start chat"
           className="sc-user-details-submit"
         />
       </form>

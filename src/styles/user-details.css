@@ -7,22 +7,24 @@
     margin: 20px auto;
     border: 1px solid #ccc;
     padding: 11px 62px;
-    color: #666;
+    color: #EDF1F9;
+    background: #EDF1F9;
     border-radius: 3px;
 }
 
 .sc-user-details-label {
   display: block;
-  color: #999;
+  color: #EDF1F9;
   font-size: 14px;
 }
 
 .sc-user-details-input {
   border-radius: 3px;
   padding: 11px 17px;
-  border: 1px solid #ccc;
+  border: 1px solid #000;
   width: 200px;
   font-size: 16px;
   cursor: pointer;
   margin-top: 13px;
+  color: #000;
 }

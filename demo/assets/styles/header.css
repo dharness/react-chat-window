@@ -1,6 +1,6 @@
 .demo-header {
   width: 100%;
-  color: #4e8cff;
+  color: #3E81C3;
   display: flex;
   justify-content: space-between;
   max-width: 1100px;
@@ -22,7 +22,7 @@
 }
 
 .demo-header--links a, .demo-header--title a {
-  color: #4e8cff;
+  color: #3E81C3;
   text-decoration: none;
   cursor: pointer;
 }

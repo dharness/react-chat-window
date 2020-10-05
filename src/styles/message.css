@@ -39,7 +39,6 @@
   white-space: pre-wrap;
   -webkit-font-smoothing: subpixel-antialiased;
   word-wrap: break-word;
-  width: calc(100% - 90px);
 }
 
 .sc-message--status {
@@ -73,14 +72,14 @@
 
 .sc-message--content.sent .sc-message--text {
   color: white;
-  background-color: #4e8cff;
+  background-color: #3E81C3;
   max-width: calc(100% - 120px);
   word-wrap: break-word;
 }
 
 .sc-message--content.received .sc-message--text {
-  color: #263238;
-  background-color: #f4f7f9;
+  color: #000;
+  background-color: #EDF1F9;
   margin-right: 40px;
 }
 
