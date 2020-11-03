@@ -4,7 +4,7 @@
 
 .sc-user-details-submit {
     display: block;
-    margin: 20px auto;
+    margin: 0px auto;
     border: 1px solid #ccc;
     padding: 11px 62px;
     color: #EDF1F9;
@@ -23,6 +23,7 @@
   padding: 11px 17px;
   border: 1px solid #000;
   width: 200px;
+  margin-bottom: 20px;
   font-size: 16px;
   cursor: pointer;
   margin-top: 13px;

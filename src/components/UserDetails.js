@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { get } from 'lodash';
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 
 class UserDetails extends Component {
   constructor(props) {
@@ -9,6 +9,7 @@ class UserDetails extends Component {
     this.state = {
       name: null,
       orderDetails: null,
+      email: null,
     };
   }
   
@@ -42,40 +43,76 @@ class UserDetails extends Component {
     }
   }
 
+  updateEmailField(e) {
+    const email = e.target.value;
+    if (email) {
+      this.setState({
+        email: e.target.value,
+      });
+    }
+  }
+
   render() {
-    const { startScreenFields } = this.props;
+    const { startScreenFields, startChatButtonValue } = this.props;
     return (
       <form
         className="sc-user-details"
         onSubmit={this.detailsSubmitted.bind(this)}
       >
-        <label
-          htmlFor="name-field"
-          className="sc-user-details-label"
-        >
-          Your Name:
-        </label>
         {get(startScreenFields, 'name') 
           ? (
-            <input
-              type="text"
-              onChange={this.updateNameField.bind(this)}
-              id="name-field"
-              className="sc-user-details-input"
-            />
+            <Fragment>
+              <label
+                htmlFor="name-field"
+                className="sc-user-details-label"
+              >
+                Your Name:
+              </label>
+              <input
+                type="text"
+                onChange={this.updateNameField.bind(this)}
+                id="name-field"
+                className="sc-user-details-input"
+              />
+            </Fragment>
+          ) : null}
+        {get(startScreenFields, 'email') 
+          ? (
+            <Fragment>
+              <label
+                htmlFor="email-field"
+                className="sc-user-details-label"
+              >
+                Email Address:
+              </label>
+              <input
+                type="text"
+                onChange={this.updateEmailField.bind(this)}
+                id="email-field"
+                className="sc-user-details-input"
+              />
+            </Fragment>
           ) : null}
         {get(startScreenFields, 'orderNumber') 
           ? (
-            <input
-              type="text"
-              onChange={this.updateOrderNumberField.bind(this)}
-              id="order-number-field"
-              className="sc-user-details-input"
-            />
+            <Fragment>
+              <label
+                htmlFor="order-number-field"
+                className="sc-user-details-label"
+              >
+                Order Number:
+              </label>
+              <input
+                type="text"
+                onChange={this.updateOrderNumberField.bind(this)}
+                id="order-number-field"
+                className="sc-user-details-input"
+              />
+            </Fragment>
           ) : null}
         <input
           type="submit"
-          value="Start chat"
+          value={startChatButtonValue ? startChatButtonValue : 'Start chat' }
           className="sc-user-details-submit"
         />
       </form>
@@ -86,6 +123,7 @@ class UserDetails extends Component {
 UserDetails.propTypes = {
   detailsSubmitted: PropTypes.func.isRequired,
   startScreenFields: PropTypes.object,
+  startChatButtonValue: PropTypes.string,
 };
 
 export default UserDetails;

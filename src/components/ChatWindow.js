@@ -70,6 +70,7 @@ class ChatWindow extends Component {
             <UserDetails
               detailsSubmitted={this.props.onUserDetailsSubmitted}
               startScreenFields={this.props.startScreenFields}
+              startChatButtonValue={this.props.startChatButtonValue}
             />
           )
         }
@@ -91,6 +92,7 @@ ChatWindow.propTypes = {
   showStartNewChatButton: PropTypes.bool,
   startNewChat: PropTypes.func,
   startScreenFields: PropTypes.object,
+  startChatButtonValue: PropTypes.string,
 };
 
 export default ChatWindow;
