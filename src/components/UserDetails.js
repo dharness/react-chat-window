@@ -8,7 +8,7 @@ class UserDetails extends Component {
 
     this.state = {
       name: null,
-      orderDetails: null,
+      orderNumber: null,
       email: null,
     };
   }
@@ -18,10 +18,25 @@ class UserDetails extends Component {
   }
 
   detailsSubmitted(e) {
+    const {
+      name,
+      orderNumber,
+      email,
+    } = this.state;
+    const { startScreenFields } = this.props;
+
     e.preventDefault();
+
+    const nameFieldRequired = get(startScreenFields, 'name');
+    const emailFieldRequired = get(startScreenFields, 'email');
+    const orderNumberFieldRequired = get(startScreenFields, 'orderNumber');
+
+    const nameFieldValid = nameFieldRequired ? name && name.length : true;
+    const emailFieldValid = emailFieldRequired ? email && email.length : true;
+    const orderNumberFieldValid = orderNumberFieldRequired ? orderNumber && orderNumber.length : true;
     
-    if(this.state.name) {
-      this.props.detailsSubmitted(this.state.name, this.state.orderDetails);
+    if (nameFieldValid && emailFieldValid && orderNumberFieldValid) {
+      this.props.detailsSubmitted(name, orderNumber, email);
     }
   }
 
@@ -54,6 +69,7 @@ class UserDetails extends Component {
 
   render() {
     const { startScreenFields, startChatButtonValue } = this.props;
+
     return (
       <form
         className="sc-user-details"
