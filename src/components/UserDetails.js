@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { get } from 'lodash';
 import React, { Component } from 'react';
 
 class UserDetails extends Component {
@@ -7,6 +8,7 @@ class UserDetails extends Component {
 
     this.state = {
       name: null,
+      orderDetails: null,
     };
   }
   
@@ -18,7 +20,7 @@ class UserDetails extends Component {
     e.preventDefault();
     
     if(this.state.name) {
-      this.props.detailsSubmitted(this.state.name);
+      this.props.detailsSubmitted(this.state.name, this.state.orderDetails);
     }
   }
 
@@ -31,7 +33,17 @@ class UserDetails extends Component {
     }
   }
 
+  updateOrderNumberField(e) {
+    const orderNumber = e.target.value;
+    if (orderNumber) {
+      this.setState({
+        orderNumber: e.target.value,
+      });
+    }
+  }
+
   render() {
+    const { startScreenFields } = this.props;
     return (
       <form
         className="sc-user-details"
@@ -43,12 +55,24 @@ class UserDetails extends Component {
         >
           Your Name:
         </label>
-        <input
-          type="text"
-          onChange={this.updateNameField.bind(this)}
-          id="name-field"
-          className="sc-user-details-input"
-        />
+        {get(startScreenFields, 'name') 
+          ? (
+            <input
+              type="text"
+              onChange={this.updateNameField.bind(this)}
+              id="name-field"
+              className="sc-user-details-input"
+            />
+          ) : null}
+        {get(startScreenFields, 'orderNumber') 
+          ? (
+            <input
+              type="text"
+              onChange={this.updateOrderNumberField.bind(this)}
+              id="order-number-field"
+              className="sc-user-details-input"
+            />
+          ) : null}
         <input
           type="submit"
           value="Start chat"
@@ -61,6 +85,7 @@ class UserDetails extends Component {
 
 UserDetails.propTypes = {
   detailsSubmitted: PropTypes.func.isRequired,
+  startScreenFields: PropTypes.object,
 };
 
 export default UserDetails;
