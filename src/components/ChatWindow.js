@@ -59,6 +59,7 @@ class ChatWindow extends Component {
                       onFilesSelected={this.onFilesSelected.bind(this)}
                       onUserStartTyping={this.onUserStartTyping.bind(this)}
                       showEmoji={this.props.showEmoji}
+                      showChatInputUi={this.props.showChatInputUi}
                     />
                     <UserOptions 
                       endChat={this.props.onUserEndChat}
@@ -93,6 +94,7 @@ ChatWindow.propTypes = {
   startNewChat: PropTypes.func,
   startScreenFields: PropTypes.object,
   startChatButtonValue: PropTypes.string,
+  showChatInputUi: PropTypes.bool,
 };
 
 export default ChatWindow;

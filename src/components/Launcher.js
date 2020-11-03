@@ -68,6 +68,7 @@ class Launcher extends Component {
           startNewChat={this.props.startNewChat}
           startScreenFields={this.props.startScreenFields}
           startChatButtonValue={this.props.startChatButtonValue}
+          showChatInputUi={this.props.showChatInputUi}
         />
       </div>
     );
@@ -100,6 +101,7 @@ Launcher.propTypes = {
   startNewChat: PropTypes.func,
   startScreenFields: PropTypes.object,
   startChatButtonValue: PropTypes.string,
+  showChatInputUi: PropTypes.bool,
 };
 
 Launcher.defaultProps = {
