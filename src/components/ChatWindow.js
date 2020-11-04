@@ -56,17 +56,21 @@ class ChatWindow extends Component {
                 )  
                 : (
                   <Fragment>
-                    <UserInput
-                      onSubmit={this.onUserInputSubmit.bind(this)}
-                      onFilesSelected={this.onFilesSelected.bind(this)}
-                      onUserStartTyping={this.onUserStartTyping.bind(this)}
-                      showEmoji={this.props.showEmoji}
-                      showChatInputUi={this.props.showChatInputUi}
-                    />
-                    <UserOptions 
-                      endChat={this.props.onUserEndChat}
-                    />
+                    {this.props.showChatInputUi ? (
+                      <Fragment>
+                        <UserInput
+                          onSubmit={this.onUserInputSubmit.bind(this)}
+                          onFilesSelected={this.onFilesSelected.bind(this)}
+                          onUserStartTyping={this.onUserStartTyping.bind(this)}
+                          showEmoji={this.props.showEmoji}
+                        />
+                        <UserOptions 
+                          endChat={this.props.onUserEndChat}
+                        />
+                      </Fragment>
+                    ) : null}
                   </Fragment>
+                  
                 )}
             </Fragment>
           ) : (
