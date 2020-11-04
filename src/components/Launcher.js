@@ -20,7 +20,7 @@ class Launcher extends Component {
     const nextMessage = nextProps.messageList[nextProps.messageList.length - 1];
     const isIncoming = (nextMessage || {}).author === 'them';
     const isNew = nextProps.messageList.length > this.props.messageList.length;
-    if (isIncoming && isNew) {
+    if (isIncoming && isNew && this.props.incomingMessageSound) {
       this.playIncomingMessageSound();
     }
   }
@@ -109,6 +109,7 @@ Launcher.propTypes = {
   chatHeaderText: PropTypes.string,
   displayCloseChatButton: PropTypes.bool,
   displayOpenChatButton: PropTypes.bool,
+  playMessageSound: PropTypes.bool,
 };
 
 Launcher.defaultProps = {
