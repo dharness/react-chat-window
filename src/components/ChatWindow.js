@@ -38,6 +38,8 @@ class ChatWindow extends Component {
           teamName={this.props.agentProfile.teamName}
           imageUrl={this.props.agentProfile.imageUrl}
           onClose={this.props.onClose}
+          displayCloseChatButton={this.props.displayCloseChatButton}
+          chatHeaderText={this.props.chatHeaderText}
         />
         {this.props.userDetailsPopulated ?
           (
@@ -95,6 +97,9 @@ ChatWindow.propTypes = {
   startScreenFields: PropTypes.object,
   startChatButtonValue: PropTypes.string,
   showChatInputUi: PropTypes.bool,
+  chatHeaderText: PropTypes.string,
+  displayCloseChatButton: PropTypes.bool,
+  displayOpenChatButton: PropTypes.bool,
 };
 
 export default ChatWindow;

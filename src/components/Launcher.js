@@ -47,11 +47,13 @@ class Launcher extends Component {
     ];
     return (
       <div id="sc-launcher">
-        <div className={classList.join(' ')} onClick={this.handleClick.bind(this)}>
-          <MessageCount count={this.props.newMessagesCount} isOpen={isOpen} />
-          <img className={'sc-open-icon'} src={launcherIconActive} />
-          <img className={'sc-closed-icon'} src={launcherIcon} />
-        </div>
+        {this.props.displayCloseChatButton ? (
+          <div className={classList.join(' ')} onClick={this.handleClick.bind(this)}>
+            <MessageCount count={this.props.newMessagesCount} isOpen={isOpen} />
+            <img className={'sc-open-icon'} src={launcherIconActive} />
+            <img className={'sc-closed-icon'} src={launcherIcon} />
+          </div>
+        ): null}
         <ChatWindow
           messageList={this.props.messageList}
           onUserInputSubmit={this.props.onMessageWasSent}
@@ -69,6 +71,8 @@ class Launcher extends Component {
           startScreenFields={this.props.startScreenFields}
           startChatButtonValue={this.props.startChatButtonValue}
           showChatInputUi={this.props.showChatInputUi}
+          chatHeaderText={this.props.chatHeaderText}
+          displayOpenChatButton={this.props.displayOpenChatButton}
         />
       </div>
     );
@@ -102,6 +106,9 @@ Launcher.propTypes = {
   startScreenFields: PropTypes.object,
   startChatButtonValue: PropTypes.string,
   showChatInputUi: PropTypes.bool,
+  chatHeaderText: PropTypes.string,
+  displayCloseChatButton: PropTypes.bool,
+  displayOpenChatButton: PropTypes.bool,
 };
 
 Launcher.defaultProps = {
