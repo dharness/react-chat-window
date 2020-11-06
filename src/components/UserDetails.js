@@ -74,6 +74,7 @@ class UserDetails extends Component {
       <form
         className="sc-user-details"
         onSubmit={this.detailsSubmitted.bind(this)}
+        autoComplete="off"
       >
         {get(startScreenFields, 'name') 
           ? (
@@ -89,6 +90,7 @@ class UserDetails extends Component {
                 onChange={this.updateNameField.bind(this)}
                 id="name-field"
                 className="sc-user-details-input"
+                autoComplete="off"
               />
             </Fragment>
           ) : null}
@@ -102,10 +104,11 @@ class UserDetails extends Component {
                 Email Address:
               </label>
               <input
-                type="text"
+                type="email"
                 onChange={this.updateEmailField.bind(this)}
                 id="email-field"
                 className="sc-user-details-input"
+                autoComplete="off"
               />
             </Fragment>
           ) : null}
@@ -123,6 +126,7 @@ class UserDetails extends Component {
                 onChange={this.updateOrderNumberField.bind(this)}
                 id="order-number-field"
                 className="sc-user-details-input"
+                autoComplete="off"
               />
             </Fragment>
           ) : null}
