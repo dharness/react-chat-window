@@ -8,14 +8,14 @@ class startNewChatButton extends Component {
         onClick={this.props.startNewChat}
         className="sc-start-new-chat-button"
       >
-          Start new chat
+        {this.props.startNewChatButtonText ? this.props.startNewChatButtonText : 'Start new chat'}
       </button>
     );
   }
 }
 
 startNewChatButton.propTypes = {
-  startNewChat: PropTypes.bool,
+  startNewChatButtonText: PropTypes.any,
 };
 
 export default startNewChatButton;

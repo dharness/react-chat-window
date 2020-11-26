@@ -52,6 +52,7 @@ class ChatWindow extends Component {
                 ?  (
                   <StartNewChat
                     startNewChat={this.props.startNewChat}
+                    startNewChatButtonText={this.props.startNewChatButtonText}
                   />
                 )  
                 : (
@@ -104,6 +105,7 @@ ChatWindow.propTypes = {
   chatHeaderText: PropTypes.string,
   displayCloseChatButton: PropTypes.bool,
   displayOpenChatButton: PropTypes.bool,
+  startNewChatButtonText: PropTypes.any,
 };
 
 export default ChatWindow;

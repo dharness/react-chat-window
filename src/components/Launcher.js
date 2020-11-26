@@ -73,6 +73,7 @@ class Launcher extends Component {
           showChatInputUi={this.props.showChatInputUi}
           chatHeaderText={this.props.chatHeaderText}
           displayOpenChatButton={this.props.displayOpenChatButton}
+          startNewChatButtonText={this.props.startNewChatButtonText}
         />
       </div>
     );
@@ -106,10 +107,12 @@ Launcher.propTypes = {
   startScreenFields: PropTypes.object,
   startChatButtonValue: PropTypes.string,
   showChatInputUi: PropTypes.bool,
-  chatHeaderText: PropTypes.string,
   displayCloseChatButton: PropTypes.bool,
   displayOpenChatButton: PropTypes.bool,
   playMessageSound: PropTypes.bool,
+  targetDOMNodeId: PropTypes.any,
+  chatHeaderText: PropTypes.any,
+  startNewChatButtonText: PropTypes.any,
 };
 
 Launcher.defaultProps = {
