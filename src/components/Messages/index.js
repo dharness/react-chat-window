@@ -4,8 +4,8 @@ import EmojiMessage from './EmojiMessage';
 import FileMessage from './FileMessage';
 import AgentTypingMessage from './AgentTypingMessage';
 import StatusMessage from './StatusMessage';
+import HtmlMessage from './HtmlMessage';
 import chatIconUrl from './../../assets/chat-icon.svg';
-
 
 class Message extends Component {
 
@@ -21,6 +21,8 @@ class Message extends Component {
       return <FileMessage {...this.props.message} />;
     case 'status':
       return <StatusMessage {...this.props.message} />;
+    case 'html':
+      return <HtmlMessage {...this.props.message} />;
     default:
       console.error(`Attempting to load message with unsupported file type '${type}'`);
     }
