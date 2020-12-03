@@ -11,8 +11,16 @@ class MessageList extends Component {
     return (
       <div className="sc-message-list" ref={el => this.scrollList = el}>
         {this.props.messages.map((message, i) => {
-          return <Message message={message} key={i} />;
+          return (
+            <Message
+              message={message}
+              key={i}
+              richContentComponent={this.props.richContentComponent}
+              richContentCallback={this.props.richContentCallback}
+            />
+          );
         })}
+        {this.props.richContentCustomHTML}
       </div>);
   }
 }

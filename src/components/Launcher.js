@@ -45,6 +45,7 @@ class Launcher extends Component {
       'sc-launcher',
       (isOpen ? 'opened' : ''),
     ];
+
     return (
       <div id="sc-launcher">
         {this.props.displayCloseChatButton ? (
@@ -74,6 +75,10 @@ class Launcher extends Component {
           chatHeaderText={this.props.chatHeaderText}
           displayOpenChatButton={this.props.displayOpenChatButton}
           startNewChatButtonText={this.props.startNewChatButtonText}
+          fieldLabels={this.props.fieldLabels}
+          richContentComponent={this.props.richContentComponent}
+          richContentCallback={this.props.richContentCallback}
+          richContentCustomHTML={this.props.children}
         />
       </div>
     );
@@ -113,6 +118,7 @@ Launcher.propTypes = {
   targetDOMNodeId: PropTypes.any,
   chatHeaderText: PropTypes.any,
   startNewChatButtonText: PropTypes.any,
+  fieldLabels: PropTypes.object,
 };
 
 Launcher.defaultProps = {

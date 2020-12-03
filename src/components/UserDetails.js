@@ -68,7 +68,7 @@ class UserDetails extends Component {
   }
 
   render() {
-    const { startScreenFields, startChatButtonValue } = this.props;
+    const { startScreenFields, startChatButtonValue, fieldLabels } = this.props;
 
     return (
       <form
@@ -83,7 +83,7 @@ class UserDetails extends Component {
                 htmlFor="name-field"
                 className="sc-user-details-label"
               >
-                Your Name:
+                {fieldLabels.name ? `${fieldLabels.name}:` : 'Your Name:' }
               </label>
               <input
                 type="text"
@@ -101,7 +101,7 @@ class UserDetails extends Component {
                 htmlFor="email-field"
                 className="sc-user-details-label"
               >
-                Email Address:
+                {fieldLabels.email ? `${fieldLabels.email}:` : 'Email Address:' }
               </label>
               <input
                 type="email"
@@ -119,7 +119,7 @@ class UserDetails extends Component {
                 htmlFor="order-number-field"
                 className="sc-user-details-label"
               >
-                Order Number:
+                {fieldLabels.orderNumber ? `${fieldLabels.orderNumber}:` : 'Order Number:' }
               </label>
               <input
                 type="text"

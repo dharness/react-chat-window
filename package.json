@@ -1,6 +1,6 @@
 {
   "name": "@jamesfiltness/chat-widget",
-  "version": "1.4.0",
+  "version": "1.4.12",
   "description": "live-chat-widget React component",
   "main": "lib/index.js",
   "module": "es/index.js",

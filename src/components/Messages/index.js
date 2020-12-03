@@ -9,7 +9,8 @@ import chatIconUrl from './../../assets/chat-icon.svg';
 
 class Message extends Component {
 
-  _renderMessageOfType(type) {
+  _renderMessageOfType(type, richContentComponent, richContentCallback) {
+    const RichContentComponent = richContentComponent;
     switch(type) {
     case 'text':
       return <TextMessage {...this.props.message} />;
@@ -23,26 +24,37 @@ class Message extends Component {
       return <StatusMessage {...this.props.message} />;
     case 'html':
       return <HtmlMessage {...this.props.message} />;
+    case 'richContentMessage':
+      return <RichContentComponent {...this.props.message} callback={richContentCallback} />;
     default:
       console.error(`Attempting to load message with unsupported file type '${type}'`);
     }
   }
 
   render () {
-    const { message } = this.props;
+    const {
+      message,
+      richContentComponent,
+      richContentCallback,
+    } = this.props;
+
     let contentClassList = [
       'sc-message--content',
       (this.props.message.author === 'me' ? 'sent' : 'received')
     ];
+    const messageClassList = [
+      'sc-message',
+      (message.type && message.type)
+    ];
     return (
-      <div className="sc-message">
+      <div className={messageClassList.join(' ')}>
         <div className={contentClassList.join(' ')}>
           {!message.hideAvatar ? (
             <div className="sc-message--avatar" style={{
               backgroundImage: `url(${chatIconUrl})`
             }}></div>) : null 
           }
-          {this._renderMessageOfType(message.type)}
+          {this._renderMessageOfType(message.type, richContentComponent, richContentCallback)}
         </div>
       </div>);
   }

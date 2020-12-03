@@ -47,6 +47,9 @@ class ChatWindow extends Component {
               <MessageList
                 messages={messageList}
                 imageUrl={this.props.agentProfile.imageUrl}
+                richContentComponent={this.props.richContentComponent}
+                richContentCallback={this.props.richContentCallback}
+                richContentCustomHTML={this.props.richContentCustomHTML}
               />
               {this.props.showStartNewChatButton
                 ?  (
@@ -79,6 +82,7 @@ class ChatWindow extends Component {
               detailsSubmitted={this.props.onUserDetailsSubmitted}
               startScreenFields={this.props.startScreenFields}
               startChatButtonValue={this.props.startChatButtonValue}
+              fieldLabels={this.props.fieldLabels}
             />
           )
         }
@@ -106,6 +110,7 @@ ChatWindow.propTypes = {
   displayCloseChatButton: PropTypes.bool,
   displayOpenChatButton: PropTypes.bool,
   startNewChatButtonText: PropTypes.any,
+  fieldLabels: PropTypes.any,
 };
 
 export default ChatWindow;
