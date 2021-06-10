@@ -10,6 +10,7 @@ class UserDetails extends Component {
       name: null,
       orderNumber: null,
       email: null,
+      numberOfItemsToCollect: null,
     };
   }
   
@@ -22,6 +23,7 @@ class UserDetails extends Component {
       name,
       orderNumber,
       email,
+      numberOfItemsToCollect,
     } = this.state;
     const { startScreenFields } = this.props;
 
@@ -30,12 +32,14 @@ class UserDetails extends Component {
     const nameFieldRequired = get(startScreenFields, 'name');
     const emailFieldRequired = get(startScreenFields, 'email');
     const orderNumberFieldRequired = get(startScreenFields, 'orderNumber');
+    const noItemsToCollectFieldRequired = get(startScreenFields, 'noItemsToCollect');
 
     const nameFieldValid = nameFieldRequired ? name && name.length : true;
     const emailFieldValid = emailFieldRequired ? email && email.length : true;
     const orderNumberFieldValid = orderNumberFieldRequired ? orderNumber && orderNumber.length : true;
+    const noItemsToCollectFieldValid = noItemsToCollectFieldRequired ? numberOfItemsToCollect && numberOfItemsToCollect.length : true;
     
-    if (nameFieldValid && emailFieldValid && orderNumberFieldValid) {
+    if (nameFieldValid && emailFieldValid && orderNumberFieldValid && noItemsToCollectFieldValid) {
       this.props.detailsSubmitted(name, orderNumber, email);
     }
   }
@@ -54,6 +58,15 @@ class UserDetails extends Component {
     if (orderNumber) {
       this.setState({
         orderNumber: e.target.value,
+      });
+    }
+  }
+
+  updateNoOfItemsToCollect(e) {
+    const numberOfItemsToCollect = e.target.value;
+    if (numberOfItemsToCollect) {
+      this.setState({
+        numberOfItemsToCollect: e.target.value,
       });
     }
   }
@@ -125,6 +138,25 @@ class UserDetails extends Component {
                 type="text"
                 onChange={this.updateOrderNumberField.bind(this)}
                 id="order-number-field"
+                className="sc-user-details-input"
+                autoComplete="off"
+                placeholder={fieldLabels.orderNumberPlaceholder ? fieldLabels.orderNumberPlaceholder : ''}
+              />
+            </Fragment>
+          ) : null}
+        {get(startScreenFields, 'numberOfItemsToCollect') 
+          ? (
+            <Fragment>
+              <label
+                htmlFor="no-of-items-to-collect"
+                className="sc-user-details-label"
+              >
+                {fieldLabels.noItemsToCollect ? `${fieldLabels.noItemsToCollect}:` : 'No of items to collect:' }
+              </label>
+              <input
+                type="number"
+                onChange={this.updateNoOfItemsToCollect.bind(this)}
+                id="no-of-items-to-collect"
                 className="sc-user-details-input"
                 autoComplete="off"
               />
