@@ -40,7 +40,7 @@ class UserDetails extends Component {
     const noItemsToCollectFieldValid = noItemsToCollectFieldRequired ? numberOfItemsToCollect && numberOfItemsToCollect.length : true;
     
     if (nameFieldValid && emailFieldValid && orderNumberFieldValid && noItemsToCollectFieldValid) {
-      this.props.detailsSubmitted(name, orderNumber, email);
+      this.props.detailsSubmitted(name, orderNumber, email, numberOfItemsToCollect);
     }
   }
 
