@@ -11,6 +11,7 @@ class UserDetails extends Component {
       orderNumber: null,
       email: null,
       numberOfItemsToCollect: null,
+      optionalField: null,
     };
   }
   
@@ -24,6 +25,7 @@ class UserDetails extends Component {
       orderNumber,
       email,
       numberOfItemsToCollect,
+      optionalField,
     } = this.state;
     const { startScreenFields } = this.props;
 
@@ -33,14 +35,21 @@ class UserDetails extends Component {
     const emailFieldRequired = get(startScreenFields, 'email');
     const orderNumberFieldRequired = get(startScreenFields, 'orderNumber');
     const noItemsToCollectFieldRequired = get(startScreenFields, 'noItemsToCollect');
+    const optionalFieldRequired = get(startScreenFields, 'optionalField');
 
     const nameFieldValid = nameFieldRequired ? name && name.length : true;
     const emailFieldValid = emailFieldRequired ? email && email.length : true;
     const orderNumberFieldValid = orderNumberFieldRequired ? orderNumber && orderNumber.length : true;
+    const optionalFieldValid = optionalFieldRequired ? optionalField && optionalField.length : true;
     const noItemsToCollectFieldValid = noItemsToCollectFieldRequired ? numberOfItemsToCollect && numberOfItemsToCollect.length : true;
     
-    if (nameFieldValid && emailFieldValid && orderNumberFieldValid && noItemsToCollectFieldValid) {
-      this.props.detailsSubmitted(name, orderNumber, email, numberOfItemsToCollect);
+    if (nameFieldValid
+      && emailFieldValid
+      && orderNumberFieldValid
+      && noItemsToCollectFieldValid
+      && optionalFieldValid
+    ) {
+      this.props.detailsSubmitted(name, orderNumber, email, numberOfItemsToCollect, optionalField);
     }
   }
 
@@ -76,6 +85,15 @@ class UserDetails extends Component {
     if (email) {
       this.setState({
         email: e.target.value,
+      });
+    }
+  }
+
+  updateOptionalField(e) {
+    const optionalField = e.target.value;
+    if (optionalField) {
+      this.setState({
+        optionalField: e.target.value,
       });
     }
   }
@@ -157,6 +175,24 @@ class UserDetails extends Component {
                 type="number"
                 onChange={this.updateNoOfItemsToCollect.bind(this)}
                 id="no-of-items-to-collect"
+                className="sc-user-details-input"
+                autoComplete="off"
+              />
+            </Fragment>
+          ) : null}
+        {get(startScreenFields, 'optionalField') 
+          ? (
+            <Fragment>
+              <label
+                htmlFor="optional-field"
+                className="sc-user-details-label"
+              >
+                {fieldLabels.optionalField ? `${fieldLabels.optionalField}:` : '' }
+              </label>
+              <input
+                type="text"
+                onChange={this.updateOptionalField.bind(this)}
+                id="optional-field"
                 className="sc-user-details-input"
                 autoComplete="off"
               />
