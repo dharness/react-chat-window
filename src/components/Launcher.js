@@ -78,7 +78,7 @@ class Launcher extends Component {
           fieldLabels={this.props.fieldLabels}
           richContentComponent={this.props.richContentComponent}
           richContentCallback={this.props.richContentCallback}
-          richContentCustomHTML={this.props.children}
+          richContentCustomHTML={this.props.children}          
         />
       </div>
     );
@@ -119,6 +119,7 @@ Launcher.propTypes = {
   chatHeaderText: PropTypes.any,
   startNewChatButtonText: PropTypes.any,
   fieldLabels: PropTypes.object,
+  startScreenRequiredFieldsCount: PropTypes.number,
 };
 
 Launcher.defaultProps = {

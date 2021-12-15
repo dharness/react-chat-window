@@ -27,75 +27,56 @@ class UserDetails extends Component {
       numberOfItemsToCollect,
       optionalField,
     } = this.state;
-    const { startScreenFields } = this.props;
 
     e.preventDefault();
 
-    const nameFieldRequired = get(startScreenFields, 'name');
-    const emailFieldRequired = get(startScreenFields, 'email');
-    const orderNumberFieldRequired = get(startScreenFields, 'orderNumber');
-    const noItemsToCollectFieldRequired = get(startScreenFields, 'noItemsToCollect');
-    const optionalFieldRequired = get(startScreenFields, 'optionalField');
+    let fieldsValidCount = 0;
 
-    const nameFieldValid = nameFieldRequired ? name && name.length : true;
-    const emailFieldValid = emailFieldRequired ? email && email.length : true;
-    const orderNumberFieldValid = orderNumberFieldRequired ? orderNumber && orderNumber.length : true;
-    const optionalFieldValid = optionalFieldRequired ? optionalField && optionalField.length : true;
-    const noItemsToCollectFieldValid = noItemsToCollectFieldRequired ? numberOfItemsToCollect && numberOfItemsToCollect.length : true;
     
-    if (nameFieldValid
-      && emailFieldValid
-      && orderNumberFieldValid
-      && noItemsToCollectFieldValid
-      && optionalFieldValid
-    ) {
+    if (name && name.length) fieldsValidCount++;
+    if (email && email.length) fieldsValidCount++;
+    if (orderNumber && orderNumber.length) fieldsValidCount++;
+    if (optionalField && optionalField.length) fieldsValidCount++;
+    if (numberOfItemsToCollect && numberOfItemsToCollect.length) fieldsValidCount++;
+    
+    if (fieldsValidCount >= 2) {
       this.props.detailsSubmitted(name, orderNumber, email, numberOfItemsToCollect, optionalField);
     }
   }
 
   updateNameField(e) {
-    const name = e.target.value;
-    if (name) {
-      this.setState({
-        name: e.target.value,
-      });
-    }
+    const name = e.target.value || '';
+    this.setState({
+      name: name,
+    });
   }
 
   updateOrderNumberField(e) {
-    const orderNumber = e.target.value;
-    if (orderNumber) {
-      this.setState({
-        orderNumber: e.target.value,
-      });
-    }
+    const orderNumber = e.target.value || '';
+    this.setState({
+      orderNumber: orderNumber,
+    });
   }
 
   updateNoOfItemsToCollect(e) {
-    const numberOfItemsToCollect = e.target.value;
-    if (numberOfItemsToCollect) {
-      this.setState({
-        numberOfItemsToCollect: e.target.value,
-      });
-    }
+    const numberOfItemsToCollect = e.target.value || '';
+    this.setState({
+      numberOfItemsToCollect: numberOfItemsToCollect,
+    });
   }
 
   updateEmailField(e) {
-    const email = e.target.value;
-    if (email) {
-      this.setState({
-        email: e.target.value,
-      });
-    }
+    const email = e.target.value || '';
+    this.setState({
+      email: email,
+    });
   }
 
   updateOptionalField(e) {
-    const optionalField = e.target.value;
-    if (optionalField) {
-      this.setState({
-        optionalField: e.target.value,
-      });
-    }
+    const optionalField = e.target.value || '';
+    this.setState({
+      optionalField: optionalField,
+    });
   }
 
   render() {
