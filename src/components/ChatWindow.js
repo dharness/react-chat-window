@@ -83,6 +83,7 @@ class ChatWindow extends Component {
               startScreenFields={this.props.startScreenFields}
               startChatButtonValue={this.props.startChatButtonValue}
               fieldLabels={this.props.fieldLabels}
+              startScreenRequiredFieldsCount={this.props.startScreenRequiredFieldsCount}
             />
           )
         }
@@ -111,6 +112,7 @@ ChatWindow.propTypes = {
   displayOpenChatButton: PropTypes.bool,
   startNewChatButtonText: PropTypes.any,
   fieldLabels: PropTypes.any,
+  startScreenRequiredFieldsCount: PropTypes.number,
 };
 
 export default ChatWindow;

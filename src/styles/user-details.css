@@ -29,3 +29,20 @@
   margin-top: 13px;
   color: #000;
 }
+
+.sc-user-details-email-sub {
+  width: 250px;
+  margin-bottom: 20px;
+  display: flex;
+}
+
+.sc-email-sub-input {
+  width: auto;
+  padding: 9px 9px 9px 0;
+}
+
+.sc-email-sub-label {
+  color: #303030;
+    font-weight: 700;
+    font-size: 13px;
+}

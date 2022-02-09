@@ -78,7 +78,8 @@ class Launcher extends Component {
           fieldLabels={this.props.fieldLabels}
           richContentComponent={this.props.richContentComponent}
           richContentCallback={this.props.richContentCallback}
-          richContentCustomHTML={this.props.children}          
+          richContentCustomHTML={this.props.children}
+          startScreenRequiredFieldsCount={this.props.startScreenRequiredFieldsCount}        
         />
       </div>
     );

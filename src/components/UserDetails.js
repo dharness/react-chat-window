@@ -12,6 +12,7 @@ class UserDetails extends Component {
       email: null,
       numberOfItemsToCollect: null,
       optionalField: null,
+      emailSub: true,
     };
   }
   
@@ -26,21 +27,20 @@ class UserDetails extends Component {
       email,
       numberOfItemsToCollect,
       optionalField,
+      detailsSubmitted,
     } = this.state;
 
     e.preventDefault();
 
     let fieldsValidCount = 0;
-
     
     if (name && name.length) fieldsValidCount++;
     if (email && email.length) fieldsValidCount++;
     if (orderNumber && orderNumber.length) fieldsValidCount++;
     if (optionalField && optionalField.length) fieldsValidCount++;
     if (numberOfItemsToCollect && numberOfItemsToCollect.length) fieldsValidCount++;
-    
-    if (fieldsValidCount >= 2) {
-      this.props.detailsSubmitted(name, orderNumber, email, numberOfItemsToCollect, optionalField);
+    if (fieldsValidCount >= this.props.startScreenRequiredFieldsCount) {
+      this.props.detailsSubmitted(name, orderNumber, email, numberOfItemsToCollect, optionalField, detailsSubmitted);
     }
   }
 
@@ -76,6 +76,13 @@ class UserDetails extends Component {
     const optionalField = e.target.value || '';
     this.setState({
       optionalField: optionalField,
+    });
+  }
+
+  updateEmailSubscribe(e) {
+    const emailSub = e.checked;
+    this.setState({
+      emailSub: emailSub,
     });
   }
 
@@ -178,6 +185,25 @@ class UserDetails extends Component {
                 autoComplete="off"
               />
             </Fragment>
+          ) : null}
+        {get(startScreenFields, 'emailSubscribe') 
+          ? (
+            <div className="sc-user-details-email-sub">
+              <input
+                type="checkbox"
+                onChange={this.updateEmailSubscribe.bind(this)}
+                id="email-sub"
+                className="sc-email-sub-input"
+                autoComplete="off"
+                checked={this.state.emailSub}
+              />
+              <label
+                htmlFor="email-sub"
+                className="sc-email-sub-label"
+              >
+                {fieldLabels.emailSubscribe ? `${fieldLabels.emailSubscribe}:` : '' }
+              </label>
+            </div>
           ) : null}
         <input
           type="submit"
