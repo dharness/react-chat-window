@@ -152,7 +152,3 @@ Look like this:
   teamName: 'Da best'
 }
 ```
-
-## People Using react-chat-window
-
-If you're using react-chat-window in a product I'd love to see what you're making! Email me at dylan@kingofthestack.com
