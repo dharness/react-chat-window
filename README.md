@@ -10,7 +10,7 @@
 </a>
 <br/>
 
-![Demo gif of react-chat-window being used](https://puu.sh/xei2F/fd4a121185.gif)
+<img alt="Demo gif of react-chat-window being used" src="./demo/assets/react-chat-window-demo.gif" width="350px">
 
 ## Features
 
