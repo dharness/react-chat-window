@@ -8,8 +8,6 @@ import Footer from './Footer';
 import monsterImgUrl from './../assets/monster.png';
 import './../assets/styles';
 
-
-
 class Demo extends Component {
 
   constructor() {

@@ -1,14 +1,13 @@
 coverage/
-demo/dist/
 
 # Generated build files
-es/
-lib/
-umd/
+dist/
+demo/dist/
 
 # Node
 node_modules/
 npm-debug.log*
 package-lock.json
 
+# Editors
 .DS_Store
