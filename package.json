@@ -1,6 +1,6 @@
 {
-  "name": "react-chat-window",
-  "version": "1.2.0",
+  "name": "react-chat-window-clone",
+  "version": "1.2.12",
   "description": "react-chat-window React component",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -20,30 +20,40 @@
   "dependencies": {
     "emoji-js": "3.2.2",
     "gh-pages": "^1.2.0",
-    "prop-types": "15.5.10",
+    "prop-types": "^15.8.1",
     "react-highlight.js": "1.0.5",
     "react-linkify": "^0.2.1",
-    "socket.io-client": "2.0.3"
+    "socket.io-client": "2.0.3",
+    "style-loader": "^3.3.3",
+    "webpack": "4.44.2"
   },
   "peerDependencies": {
     "react": "15.x"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
+    "@babel/core": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "css-loader": "^6.8.1",
+    "svg-inline-loader": "^0.8.0",
     "eslint": "^5.13.0",
     "eslint-plugin-react": "^7.12.4",
-    "nwb": "^0.23.0",
+    "nwb": "^0.25.2",
     "react": "15.6.1",
-    "react-dom": "15.6.1"
+    "react-dom": "15.6.1",
+    "webpack-cli": "^4.0.0"
   },
-  "author": "kingofthestack",
-  "homepage": "https://kingofthestack.github.io/react-chat-window/",
+  "author": "mvsknitw",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kingofthestack/react-chat-window.git"
+    "url": "git+https://github.com/mvsknitw/react-chat-window.git"
   },
   "keywords": [
     "react-component"
-  ]
+  ],
+  "bugs": {
+    "url": "https://github.com/mvsknitw/react-chat-window/issues"
+  },
+  "homepage": "https://github.com/mvsknitw/react-chat-window#readme"
 }
