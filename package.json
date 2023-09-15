@@ -1,6 +1,6 @@
 {
   "name": "react-chat-window-clone",
-  "version": "1.2.12",
+  "version": "1.2.13",
   "description": "react-chat-window React component",
   "main": "lib/index.js",
   "module": "es/index.js",
