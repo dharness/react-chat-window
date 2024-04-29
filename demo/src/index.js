@@ -78,7 +78,9 @@ class Demo extends Component {
         newMessagesCount={this.state.newMessagesCount}
         handleClick={this._handleClick.bind(this)}
         isOpen={this.state.isOpen}
-        showEmoji
+        showEmoji={this.state.showEmoji}
+        showFilePicker={this.state.showFilePicker}
+        allowInputText={this.state.allowInputText}
       />
       <img className="demo-monster-img" src={monsterImgUrl} />
       <Footer />

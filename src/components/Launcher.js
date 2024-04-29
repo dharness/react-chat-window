@@ -60,6 +60,8 @@ class Launcher extends Component {
           isOpen={isOpen}
           onClose={this.handleClick.bind(this)}
           showEmoji={this.props.showEmoji}
+          showFilePicker={this.props.showFilePicker}
+          allowInputText={this.props.allowInputText}
         />
       </div>
     );
@@ -84,11 +86,15 @@ Launcher.propTypes = {
   messageList: PropTypes.arrayOf(PropTypes.object),
   mute: PropTypes.bool,
   showEmoji: PropTypes.bool,
+  showFilePicker: PropTypes.bool,
+  allowInputText: PropTypes.bool,
 };
 
 Launcher.defaultProps = {
   newMessagesCount: 0,
-  showEmoji: true
+  showEmoji: true,
+  showFilePicker: true,
+  allowInputText: true,
 };
 
 export default Launcher;

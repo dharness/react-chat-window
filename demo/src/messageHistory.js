@@ -18,6 +18,7 @@ export default [
   {type: 'text', author: 'me', data: { text: 'No forget the story. '} },
   {type: 'text', author: 'them', data: { text: "You've got to have a story."} },
   {type: 'emoji', author: 'me', data: { emoji: '😋'} },
+  {type: 'image', author: 'them', data: { url: 'https://a.slack-edge.com/66f9/img/avatars-teams/ava_0001-34.png', alt: '...', width: 50, height: 50} },
   {type: 'file', author: 'me',
     data: {
       url: monsterImgUrl,
